@@ -46,6 +46,3 @@ require_once get_template_directory() . '/functions/disable-comments.php';
 
 //
 require_once get_template_directory() . '/functions/login.php';
-
-// Update checker
-require_once get_template_directory() . '/functions/bb-update-checker.php';
