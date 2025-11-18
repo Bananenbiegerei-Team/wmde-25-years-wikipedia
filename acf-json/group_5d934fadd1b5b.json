@@ -801,6 +801,7 @@
             },
             "choices": {
                 "white": "white",
+                "black": "black",
                 "primary": "primary",
                 "secondary": "secondary",
                 "accent": "accent",
@@ -831,6 +832,7 @@
             },
             "choices": {
                 "white": "white",
+                "black": "black",
                 "primary": "primary",
                 "secondary": "secondary",
                 "accent": "accent",
@@ -861,6 +863,7 @@
             },
             "choices": {
                 "white": "white",
+                "black": "black",
                 "primary": "primary",
                 "secondary": "secondary",
                 "accent": "accent",
@@ -894,5 +897,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726480828
+    "modified": 1732014200
 }
