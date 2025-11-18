@@ -1,5 +1,5 @@
 <?php
-wp_nav_menu( array(
+bb_wp_nav_menu( array(
   'theme_location' => 'nav-right-level-2',
   'menu_id'        => 'nav-right-level-2',
   'menu_class'     => 'menu horizontal right', // Add the 'menu' class to the ul element

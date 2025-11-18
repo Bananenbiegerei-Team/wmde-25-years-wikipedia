@@ -1,0 +1,45 @@
+{
+    "key": "group_menu_settings",
+    "title": "Menu Settings",
+    "fields": [
+        {
+            "key": "field_sync_menus",
+            "label": "Sync Menus from Main Site",
+            "name": "sync_menus",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "When enabled, this subsite will display menus from the main site instead of its own menus. Edit menus on the main site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable menu synchronization",
+            "default_value": 0,
+            "ui_on_text": "Enabled",
+            "ui_off_text": "Disabled",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1732014400
+}
