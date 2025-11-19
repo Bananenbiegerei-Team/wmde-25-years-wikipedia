@@ -58,6 +58,16 @@ function register_acf_block_types()
 		'keywords'			=> ['numbers', 'stats', 'statistics'],
 		'mode' => 'edit',
 	]);
+	acf_register_block_type([
+		'name' => 'w25-bus',
+		'title'				=> __('W25 Bus'),
+		'description'		=> __('Display bus section with headline, text, CTA and image'),
+		'render_template'	=> 'blocks/w25-bus.php',
+		'category'			=> 'custom-blocks',
+		'icon'				=> 'admin-site',
+		'keywords'			=> ['bus', 'cta', 'section'],
+		'mode' => 'edit',
+	]);
 }
 if (function_exists('acf_register_block_type')) {
 	add_action('acf/init', 'register_acf_block_types');
