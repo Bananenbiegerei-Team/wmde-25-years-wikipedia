@@ -3,6 +3,8 @@
 // To override the options and force loading all of the blocks and force choosing default blocks
 define('BB_LOAD_ALL_BB_BLOCKS', false);
 define('BB_ALLOWED_WP_BLOCKS', []);
+ // Add your custom ACF blocks here
+define('BB_ALLOWED_CUSTOM_BLOCKS', ['acf/w25-hero-video']);
 define('BB_EMAIL_DOMAIN', 'bananenbiegerei.de');
 // Load bb-blocks
 require_once get_template_directory() . '/bb-blocks/init.php';
