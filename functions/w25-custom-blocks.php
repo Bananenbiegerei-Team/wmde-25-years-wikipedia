@@ -48,6 +48,16 @@ function register_acf_block_types()
 		'keywords'			=> ['testimonial', 'quote', 'review'],
 		'mode' => 'edit',
 	]);
+	acf_register_block_type([
+		'name' => 'w25-numbers',
+		'title'				=> __('W25 Numbers'),
+		'description'		=> __('Display numbers or statistics'),
+		'render_template'	=> 'blocks/w25-numbers.php',
+		'category'			=> 'custom-blocks',
+		'icon'				=> 'dashboard',
+		'keywords'			=> ['numbers', 'stats', 'statistics'],
+		'mode' => 'edit',
+	]);
 }
 if (function_exists('acf_register_block_type')) {
 	add_action('acf/init', 'register_acf_block_types');
