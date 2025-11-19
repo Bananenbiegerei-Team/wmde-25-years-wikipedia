@@ -38,6 +38,16 @@ function register_acf_block_types()
 		'keywords'			=> [],
 		'mode' => 'edit',
 	]);
+	acf_register_block_type([
+		'name' => 'w25-testimonials',
+		'title'				=> __('W25 Testimonials'),
+		'description'		=> __('Display testimonials with quote, author, and image'),
+		'render_template'	=> 'blocks/w25-testimonials.php',
+		'category'			=> 'custom-blocks',
+		'icon'				=> 'format-quote',
+		'keywords'			=> ['testimonial', 'quote', 'review'],
+		'mode' => 'edit',
+	]);
 }
 if (function_exists('acf_register_block_type')) {
 	add_action('acf/init', 'register_acf_block_types');
