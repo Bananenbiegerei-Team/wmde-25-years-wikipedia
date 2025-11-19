@@ -28,6 +28,16 @@ function register_acf_block_types()
 		'keywords'			=> [],
 		'mode' => 'edit',
 	]);
+	acf_register_block_type([
+		'name' => 'w25-welcome-text',
+		'title'				=> __('W25 Welcome Text'),
+		'description'		=> __(''),
+		'render_template'	=> 'blocks/w25-welcome-text.php',
+		'category'			=> 'custom-blocks',
+		'icon'				=> 'text',
+		'keywords'			=> [],
+		'mode' => 'edit',
+	]);
 }
 if (function_exists('acf_register_block_type')) {
 	add_action('acf/init', 'register_acf_block_types');
