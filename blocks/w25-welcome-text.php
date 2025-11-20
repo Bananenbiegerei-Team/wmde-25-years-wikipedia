@@ -31,22 +31,23 @@ $headline = get_field('headline');
 $description = get_field('description');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <?php if ($icon_url): ?>
-        <div class="w25-welcome-text__icon">
-            <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>">
-        </div>
-    <?php endif; ?>
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-secondary flex justify-center p-4 lg:p-16 pb-8 lg:pb-32">
+    <div class="flex max-w-5xl gap-4 lg:pr-16">
+        <?php if ($icon_url): ?>
+        <img class="w-auto h-[27px] mt-[3px] lg:h-[55px] lg:mt-[5px]" src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>">
+        <div>
+        <?php endif; ?>
+            <?php if ($headline): ?>
+            <h2 class="text-3xl lg:text-6xl">
+                <?php echo esc_html($headline); ?>
+            </h2>
+        <?php endif; ?>
 
-    <?php if ($headline): ?>
-        <h2 class="w25-welcome-text__headline">
-            <?php echo esc_html($headline); ?>
-        </h2>
-    <?php endif; ?>
-
-    <?php if ($description): ?>
-        <div class="w25-welcome-text__description">
-            <?php echo nl2br(esc_html($description)); ?>
+        <?php if ($description): ?>
+            <div class="text-xl leading-none font-headings lg:text-3xl">
+                <?php echo nl2br(esc_html($description)); ?>
+            </div>
+        <?php endif; ?>
         </div>
-    <?php endif; ?>
+    </div>
 </div>

@@ -38,7 +38,7 @@ module.exports = {
 			'3xl': '2rem', // 32px
 			'4xl': '2.5rem', // 40px
 			'5xl': '3.5rem', // 56px
-			'6xl': '4rem', // 96px
+			'6xl': '4rem', // 64px
 			'3vw': '10vw',
 		},
 		fontFamily: {
