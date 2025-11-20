@@ -68,6 +68,16 @@ function register_acf_block_types()
 		'keywords'			=> ['bus', 'cta', 'section'],
 		'mode' => 'edit',
 	]);
+	acf_register_block_type([
+		'name' => 'w25-news',
+		'title'				=> __('W25 News'),
+		'description'		=> __('News swiper carousel with images and links'),
+		'render_template'	=> 'blocks/w25-news.php',
+		'category'			=> 'custom-blocks',
+		'icon'				=> 'megaphone',
+		'keywords'			=> ['news', 'swiper', 'carousel'],
+		'mode' => 'edit',
+	]);
 }
 if (function_exists('acf_register_block_type')) {
 	add_action('acf/init', 'register_acf_block_types');

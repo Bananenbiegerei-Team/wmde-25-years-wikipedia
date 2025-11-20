@@ -1,7 +1,8 @@
 //import * as TW from './tailwindhelpers';
 import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
-import Swiper, { Navigation, Autoplay, Pagination, Mousewheel } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation, Autoplay, Pagination, Mousewheel, EffectCoverflow } from 'swiper/modules';
 
 // Init Alpine
 window.Alpine = Alpine;
@@ -15,9 +16,9 @@ Alpine.start();
 // 'SwipersConfig' is defined in 'head.php', every swiper block adds its config in it.
 var Swipers = {};
 for (sel in SwipersConfig) {
-	Swipers[sel] = new Swiper(`${sel} .swiper-container`, {
+	Swipers[sel] = new Swiper(`${sel} .swiper`, {
 		// include modules
-		...{ modules: [Navigation, Autoplay, Pagination, Mousewheel] },
+		...{ modules: [Navigation, Autoplay, Pagination, Mousewheel, EffectCoverflow] },
 		// enable mouse-wheel by default
 		...{ mousewheel: { forceToAxis: true } },
 		// include swiper-specific config
@@ -25,4 +26,3 @@ for (sel in SwipersConfig) {
 	});
 }
 window.Swipers = Swipers;
-
