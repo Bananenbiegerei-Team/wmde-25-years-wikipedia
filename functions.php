@@ -25,7 +25,7 @@ require_once get_template_directory() . '/functions/acf-options.php';
 require_once get_template_directory() . '/functions/fonts.php';
 
 // Wrap blocks with containers for page layout
-require_once get_template_directory() . '/functions/containers.php';
+// require_once get_template_directory() . '/functions/containers.php';
 
 // Load styles & scripts
 require_once get_template_directory() . '/functions/enqueue-scripts.php';
