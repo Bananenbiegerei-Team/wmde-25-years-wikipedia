@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/w25-hero-video",
+	"title": "W25 Hero Video",
+	"description": "Video on top with full and looped version",
+	"category": "custom-blocks",
+	"icon": "editor-video",
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"mode": true,
+		"align": false
+	}
+}

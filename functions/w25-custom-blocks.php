@@ -15,70 +15,20 @@ function custom_block_category($categories, $post)
 }
 add_filter('block_categories_all', 'custom_block_category', 10, 2);
 
-// For Icons go to: https://developer.wordpress.org/resource/dashicons/ – But leave out the "dashicons-" Prefix
+// Register ACF Blocks using block.json
 function register_acf_block_types()
 {
-	acf_register_block_type([
-		'name' => 'w25-hero-video',
-		'title'				=> __('W25 Hero Video'),
-		'description'		=> __('Video on top with full and looped version'),
-		'render_template'	=> 'blocks/w25-hero-video.php',
-		'category'			=> 'custom-blocks',
-		'icon'				=> 'editor-video',
-		'keywords'			=> [],
-		'mode' => 'edit',
-	]);
-	acf_register_block_type([
-		'name' => 'w25-welcome-text',
-		'title'				=> __('W25 Welcome Text'),
-		'description'		=> __(''),
-		'render_template'	=> 'blocks/w25-welcome-text.php',
-		'category'			=> 'custom-blocks',
-		'icon'				=> 'text',
-		'keywords'			=> [],
-		'mode' => 'edit',
-	]);
-	acf_register_block_type([
-		'name' => 'w25-testimonials',
-		'title'				=> __('W25 Testimonials'),
-		'description'		=> __('Display testimonials with quote, author, and image'),
-		'render_template'	=> 'blocks/w25-testimonials.php',
-		'category'			=> 'custom-blocks',
-		'icon'				=> 'format-quote',
-		'keywords'			=> ['testimonial', 'quote', 'review'],
-		'mode' => 'edit',
-	]);
-	acf_register_block_type([
-		'name' => 'w25-numbers',
-		'title'				=> __('W25 Numbers'),
-		'description'		=> __('Display numbers or statistics'),
-		'render_template'	=> 'blocks/w25-numbers.php',
-		'category'			=> 'custom-blocks',
-		'icon'				=> 'dashboard',
-		'keywords'			=> ['numbers', 'stats', 'statistics'],
-		'mode' => 'edit',
-	]);
-	acf_register_block_type([
-		'name' => 'w25-bus',
-		'title'				=> __('W25 Bus'),
-		'description'		=> __('Display bus section with headline, text, CTA and image'),
-		'render_template'	=> 'blocks/w25-bus.php',
-		'category'			=> 'custom-blocks',
-		'icon'				=> 'admin-site',
-		'keywords'			=> ['bus', 'cta', 'section'],
-		'mode' => 'edit',
-	]);
-	acf_register_block_type([
-		'name' => 'w25-news',
-		'title'				=> __('W25 News'),
-		'description'		=> __('News swiper carousel with images and links'),
-		'render_template'	=> 'blocks/w25-news.php',
-		'category'			=> 'custom-blocks',
-		'icon'				=> 'megaphone',
-		'keywords'			=> ['news', 'swiper', 'carousel'],
-		'mode' => 'edit',
-	]);
+	$blocks = [
+		'w25-hero-video',
+		'w25-welcome-text',
+		'w25-testimonials',
+		'w25-numbers',
+		'w25-bus',
+		'w25-news',
+	];
+
+	foreach ($blocks as $block) {
+		register_block_type(get_template_directory() . '/blocks/' . $block);
+	}
 }
-if (function_exists('acf_register_block_type')) {
-	add_action('acf/init', 'register_acf_block_types');
-}
+add_action('acf/init', 'register_acf_block_types');

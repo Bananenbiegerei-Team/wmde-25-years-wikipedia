@@ -31,7 +31,8 @@ $image = get_field('image'); // Returns array with 'url', 'alt', 'width', 'heigh
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <div class="w25-bus__content">
+    <div class="hidden">
+        <div class="w25-bus__content">
         <?php if ($headline): ?>
             <h2 class="w25-bus__headline">
                 <?php echo esc_html($headline); ?>
@@ -63,4 +64,5 @@ $image = get_field('image'); // Returns array with 'url', 'alt', 'width', 'heigh
                  height="<?php echo esc_attr($image['height']); ?>">
         </div>
     <?php endif; ?>
+    </div>
 </div>
