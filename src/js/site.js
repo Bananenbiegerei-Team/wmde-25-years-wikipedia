@@ -18,7 +18,8 @@ const w25NewsSwiper = new Swiper('.w25-news .swiper', {
 	modules: [Navigation, Pagination, EffectCoverflow],
 	grabCursor: true,
 	centeredSlides: true,
-	slidesPerView: '3',
+	slidesPerView: 1,
+	spaceBetween: 0,
 	loop: true,
 	navigation: {
 		nextEl: '.w25-news .swiper-button-next',
@@ -27,5 +28,18 @@ const w25NewsSwiper = new Swiper('.w25-news .swiper', {
 	pagination: {
 		el: '.w25-news .swiper-pagination',
 		clickable: true,
+	},
+	breakpoints: {
+		// Mobile (default above: 1 slide)
+		640: {
+			// sm breakpoint
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+		1024: {
+			// lg breakpoint
+			slidesPerView: 3,
+			spaceBetween: 0,
+		},
 	},
 });

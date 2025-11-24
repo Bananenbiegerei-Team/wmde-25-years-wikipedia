@@ -3,6 +3,27 @@
     "title": "Block: W25 News",
     "fields": [
         {
+            "key": "field_692473e448afd",
+            "label": "headline",
+            "name": "headline",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_691f13dc3ac86",
             "label": "news swiper",
             "name": "news_swiper",
@@ -164,5 +185,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763975725
+    "modified": 1763996657
 }

@@ -23,58 +23,71 @@ if (!empty($block['align'])) {
     $className .= ' align' . $block['align'];
 }
 
+// Get the headline field
+$block_headline = get_field('headline');
 ?>
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <?php if (have_rows('news_swiper')): ?>
-    <div class="swiper">
-        <div class="py-16 swiper-wrapper">
-            <?php while (have_rows('news_swiper')): the_row();
-                $image = get_sub_field('image');
-                $headline = get_sub_field('headline');
-                $description = get_sub_field('description');
-                $link = get_sub_field('link');
-                $background_color = get_sub_field('background_color');
-            ?>
-            <div class="swiper-slide overflow-hidden rounded-lg <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
-                <div class="relative">
-                    <?php if ($image):
-                        $image_url = wp_get_attachment_image_url($image, 'four-columns-four-three');
-                        $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
-                    ?>
-                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                    <?php endif; ?>
-                    <div class="p-4">
-                    <?php if ($headline): ?>
-                        <?php if ($link): ?>
-                            <h3 class="">
-                            <a href="<?php echo esc_url($link['url']); ?>" class="after:content-[''] after:absolute after:inset-0 after:z-10 hover:underline"<?php if (!empty($link['target'])): ?> target="<?php echo esc_attr($link['target']); ?>"<?php endif; ?>>
-                                <?php echo esc_html($headline); ?>
-                            </a>
-                            </h3>
-                        <?php else: ?>
-                            <h3 class="">
-                            <?php echo esc_html($headline); ?>
-                            </h3>
-                        <?php endif; ?>
-                    </h3>
-                    <?php endif; ?>
+    <?php if ($block_headline): ?>
+        <h2 class="mt-8 text-3xl text-center lg:text-4xl"><?php echo esc_html($block_headline); ?></h2>
+    <?php endif; ?>
 
-                    <?php if ($description): ?>
-                        <?php echo esc_html($description); ?>
-                    <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-            <?php endwhile; ?>
+    <?php if (have_rows('news_swiper')): ?>
+    <div class="flex items-center">
+        <!-- Navigation button - Previous -->
+        <div class="!w-16 swiper-button-prev">
+            <?php echo bb_icon('arrow-left', 'custom-class'); ?>
         </div>
 
-        <!-- Navigation buttons -->
-        <div class="swiper-button-prev">prev</div>
-        <div class="swiper-button-next">next</div>
+        <!-- Swiper container -->
+        <div class="flex-1 swiper">
+            <div class="py-10 lg:py-16 swiper-wrapper">
+                <?php while (have_rows('news_swiper')): the_row();
+                    $image = get_sub_field('image');
+                    $headline = get_sub_field('headline');
+                    $description = get_sub_field('description');
+                    $link = get_sub_field('link');
+                    $background_color = get_sub_field('background_color');
+                ?>
+                <div class="swiper-slide overflow-hidden rounded-lg <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
+                    <div class="relative">
+                        <?php if ($image):
+                            $image_url = wp_get_attachment_image_url($image, 'four-columns-four-three');
+                            $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+                        ?>
+                            <img class="w-full" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                        <?php endif; ?>
+                        <div class="p-4">
+                        <?php if ($headline): ?>
+                            <?php if ($link): ?>
+                                <h3 class="lg:text-4xl">
+                                <a href="<?php echo esc_url($link['url']); ?>" class="after:content-[''] after:absolute after:inset-0 after:z-10 hover:underline hover:underline-offset-2 decoration-1"<?php if (!empty($link['target'])): ?> target="<?php echo esc_attr($link['target']); ?>"<?php endif; ?>>
+                                    <?php echo esc_html($headline); ?>
+                                </a>
+                                </h3>
+                            <?php else: ?>
+                                <h3 class="lg:text-4xl">
+                                <?php echo esc_html($headline); ?>
+                                </h3>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php if ($description): ?>
+                            <p class=""><?php echo esc_html($description); ?></p>
+                        <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <?php endwhile; ?>
+            </div>
 
-        <!-- Pagination -->
-        <div class="swiper-pagination"></div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Navigation button - Next -->
+        <div class="!w-16 swiper-button-next">
+            <?php echo bb_icon('arrow-right', 'custom-class'); ?>
+        </div>
     </div>
 
     <?php else: ?>

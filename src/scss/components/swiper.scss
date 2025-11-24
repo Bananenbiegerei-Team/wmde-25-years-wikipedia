@@ -1,12 +1,35 @@
 // Swiper 11 bundle (includes all modules: navigation, pagination, effects, etc.)
 @import 'swiper/swiper-bundle';
 
-// Scale effect for active center slide
+.swiper-button-prev:after, .swiper-button-next:after {
+	@apply content-none;
+}
+
+// Swiper color overrides, using the color variables defined in theme settings
+.swiper {
+	--swiper-theme-color: theme('colors.primary.DEFAULT');
+	--swiper-pagination-color: theme('colors.primary.DEFAULT');
+	--swiper-pagination-bullet-inactive-color: theme('colors.neutral.dark');
+	--swiper-pagination-bullet-inactive-opacity: 0.5;
+}
+
+// Navigation button colors (works even when buttons are outside .swiper container)
+.swiper-button-next,
+.swiper-button-prev {
+	--swiper-navigation-color: theme('colors.primary.DEFAULT');
+}
+
+// Custom News Swiper: Scale effect for active center slide
 .w25-news .swiper-slide {
-	transition: transform 0.3s ease;
-	transform: scale(0.8);
+	@apply transition-transform duration-300 ease-in-out scale-[0.9];
 }
 
 .w25-news .swiper-slide-active {
-	transform: scale(1);
+	@apply scale-100;
+}
+
+// Reset positioning for navigation buttons to allow Tailwind layout control
+.w25-news .swiper-button-prev,
+.w25-news .swiper-button-next {
+	@apply relative inset-auto m-0;
 }
