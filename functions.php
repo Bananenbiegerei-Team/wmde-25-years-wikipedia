@@ -47,3 +47,6 @@ require_once get_template_directory() . '/functions/disable-comments.php';
 
 //
 require_once get_template_directory() . '/functions/login.php';
+
+// Excerpts
+require_once get_template_directory() . '/functions/image-sizes.php';
