@@ -1,6 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
 	"name": "acf/w25-bus",
 	"title": "W25 Bus",
 	"description": "Display bus section with headline, text, CTA and image",
@@ -12,7 +10,6 @@
 		"renderTemplate": "render.php"
 	},
 	"supports": {
-		"mode": true,
 		"align": false
 	}
 }

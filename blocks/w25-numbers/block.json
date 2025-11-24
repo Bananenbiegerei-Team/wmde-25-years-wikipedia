@@ -1,6 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
 	"name": "acf/w25-numbers",
 	"title": "W25 Numbers",
 	"description": "Display numbers or statistics",
@@ -8,11 +6,10 @@
 	"icon": "dashboard",
 	"keywords": ["numbers", "stats", "statistics"],
 	"acf": {
-		"mode": "preview",
+		"mode": "auto",
 		"renderTemplate": "render.php"
 	},
 	"supports": {
-		"mode": true,
 		"align": false
 	}
 }

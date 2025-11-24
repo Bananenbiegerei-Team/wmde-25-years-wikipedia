@@ -1,6 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
 	"name": "acf/w25-news",
 	"title": "W25 News",
 	"description": "News swiper carousel with images and links",
@@ -8,11 +6,10 @@
 	"icon": "megaphone",
 	"keywords": ["news", "swiper", "carousel"],
 	"acf": {
-		"mode": "preview",
+		"mode": "auto",
 		"renderTemplate": "render.php"
 	},
 	"supports": {
-		"mode": true,
 		"align": false
 	}
 }

@@ -9,6 +9,9 @@ $bb_colors: 'primary', 'secondary', 'neutral', 'success', 'warning', 'error', 'a
 /* Styles for BB-Blocks */
 @import '../../bb-blocks/**/style.scss';
 
+/* Styles for W25 Blocks */
+@import '../../blocks/**/style.scss';
+
 /* UI Basic components */
 @import './ui/*';
 

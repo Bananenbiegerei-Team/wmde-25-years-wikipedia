@@ -16,8 +16,9 @@ require_once get_template_directory() . '/functions/localization.php';
 // Special features of theme
 require_once get_template_directory() . '/functions/features.php';
 
-// Load ACF blocks
-require_once get_template_directory() . '/functions/w25-custom-blocks.php';
+// Load ACF blocks system
+require_once get_template_directory() . '/functions/w25-blocks.php';
+// require_once get_template_directory() . '/functions/w25-custom-blocks.php'; // Old system - kept for reference
 require_once get_template_directory() . '/functions/acf-blocks.php';
 require_once get_template_directory() . '/functions/acf-options.php';
 

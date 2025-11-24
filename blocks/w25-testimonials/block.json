@@ -1,6 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
 	"name": "acf/w25-testimonials",
 	"title": "W25 Testimonials",
 	"description": "Display testimonials with quote, author, and image",
@@ -8,11 +6,10 @@
 	"icon": "format-quote",
 	"keywords": ["testimonial", "quote", "review"],
 	"acf": {
-		"mode": "preview",
+		"mode": "auto",
 		"renderTemplate": "render.php"
 	},
 	"supports": {
-		"mode": true,
 		"align": false
 	}
 }
