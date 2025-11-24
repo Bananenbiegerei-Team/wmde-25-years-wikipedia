@@ -151,7 +151,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "all"
+                "value": "acf\/w25-news"
             }
         ]
     ],
@@ -164,5 +164,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763647482
+    "modified": 1763975725
 }

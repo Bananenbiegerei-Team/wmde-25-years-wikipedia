@@ -1,1 +1,12 @@
-@import '../../../node_modules/swiper/swiper';
+// Swiper 11 bundle (includes all modules: navigation, pagination, effects, etc.)
+@import 'swiper/swiper-bundle';
+
+// Scale effect for active center slide
+.w25-news .swiper-slide {
+	transition: transform 0.3s ease;
+	transform: scale(0.8);
+}
+
+.w25-news .swiper-slide-active {
+	transform: scale(1);
+}
