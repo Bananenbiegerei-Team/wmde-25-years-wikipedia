@@ -106,37 +106,10 @@ add_action('acf/init', function () {
 });
 
 /**
- * Enqueue block-specific styles
+ * Block styles are automatically compiled into site.css via SCSS imports
+ * See src/scss/site.scss for the import statement
+ * No need to enqueue separately since they are part of the main stylesheet
  */
-add_action('wp_enqueue_scripts', function () {
-	$block_dirs = glob(WMDE_BB_BLOCKS_PATH . '/*', GLOB_ONLYDIR);
-
-	if (!empty($block_dirs)) {
-		foreach ($block_dirs as $block_dir) {
-			$block_name = basename($block_dir);
-
-			// Check if block should be loaded
-			if (wmde_should_load_block($block_name)) {
-				// Check for style.css or style.scss
-				$style_css = $block_dir . '/style.css';
-				$style_scss = $block_dir . '/style.scss';
-
-				if (file_exists($style_css)) {
-					wp_enqueue_style(
-						'block-' . $block_name,
-						get_template_directory_uri() . '/blocks/' . $block_name . '/style.css',
-						array(),
-						filemtime($style_css)
-					);
-				} elseif (file_exists($style_scss)) {
-					// SCSS files need to be compiled first
-					// For now, we'll just note they exist
-					// You'll need to compile them to CSS or use a build process
-				}
-			}
-		}
-	}
-}, 100);
 
 /**
  * Load ACF JSON from block directories
