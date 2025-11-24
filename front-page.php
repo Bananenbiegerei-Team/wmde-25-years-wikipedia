@@ -7,9 +7,7 @@ NOTE: This implements a workaround for the pagination bug with Polylang. 'is_pag
 	<?php get_header(); ?>
 	<?php while (have_posts()): ?>
 		<?php the_post(); ?>
-		<div class="mt-10">
-			<?php the_content(); ?>
-		</div>
+		<?php the_content(); ?>
 	<?php endwhile; ?>
 	<?php get_footer(); ?>
 <?php else: ?>

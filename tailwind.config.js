@@ -1,7 +1,10 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-	content: ['./**/*.php'],
+	content: [
+		'./**/*.php',
+		'./blocks/**/render.php', // Explicitly include block templates
+	],
 	safelist: [
 		{
 			pattern: /justify-/,

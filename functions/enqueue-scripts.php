@@ -38,6 +38,8 @@ add_action(
         if ($pagenow == 'post.php' || $pagenow == 'post-new.php') {
             wp_enqueue_script('editor-addon', get_template_directory_uri() . '/js/editor.js', ['jquery', 'acf-input'], '', false);
             wp_enqueue_style('editor-wmde', get_template_directory_uri() . '/css/editor.css', [], '', 'all');
+            // Enqueue frontend styles in editor so blocks look the same
+            wp_enqueue_style('site-frontend', get_template_directory_uri() . '/css/site.css', [], '', 'all');
         }
         wp_enqueue_script('admin', get_template_directory_uri() . '/js/admin.js', ['jquery'], '', false);
         if (current_user_can('administrator')) {

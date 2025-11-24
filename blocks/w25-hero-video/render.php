@@ -29,7 +29,8 @@ if (!empty($block['align'])) {
 // $video_loop = get_field('video_loop');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <p>W25 Hero Video Block - Please configure ACF fields for this block</p>
-    <!-- Add your block HTML here -->
+<div id="<?php echo esc_attr($id); ?>" class="aspect-h-9 aspect-w-16 bg-neutral <?php echo esc_attr($className); ?>">
+    <div class="p-4">
+        <p>W25 Hero Video Block - Please configure ACF fields for this block</p>
+    </div>
 </div>

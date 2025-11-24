@@ -9,7 +9,7 @@ $body_color = get_field('body_color', 'options') ?: 'white';
     <?php get_template_part('template-parts/header-top/main'); ?>
     <!--/header-->
 
-    <main class="main-content flex-grow pt-14 nohover:pt-14 md:pt-0 transition-fade" id="main-content" role="main">
+    <main class="flex-grow main-content pt-14 nohover:pt-14 md:pt-0 transition-fade" id="main-content" role="main">
         <?php if (is_front_page()): ?>
         <h1 class="sr-only">
             <?= get_bloginfo('name') ?>

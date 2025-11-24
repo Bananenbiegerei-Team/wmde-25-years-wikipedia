@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			loop: true,
+			autoHeight: true,
 			navigation: {
 				nextEl: '.w25-news .swiper-button-next',
 				prevEl: '.w25-news .swiper-button-prev',
@@ -38,11 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
 					// sm breakpoint
 					slidesPerView: 2,
 					spaceBetween: 0,
+					autoHeight: false,
 				},
 				1024: {
 					// lg breakpoint
 					slidesPerView: 3,
 					spaceBetween: 0,
+					autoHeight: false,
 				},
 			},
 		});
