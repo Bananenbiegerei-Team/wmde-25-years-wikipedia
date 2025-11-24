@@ -1,0 +1,49 @@
+name: Submodule Health Check
+on:
+  push:
+    branches: [main, dev]
+
+jobs:
+  check-submodules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          token: ${{ secrets.PAT_BB_READ }}
+          fetch-depth: 0
+          
+      - name: 🔍 Check Gutenberg blocks submodule freshness
+        run: |
+          # Navigate to blocks submodule directory
+          cd blocks
+          
+          git fetch origin
+          
+          SUBMODULE_COMMIT=$(git rev-parse HEAD)
+          LATEST_COMMIT=$(git rev-parse origin/main)
+          
+          echo "Current submodule commit: $SUBMODULE_COMMIT"
+          echo "Latest available commit: $LATEST_COMMIT"
+          
+          if [ "$SUBMODULE_COMMIT" != "$LATEST_COMMIT" ]; then
+            COMMITS_BEHIND=$(git rev-list --count HEAD..origin/main)
+            LAST_UPDATE=$(git log -1 --format="%cr" HEAD)
+            BRANCH_NAME="${{ github.ref_name }}"
+            PUSHER="${{ github.actor }}"
+            
+            echo "::warning::🔄 Gutenberg blocks submodule is $COMMITS_BEHIND commits behind on branch '$BRANCH_NAME'"
+            echo "::warning::📅 Last submodule update: $LAST_UPDATE"
+            echo "::warning::👤 Pushed by: $PUSHER"
+            echo "::notice::💡 To update: git submodule update --remote && git add . && git commit -m 'Update Gutenberg blocks submodule'"
+            
+            # Show what commits are missing
+            echo "::group::Missing commits"
+            git log --oneline HEAD..origin/main
+            echo "::endgroup::"
+            
+            exit 1
+          else
+            echo "::notice::✅ Submodule is up to date!"
+          fi

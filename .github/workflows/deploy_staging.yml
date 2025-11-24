@@ -1,0 +1,63 @@
+name: DDeploy Theme 25 years of Wikipedia to Staging
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    name: Install, Build, and Deploy Theme
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive  # 👈 Enables fetching submodules during checkout
+          token: ${{ secrets.PAT_BB_READ }}
+
+      # - name: 🧱 Ensure submodules are up to date
+      #   run: git submodule update --init --recursive
+
+      - name: 🧰 Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: 💾 Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🛠️ Build WMDE Theme
+        run: npm run build
+
+      - name: 🚚 Deploy theme via SSH (rsync)
+        uses: burnett01/rsync-deployments@6.0.0
+        with:
+          switches: -azv --delete --exclude=node_modules --exclude=.git
+          path: ./ 
+          remote_path: stage.wikimedia.de/wp-content/themes/wmde-25-years-wikipedia
+          remote_host: stage.wikimedia.de
+          remote_user: www-data
+          remote_key: ${{ secrets.WMDE_SSH_KEY  }}
+          remote_port: 22
+
+      # - name: 🔁 Clear WP Cache (optional)
+      #   uses: appleboy/ssh-action@v0.1.10
+      #   with:
+      #     host: stage.wikimedia.de
+      #     username: www-data
+      #     key: ${{ secrets.WMDE_SSH_KEY  }}
+      #     port: 22
+      #     script: |
+      #       cd stage.wikimedia.de
+      #       wp cache flush || echo "WP-CLI not available or cache plugin missing"
