@@ -26,6 +26,7 @@ if (!empty($block['align'])) {
 // Get the headline field
 $block_headline = get_field('headline');
 ?>
+<?php if (!is_admin()): ?>
 <div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?>">
     <?php if ($block_headline): ?>
         <h2 class="mt-8 text-3xl text-center lg:text-4xl"><?php echo esc_html($block_headline); ?></h2>
@@ -92,3 +93,10 @@ $block_headline = get_field('headline');
     <p class="w25-news__empty">No news items added yet.</p>
     <?php endif; ?>
 </div>
+
+<?php else: ?>
+<div class="flex flex-col items-center gap-4 p-8 bg-white border border-dashed rounded-lg">
+    <p>Click to edit W25 News Swiper</p>
+    <img class="w-128" src="<?php echo get_template_directory_uri(); ?>/blocks/w25-news/w25-news-preview.png" alt="W25 News Preview">
+</div>
+<?php endif; ?>
