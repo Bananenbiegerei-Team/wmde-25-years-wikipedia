@@ -39,7 +39,7 @@
             },
             "layout": "row",
             "pagination": 0,
-            "min": 0,
+            "min": 5,
             "max": 0,
             "collapsed": "",
             "button_label": "Eintrag hinzufügen",
@@ -79,7 +79,7 @@
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -87,7 +87,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
+                    "maxlength": 40,
                     "allow_in_bindings": 0,
                     "placeholder": "",
                     "prepend": "",
@@ -101,7 +101,7 @@
                     "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -109,7 +109,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
+                    "maxlength": 400,
                     "allow_in_bindings": 1,
                     "rows": "",
                     "placeholder": "",
@@ -185,5 +185,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763996657
+    "modified": 1763998078
 }

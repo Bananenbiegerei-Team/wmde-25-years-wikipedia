@@ -26,12 +26,10 @@ if (!empty($block['align'])) {
 // Get the headline field
 $block_headline = get_field('headline');
 ?>
-
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?>">
     <?php if ($block_headline): ?>
         <h2 class="mt-8 text-3xl text-center lg:text-4xl"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>
-
     <?php if (have_rows('news_swiper')): ?>
     <div class="flex items-center">
         <!-- Navigation button - Previous -->
@@ -49,7 +47,7 @@ $block_headline = get_field('headline');
                     $link = get_sub_field('link');
                     $background_color = get_sub_field('background_color');
                 ?>
-                <div class="swiper-slide overflow-hidden rounded-lg <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
+                <div class="swiper-slide md:min-h-[430px] overflow-hidden rounded-lg <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
                     <div class="relative">
                         <?php if ($image):
                             $image_url = wp_get_attachment_image_url($image, 'four-columns-four-three');
@@ -60,13 +58,13 @@ $block_headline = get_field('headline');
                         <div class="p-4">
                         <?php if ($headline): ?>
                             <?php if ($link): ?>
-                                <h3 class="lg:text-4xl">
+                                <h3 class="mb-2 lg:text-4xl">
                                 <a href="<?php echo esc_url($link['url']); ?>" class="after:content-[''] after:absolute after:inset-0 after:z-10 hover:underline hover:underline-offset-2 decoration-1"<?php if (!empty($link['target'])): ?> target="<?php echo esc_attr($link['target']); ?>"<?php endif; ?>>
                                     <?php echo esc_html($headline); ?>
                                 </a>
                                 </h3>
                             <?php else: ?>
-                                <h3 class="lg:text-4xl">
+                                <h3 class="mb-2 lg:text-4xl">
                                 <?php echo esc_html($headline); ?>
                                 </h3>
                             <?php endif; ?>

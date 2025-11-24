@@ -31,7 +31,7 @@ const w25NewsSwiper = new Swiper('.w25-news .swiper', {
 	},
 	breakpoints: {
 		// Mobile (default above: 1 slide)
-		640: {
+		768: {
 			// sm breakpoint
 			slidesPerView: 2,
 			spaceBetween: 0,
