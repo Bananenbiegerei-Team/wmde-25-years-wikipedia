@@ -1,3 +1,3 @@
 [submodule "bb-blocks"]
 	path = bb-blocks
-	url = https://github.com/bananenbiegerei/bb-blocks
+	url = git@github.com:bananenbiegerei/bb-blocks
