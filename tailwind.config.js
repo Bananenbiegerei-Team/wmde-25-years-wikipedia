@@ -3,7 +3,8 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
 	content: [
 		'./**/*.php',
-		'./blocks/**/render.php', // Explicitly include block templates
+		'./blocks/**/render.php',
+		'./bb-blocks/**/render.php', // Explicitly include block templates
 	],
 	safelist: [
 		{
@@ -109,39 +110,39 @@ module.exports = {
 							DEFAULT: 'white',
 						},
 						primary: {
-							light: '#0000ff',
-							DEFAULT: '#000099',
-							dark: '#000033',
+							light: '#c0e6ff',
+							DEFAULT: '#049dff',
+							dark: '#15314e',
 						},
 						secondary: {
-							light: '#00ff00',
-							DEFAULT: '#009900',
-							dark: '#003300',
+							light: '#FBEEBF',
+							DEFAULT: '#F0BC00',
+							dark: '#60341a',
 						},
 						neutral: {
-							light: '#F8f8f8',
-							DEFAULT: '#F6F6F6',
-							dark: '#a0a0a0',
+							light: '#f6f6f6',
+							DEFAULT: '#a2a9b1',
+							dark: '#5e5e5e',
 						},
 						accent: {
-							light: '#2878ff',
-							DEFAULT: '#2878ff',
-							dark: '#2878ff',
+							light: '#F9DDE9',
+							DEFAULT: '#E679A6',
+							dark: '#6b2235',
 						},
 						error: {
-							light: '#ffc9d4',
-							DEFAULT: '#ff3164',
-							dark: '#910a3d',
+							light: '#fcd9d9',
+							DEFAULT: '#e24949',
+							dark: '#751212',
 						},
 						success: {
-							light: '#edfcf4',
-							DEFAULT: '#087951',
-							dark: '#084c35',
+							light: '#cfe7cf',
+							DEFAULT: '#3a903c',
+							dark: '#062d07',
 						},
 						warning: {
-							light: '#fffaec',
-							DEFAULT: '#ff7b00',
-							dark: '#823b0c',
+							light: '#fbdfc5',
+							DEFAULT: '#EE8019',
+							dark: '#682517',
 						},
 					},
 				},

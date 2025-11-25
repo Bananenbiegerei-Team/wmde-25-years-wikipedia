@@ -1,66 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-// List of colors as defined in tailwind.config.js
-$bb_colors: 'primary', 'secondary', 'neutral', 'success', 'warning', 'error', 'accent';
-
-@import '../../bb-blocks/**/style.scss';
-
-@import './ui/*';
-@import './components/*';
-@import './gutenberg-overwrites/*';
-
-html :where(.editor-styles-wrapper) {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply font-headings;
-	}
-}
-
-// Apply container width to all blocks
-html :where(.wp-block) {
-	@apply max-w-screen-2xl mx-auto px-6;
-}
-
 // Specific settings for blocks in editor
 html :where(.wp-block) {
 	@import '../../blocks/**/editor.scss';
 }
 
-// ACF
-.edit-post-meta-boxes-area #poststuff .stuffbox > h3,
-.edit-post-meta-boxes-area #poststuff h2.hndle,
-.edit-post-meta-boxes-area #poststuff h3.hndle {
-	font-weight: 400;
-	padding: 16px;
-	font-size: inherit;
-}
-
 .editor-styles-wrapper,
 :where(.editor-styles-wrapper) {
-	@apply container font-texts bg-transparent;
-	.bb-facts-block {
-		> div {
-			height: 8rem;
-			div.text-6xl {
-				font-size: 3rem;
-			}
-			div.text-base {
-				font-size: 0.5rem;
-			}
-		}
-		p {
-			line-height: 0;
-			@apply font-texts;
-		}
-	}
-
 	.bb-block-spacer {
 		@apply after:content-['_spacer'] after:absolute after:top-2 after:right-8 after:bg-neutral-light after:py-1 after:px-3 text-xs after:rounded-full after:block border border-neutral-light rounded-xl border-dotted;
 	}

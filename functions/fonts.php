@@ -105,11 +105,23 @@ function bb_inline_style_fonts()
     return $bb_fonts_css;
 }
 
-// Add custom colors to stylesheet
+// Add custom fonts to frontend stylesheet
 add_action(
     'wp_enqueue_scripts',
     function () {
         wp_add_inline_style('style', bb_inline_style_fonts());
+    },
+    PHP_INT_MAX
+);
+
+// Add custom fonts to editor stylesheet so they match frontend
+add_action(
+    'admin_enqueue_scripts',
+    function () {
+        global $pagenow;
+        if ($pagenow == 'post.php' || $pagenow == 'post-new.php') {
+            wp_add_inline_style('site-frontend', bb_inline_style_fonts());
+        }
     },
     PHP_INT_MAX
 );
