@@ -34,17 +34,17 @@ $description = get_field('description');
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-secondary flex justify-center p-4 lg:p-16 pb-8 lg:pb-32">
     <div class="flex max-w-xl gap-4 lg:max-w-5xl lg:pr-16">
         <?php if ($icon_url): ?>
-        <img class="w-auto h-8 lg:h-16" src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>">
+        <img class="w-auto h-[27px] lg:h-[52px]" src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>">
         <div>
         <?php endif; ?>
             <?php if ($headline): ?>
-            <h2 class="text-3xl lg:text-6xl">
+            <h2 class="mb-2 text-3xl lg:text-6xl">
                 <?php echo esc_html($headline); ?>
             </h2>
         <?php endif; ?>
 
         <?php if ($description): ?>
-            <div class="text-xl leading-none font-headings lg:text-3xl">
+            <div class="text-xl leading-tight font-headings lg:text-3xl">
                 <?php echo nl2br(esc_html($description)); ?>
             </div>
         <?php endif; ?>
