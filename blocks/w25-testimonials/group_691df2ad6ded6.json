@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_691df2f915e77",
-            "label": "testimials",
+            "label": "testimonials",
             "name": "testimials",
             "aria-label": "",
             "type": "repeater",
@@ -110,7 +110,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
+                    "maxlength": 110,
                     "allow_in_bindings": 0,
                     "rows": "",
                     "placeholder": "",
@@ -125,7 +125,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf/w25-testimonials"
+                "value": "acf\/w25-testimonials"
             }
         ]
     ],
@@ -138,5 +138,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763570506
+    "modified": 1764067560
 }

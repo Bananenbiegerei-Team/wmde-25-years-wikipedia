@@ -29,38 +29,35 @@ $testimonials = get_field('testimials'); // Note: typo in field name from ACF
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <?php if ($testimonials): ?>
-        <div class="w25-testimonials__grid">
+        <div class="container grid grid-cols-1 gap-12 pb-16 md:gap-4 bg-secondary md:grid-cols-2 lg:grid-cols-4">
             <?php foreach ($testimonials as $testimonial): ?>
-                <div class="w25-testimonials__item">
+                <div class="space-y-4">
                     <?php if (!empty($testimonial['image'])):
                         $image_id = $testimonial['image'];
-                        $image_url = wp_get_attachment_image_url($image_id, 'medium');
+                        $image_url = wp_get_attachment_image_url($image_id, 'four-columns-four-three');
                         $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
                     ?>
-                        <div class="w25-testimonials__image">
-                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                        </div>
+                        <img class="rounded-t-lg" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
                     <?php endif; ?>
 
-                    <?php if (!empty($testimonial['text'])): ?>
-                        <blockquote class="w25-testimonials__quote">
-                            <?php echo nl2br(esc_html($testimonial['text'])); ?>
-                        </blockquote>
-                    <?php endif; ?>
-
-                    <div class="w25-testimonials__author">
+                    <div class="">
                         <?php if (!empty($testimonial['name'])): ?>
-                            <div class="w25-testimonials__name">
+                            <h4 class="font-sans font-bold">
                                 <?php echo esc_html($testimonial['name']); ?>
-                            </div>
+                            </h4>
                         <?php endif; ?>
 
                         <?php if (!empty($testimonial['role'])): ?>
-                            <div class="w25-testimonials__role">
-                                <?php echo esc_html($testimonial['role']); ?>
-                            </div>
+                            <p><?php echo esc_html($testimonial['role']); ?></p>
                         <?php endif; ?>
                     </div>
+
+                    <?php if (!empty($testimonial['text'])): ?>
+                        <blockquote class="text-xl leading-tight font-headings">
+                            <img class="float-left w-auto h-6 mr-2" src="<?php echo get_template_directory_uri(); ?>/blocks/w25-testimonials/quote-icon-testimonials.svg" alt="Quote">
+                            <?php echo nl2br(esc_html($testimonial['text'])); ?>
+                        </blockquote>
+                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         </div>

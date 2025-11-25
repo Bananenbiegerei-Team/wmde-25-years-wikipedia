@@ -31,7 +31,7 @@ $headline = get_field('headline');
 $description = get_field('description');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-secondary flex justify-center p-4 lg:p-16 pb-8 lg:pb-32">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-secondary flex justify-center lg:p-16 py-16 px-4 lg:pb-32">
     <div class="flex max-w-xl gap-4 lg:max-w-5xl lg:pr-16">
         <?php if ($icon_url): ?>
         <img class="w-auto h-[27px] lg:h-[52px]" src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>">
