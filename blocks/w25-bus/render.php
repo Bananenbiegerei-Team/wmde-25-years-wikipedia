@@ -30,6 +30,7 @@ $cta = get_field('cta'); // Returns array with 'url', 'title', 'target'
 $image = get_field('image'); // Returns array with 'url', 'alt', 'width', 'height', etc.
 
 ?>
+
 <div id="<?php echo esc_attr($id); ?>"
     class="overflow-hidden relative bg-secondary-light <?php echo esc_attr($className); ?>" x-data="puzzlePieces()">
     <div class="container">
@@ -81,14 +82,15 @@ $image = get_field('image'); // Returns array with 'url', 'alt', 'width', 'heigh
                             </div>
                         </template>
                     </div>
-                    <img class="z-10 absolute w-[800px] h-auto bottom-[20px] -right-[80px]" src="<?php echo get_template_directory_uri(); ?>/blocks/w25-bus/bus.png" alt="Wikipedia Bus">
+                    <img class="z-10 absolute w-[500px] h-auto bottom-[20px] transition-transform duration-[1000ms] ease-linear"
+                        :style="`transform: translateX(${allPuzzlesRevealed ? '-300%' : '0%'}) translateY(${allPuzzlesRevealed ? '-20%' : '0%'}) scale(${allPuzzlesRevealed ? '2' : '1'}); right: -100px;`"
+                        src="<?php echo get_template_directory_uri(); ?>/blocks/w25-bus/bus.png" alt="Wikipedia Bus">
+                    <img class="z-10 absolute w-[100px] h-auto top-[20px] left-[20px]"
+                        :class="allPuzzlesRevealed ? 'animate-bounce-in-down' : 'opacity-0'"
+                        src="<?php echo get_template_directory_uri(); ?>/blocks/w25-bus/sign.svg" alt="Freuen uns">
                 </div>
             </div>
         </div>
-    </div>
-    <div class="hidden h-[50vh] overflow-hidden bg-no-repeat bg-cover"
-        style="background-image: url(<?php echo esc_url($image['url']); ?>);">
-
     </div>
     <script>
     function puzzlePieces() {
@@ -96,14 +98,17 @@ $image = get_field('image'); // Returns array with 'url', 'alt', 'width', 'heigh
             audioContext: null,
             soundEnabled: false,
             rows: Array.from({
-                    length: 6
+                    length: 6 // 6
                 }, () =>
                 Array.from({
-                    length: 10
+                    length: 10 //10
                 }, () => ({
                     revealed: false
                 }))
             ),
+            get allPuzzlesRevealed() {
+                return this.rows.every(row => row.every(piece => piece.revealed));
+            },
             toggleSound() {
                 if (!this.audioContext) {
                     // Create AudioContext on first click
@@ -152,10 +157,28 @@ $image = get_field('image'); // Returns array with 'url', 'alt', 'width', 'heigh
                 }
             },
             resetAllPieces() {
+                // Temporarily disable transition for instant reset
+                const busElement = document.querySelector('img[alt="Wikipedia Bus"]');
+                if (busElement) {
+                    busElement.style.transition = 'none';
+                }
+
                 this.rows.forEach(row => {
                     row.forEach(piece => {
                         piece.revealed = false;
                     });
+                });
+
+                // Force reflow to apply the transition: none immediately
+                if (busElement) {
+                    busElement.offsetHeight; // Trigger reflow
+                }
+
+                // Re-enable transition on next frame
+                requestAnimationFrame(() => {
+                    if (busElement) {
+                        busElement.style.transition = '';
+                    }
                 });
             }
         }
