@@ -29,18 +29,18 @@ $block_headline = get_field('headline');
 <?php if (!is_admin()): ?>
 <div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?>">
     <?php if ($block_headline): ?>
-        <h2 class="mt-8 text-3xl text-center lg:text-4xl"><?php echo esc_html($block_headline); ?></h2>
+        <h2 class="mb-4 text-3xl lg:mb-8 lg:text-4xl"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>
     <?php if (have_rows('news_swiper')): ?>
     <div class="flex items-center">
         <!-- Navigation button - Previous -->
-        <div class="!w-16 swiper-button-prev">
+        <div class="!w-8 lg:!w-16 swiper-button-prev">
             <?php echo bb_icon('arrow-left', 'custom-class'); ?>
         </div>
 
         <!-- Swiper container -->
         <div class="flex-1 swiper">
-            <div class="py-10 lg:py-16 swiper-wrapper">
+            <div class="swiper-wrapper">
                 <?php while (have_rows('news_swiper')): the_row();
                     $image = get_sub_field('image');
                     $headline = get_sub_field('headline');
@@ -59,19 +59,19 @@ $block_headline = get_field('headline');
                         <div class="p-4">
                         <?php if ($headline): ?>
                             <?php if ($link): ?>
-                                <h3 class="mb-2 lg:text-4xl">
+                                <h3 class="mb-2 lg:text-3xl">
                                 <a href="<?php echo esc_url($link['url']); ?>" class="after:content-[''] after:absolute after:inset-0 after:z-10 hover:underline hover:underline-offset-2 decoration-1"<?php if (!empty($link['target'])): ?> target="<?php echo esc_attr($link['target']); ?>"<?php endif; ?>>
                                     <?php echo esc_html($headline); ?>
                                 </a>
                                 </h3>
                             <?php else: ?>
-                                <h3 class="mb-2 lg:text-4xl">
+                                <h3 class="mb-2 lg:text-3xl">
                                 <?php echo esc_html($headline); ?>
                                 </h3>
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php if ($description): ?>
-                            <p class=""><?php echo esc_html($description); ?></p>
+                            <p class="line-clamp-4"><?php echo esc_html($description); ?></p>
                         <?php endif; ?>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ $block_headline = get_field('headline');
         </div>
 
         <!-- Navigation button - Next -->
-        <div class="!w-16 swiper-button-next">
+        <div class="!w-8 lg:!w-16 swiper-button-next">
             <?php echo bb_icon('arrow-right', 'custom-class'); ?>
         </div>
     </div>
