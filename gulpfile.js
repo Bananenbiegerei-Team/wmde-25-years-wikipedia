@@ -78,7 +78,7 @@ function dev() {
 		notify: false,
 	});
 	watch(['./src/scss/**/*.scss', './*blocks/**/*.scss'], stylesDev).on('change', browserSync.reload);
-	watch('./src/js/**/*.js', esbuildDev).on('change', browserSync.reload);
+	watch(['./src/js/**/*.js', './blocks/**/*.js'], esbuildDev).on('change', browserSync.reload);
 	watch('./**/*.php', stylesDev).on('change', browserSync.reload);
 	watch(['./img/**/*.*', './fonts/**/*.*']).on('change', browserSync.reload);
 }

@@ -1,0 +1,19 @@
+@import 'plyr/src/sass/plyr';
+
+.w25-hero-video {
+
+
+
+    .plyr__video-wrapper {
+        max-width: 1180px;    
+        aspect-ratio: 16 / 9;
+   }
+
+   .plyr__controls {
+     max-width: 1180px;
+   }
+    
+    .plyr__control--overlaid {
+        background-color: black;
+    }
+}
