@@ -1,11 +1,11 @@
 <table class="w-full overflow-hidden rounded-lg">
-    <thead class="bg-secondary">
+    <thead class="">
         <tr>
             <th class="px-3 py-2 text-sm font-bold tracking-wider text-left uppercase ">Datum</th>
             <th class="px-3 py-2 text-sm font-bold tracking-wider text-left uppercase ">Ort</th>
         </tr>
     </thead>
-    <tbody class="bg-white divide-y divide-neutral-light">
+    <tbody class="divide-y divide-neutral-dark">
         <tr class="transition-colors hover:bg-neutral-light">
             <td class="px-3 py-2 text-sm whitespace-nowrap">15. März 2026</td>
             <td class="px-2 py-2 text-sm whitespace-nowrap">Berlin</td>
