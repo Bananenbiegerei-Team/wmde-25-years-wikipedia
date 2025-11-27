@@ -20,6 +20,12 @@ module.exports = {
 		{
             pattern: /shadow-(images|xl|2xl)/,
         },
+		{
+			pattern: /animate-(wiggle|jump|bounce|fade|spin|ping|pulse|shake|flip|roll)/,
+		},
+		{
+			pattern: /animate-(once|twice|infinite|delay|duration|ease)/,
+		},
 	],
 	theme: {
 		screens: {
@@ -93,6 +99,7 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/aspect-ratio'),
 		require('@tailwindcss/container-queries'),
+		require('tailwindcss-animated'),
 		// plugin(function ({ addBase }) {
 		// 	addBase({
 		// 		//				html: { fontSize: '6px' },
