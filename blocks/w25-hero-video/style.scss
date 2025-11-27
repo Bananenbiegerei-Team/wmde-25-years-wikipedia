@@ -2,7 +2,44 @@
 
 .w25-hero-video {
 
+    /* Plyr UI color tokens scoped to the hero block */
+    --plyr-color-main: #F0BC00;
+    --plyr-control-background: #F0BC00;
+    --plyr-control-background-hover: transparent;
+    --plyr-control-color: #ffffff;
+    --plyr-control-color-disabled: rgba(255, 255, 255, 0.5);
+    --plyr-range-background: rgba(255, 255, 255, 0.12);
+    --plyr-range-fill: #F0BC00;
+    --plyr-range-thumb-background: #ffffff;
+    --plyr-progress-buffered: rgba(255, 255, 255, 0.25);
+    --plyr-tooltip-background: #F0BC00;
+    --plyr-tooltip-color: #ffffff;
+    --plyr-loading-spinner: #ffffff;
 
+    /* Fine-tune some Plyr elements inside this scope */
+    .plyr > .plyr__controls {
+        background: linear-gradient(0deg, black, transparent);
+    }
+    
+    .plyr__control,
+    .plyr__controls {
+        color: var(--plyr-control-color);
+        background: transparent;
+    }
+
+    .plyr--full-ui .plyr__progress--played {
+        background: var(--plyr-range-fill);
+    }
+
+    .plyr__progress--buffer {
+        background: var(--plyr-progress-buffered);
+    }
+
+    .plyr__control[aria-pressed="true"],
+    .plyr__control:hover {
+        background: var(--plyr-control-background-hover);
+        color: var(--plyr-control-color);
+    }
 
     .plyr__video-wrapper {
         max-width: 1180px;    
@@ -11,6 +48,7 @@
 
    .plyr__controls {
      max-width: 1180px;
+     margin: auto;
    }
     
     .plyr__control--overlaid {
