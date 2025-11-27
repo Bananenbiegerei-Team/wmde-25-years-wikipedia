@@ -6,6 +6,9 @@ import focus from '@alpinejs/focus';
 import Swiper from 'swiper';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 
+// load js from blocks repositoy 
+import '../../blocks/w25-hero-video/script.js';
+
 // Swiper styles loaded via SCSS (src/scss/components/swiper.scss)
 
 // Init Alpine
@@ -51,3 +54,5 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 });
+
+
