@@ -77,11 +77,28 @@ function dev() {
 		open: process.env.BROWSERSYNC_OPEN_BROWSER == 'true',
 		notify: false,
 	});
-	watch(['./src/scss/**/*.scss', './*blocks/**/*.scss'], stylesDev).on('change', browserSync.reload);
-	watch(['./src/js/**/*.js', './blocks/**/*.js'], esbuildDev).on('change', browserSync.reload);
-	watch('./**/*.php', stylesDev).on('change', browserSync.reload);
-	watch(['./img/**/*.*', './fonts/**/*.*']).on('change', browserSync.reload);
+
+	// SCSS → only run stylesDev, it already streams to browserSync
+	watch(
+		['./src/scss/**/*.scss', './blocks/**/*.scss', './blocks/**/*.css'],
+		stylesDev
+	);
+
+	// JS → rebuild then reload
+	watch(['./src/js/**/*.js', './blocks/**/*.js'], series(esbuildDev, reloadBrowser));
+
+	// PHP → just reload
+	watch('./**/*.php', reloadBrowser);
+
+	// Assets → just reload
+	watch(['./img/**/*.*', './fonts/**/*.*'], reloadBrowser);
 }
+
+function reloadBrowser(done) {
+	browserSync.reload();
+	done();
+}
+
 
 exports.default = series(parallel(stylesDev, esbuildDev), dev);
 exports.build = series(stylesProd, esbuildProd);
