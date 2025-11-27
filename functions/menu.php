@@ -76,7 +76,7 @@ function bb_wp_nav_menu($args)
 
     wp_nav_menu($args);
 
-    if (is_multisite() && get_current_blog_id() != 1 && get_field('sync_menus', 'options')) {
+    if (is_multisite() && get_current_blog_id() == 1 && get_field('sync_menus', 'options')) {
         restore_current_blog();
     }
 }
@@ -98,12 +98,10 @@ function bb_get_nav_menu($location = 'nav')
 
     $menu = wp_get_nav_menu_name($location);
 
-    if ($menu === '') {
-        if ($switched) {
-            restore_current_blog();
-        }
-        return [];
+    if ($switched) {
+        restore_current_blog();
     }
+    
 
     $nav = [];
     $featured_id = null;
