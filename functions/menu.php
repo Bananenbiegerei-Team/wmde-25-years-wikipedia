@@ -98,10 +98,12 @@ function bb_get_nav_menu($location = 'nav')
 
     $menu = wp_get_nav_menu_name($location);
 
-    if ($switched) {
-        restore_current_blog();
+    if ($menu === '') {
+        if ($switched) {
+            restore_current_blog();
+        }
+        return [];
     }
-    
 
     $nav = [];
     $featured_id = null;
