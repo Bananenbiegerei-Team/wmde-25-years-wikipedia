@@ -93,6 +93,10 @@ function bb_get_nav_menu($location = 'nav')
     $switched = false;
     if (is_multisite() && get_current_blog_id() != 1 && get_field('sync_menus', 'options')) {
         switch_to_blog(1);
+        
+        // Register custom post types from main site
+        bb_register_custom_post_types();
+        
         $switched = true;
     }
 
