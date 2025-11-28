@@ -1041,13 +1041,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Bold.ttf": "Lato-Bold.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Black.ttf": "Lato-Black.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Regular.ttf": "Lato-Regular.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/LinLibertine_R.ttf": "LinLibertine_R.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/LinLibertine_DR.ttf": "LinLibertine_DR.ttf"
-                    },
+                    "choices": [],
                     "default_value": false,
                     "return_format": "array",
                     "multiple": 0,
@@ -1095,13 +1089,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Bold.ttf": "Lato-Bold.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Black.ttf": "Lato-Black.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Regular.ttf": "Lato-Regular.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/LinLibertine_R.ttf": "LinLibertine_R.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/LinLibertine_DR.ttf": "LinLibertine_DR.ttf"
-                    },
+                    "choices": [],
                     "default_value": false,
                     "return_format": "array",
                     "multiple": 0,
@@ -1149,13 +1137,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Bold.ttf": "Lato-Bold.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Black.ttf": "Lato-Black.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/Lato-Regular.ttf": "Lato-Regular.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/LinLibertine_R.ttf": "LinLibertine_R.ttf",
-                        "https:\/\/wikicon23.local\/wp-content\/uploads\/2024\/08\/LinLibertine_DR.ttf": "LinLibertine_DR.ttf"
-                    },
+                    "choices": [],
                     "default_value": false,
                     "return_format": "array",
                     "multiple": 0,
