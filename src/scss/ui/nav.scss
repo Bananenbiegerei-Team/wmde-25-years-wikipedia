@@ -60,3 +60,50 @@
 		}
 	}
 }
+
+/* Menu */
+.btn-menu {
+	@apply rounded-md inline-flex select-none flex-wrap items-center justify-start border-transparent text-left transition duration-200 ease-out leading-none text-base p-3 bg-transparent text-black font-alt font-medium hover:bg-gray hover:border-gray mb-0;
+
+	&.current {
+		@apply text-primary-500;
+	}
+}
+
+.btn-menu-section {
+	@apply text-sm bg-transparent text-black font-alt font-bold uppercase border-none hover:bg-transparent hover:text-primary-800 rounded-md;
+}
+
+// Domains
+#navmenu_desktop_domains {
+	a {
+		&.current {
+			// Current domain or top-level page
+		}
+	}
+}
+
+// Menu items in dropdown
+#navmenu_desktop_dropdown {
+	li {
+		&.current {
+			// Current page
+		}
+
+		&.current {
+			@apply text-primary-500;
+		}
+	}
+}
+
+// Dropdown animations (could not get them to work with AlpineJS)
+#navmenu_desktop_dropdown {
+	&>div.invisible {
+		opacity: 0;
+	}
+
+	&>div.visible {
+		opacity: 1;
+		transition: opacity 0.2s;
+	}
+}
