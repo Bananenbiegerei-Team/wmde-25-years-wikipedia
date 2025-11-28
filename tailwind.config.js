@@ -55,6 +55,7 @@ module.exports = {
 			headings: ['Headings', 'sans-serif'],
 			texts: ['Texts', 'sans-serif'],
 			menus: ['Menus', 'sans-serif'],
+			alt: ['Montserrat', 'sans-serif'],
 		},
 		fontWeight: {
 			normal: 300,
@@ -116,9 +117,14 @@ module.exports = {
 						white: {
 							DEFAULT: 'white',
 						},
+						gray: {
+							DEFAULT: '#F6F6F6',
+						},
 						primary: {
 							light: '#c0e6ff',
 							DEFAULT: '#049dff',
+							500: '#1423ff', // for menu
+							800: '#0008e3',
 							dark: '#15314e',
 						},
 						secondary: {
