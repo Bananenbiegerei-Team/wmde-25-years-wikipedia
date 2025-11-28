@@ -36,6 +36,37 @@ add_action(
 );
 
 
+function bb_register_custom_post_types()
+{
+    register_post_type('projects', [
+        'labels' => [
+            'name' => __('Projects', BB_TEXT_DOMAIN),
+            'singular_name' => __('Project', BB_TEXT_DOMAIN)
+        ],
+        'public' => true,
+        'has_archive' => false,
+        'supports' => ['title', 'editor', 'thumbnail', 'author', 'excerpt'],
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'show_in_menu' => false
+    ]);
+
+    register_post_type('theme-releases', [
+        'labels' => [
+            'name' => _x('Themen', 'Post Type General Name', BB_TEXT_DOMAIN),
+            'singular_name' => _x('Thema', 'Post Type Singular Name', BB_TEXT_DOMAIN)
+        ],
+        'public' => true,
+        'has_archive' => false,
+        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields', 'excerpt'],
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-megaphone',
+        'show_in_menu' => false
+    ]);
+}
+
+
+
 // Get the menus from the main site (used for the footer menu)
 function bb_wp_nav_menu($args)
 {
@@ -45,7 +76,7 @@ function bb_wp_nav_menu($args)
 
     wp_nav_menu($args);
 
-    if (is_multisite() && get_current_blog_id() != 1 && get_field('sync_menus', 'options')) {
+    if (is_multisite() && get_current_blog_id() == 1 && get_field('sync_menus', 'options')) {
         restore_current_blog();
     }
 }
@@ -53,7 +84,6 @@ function bb_wp_nav_menu($args)
 // Get menu data in a JSON structure for the nav top dropdown menu
 function bb_get_nav_menu($location = 'nav')
 {
-
     // Return cached value, except for editors (Polylang pro makes a lot of DB queries!)
     $cached = get_transient(BB_NAV_MENU_CACHE . $location);
     if ($cached && !current_user_can('edit_posts')) {
@@ -109,6 +139,7 @@ function bb_get_nav_menu($location = 'nav')
             $page->ID = intval($m->object_id);
             $page->title = $m->title;
             $page->url = $m->url;
+            $page->target = $m->target;
             $page->domain_id = $domain->ID;
             $domain->children[] = $page->ID;
             if ($m->menu_item_parent == $featured_id) {

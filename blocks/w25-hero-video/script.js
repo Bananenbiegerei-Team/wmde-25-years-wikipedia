@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 if (overlay) overlay.style.display = 'none';
                 if (container) container.style.display = 'block';
+
+                videoEl.style.display = 'block';
+                
                 const playPromise = plyrInstance.play();
                 if (playPromise && typeof playPromise.then === 'function') {
                     playPromise.catch(() => {

@@ -37,7 +37,6 @@ if (!empty($block['align'])) {
     <h1 class="sr-only">Wikipedia 25</h1>
 
     <div class="video-overlay">
-
         <video
             class="absolute top-0 left-0 w-full h-full object-cover"
             autoplay
@@ -49,13 +48,13 @@ if (!empty($block['align'])) {
         >
             <source src="<?= esc_url($video_loop['url']) ?>" type="<?= esc_attr($video_loop['mime_type']) ?>">
         </video>
-
+        
         <img
             src="<?php echo esc_url( get_template_directory_uri() . '/blocks/w25-hero-video/overlay.svg' ); ?>"
             alt="<?php echo esc_attr( 'Hero Video Placeholder', 'wmde-25-years-wikipedia' ); ?>"
             class="object-cover w-full h-full relative max-h-[80vh]"
         ></<img>
-
+ 
         <button 
             class="play-button absolute left-1/2 top-[calc(50%+4rem)] -translate-x-1/2 flex items-center justify-center gap-4 group"
             aria-label="<?php echo esc_attr( 'Play full video', 'wmde-25-years-wikipedia' ); ?>"
@@ -65,7 +64,7 @@ if (!empty($block['align'])) {
                 <path class="fill-black group-hover:fill-[#F0BC00]" d="M30 25.8171C30 24.2038 31.812 23.2544 33.1384 24.1728L53.6248 38.3556C54.7736 39.1509 54.7736 40.8491 53.6248 41.6444L33.1384 55.8273C31.812 56.7456 30 55.7962 30 54.1829V25.8171Z"/>
             </svg>
 
-            Play Video
+            Play Video 
 
         </button>
     </div>
