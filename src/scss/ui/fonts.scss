@@ -1,22 +1,26 @@
+/* Libertinus Serif for Headings */
 @font-face {
 	font-family: 'Headings';
 	font-style: normal;
-	font-weight: 700;
-	src: url('../fonts/montserrat-v25-latin-700.woff2') format('woff2');
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('../fonts/LibertinusSerif-Regular.woff2') format('woff2');
 }
 
+/* Roboto Flex for Body Text */
 @font-face {
 	font-family: 'Texts';
 	font-style: normal;
-	font-weight: 100 700;
+	font-weight: 100 1000;
 	font-display: swap;
 	src: url('../fonts/RobotoFlex.woff2') format('woff2');
 }
 
+/* Montserrat Medium for Menus */
 @font-face {
 	font-family: 'Menus';
 	font-style: normal;
-	font-weight: 100 700;
+	font-weight: 500;
 	font-display: swap;
-	src: url('../fonts/RobotoFlex.woff2') format('woff2');
+	src: url('../fonts/montserrat-v25-latin-500.woff2') format('woff2');
 }
