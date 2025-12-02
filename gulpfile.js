@@ -79,24 +79,24 @@ function dev() {
 	});
 
 	// SCSS → only run stylesDev, it already streams to browserSync
-	watch(
-		['./src/scss/**/*.scss', './blocks/**/*.scss', './blocks/**/*.css'],
-		stylesDev
-	);
+	// watch(
+	// 	['./src/scss/**/*.scss', './blocks/**/*.scss', './blocks/**/*.css'],
+	// 	stylesDev
+	// );
 
-	// JS → rebuild then reload
-	watch(['./src/js/**/*.js', './blocks/**/*.js'], series(esbuildDev, reloadBrowser));
+	// // JS → rebuild then reload
+	// watch(['./src/js/**/*.js', './blocks/**/*.js'], series(esbuildDev, reloadBrowser));
 
 	// PHP → rebuild CSS (for Tailwind JIT) then reload
 	watch('./**/*.php', series(stylesDev, reloadBrowser));
 
-	// Assets → just reload
-	watch(['./img/**/*.*', './fonts/**/*.*'], reloadBrowser);
-}
+	// // Assets → just reload
+	// watch(['./img/**/*.*', './fonts/**/*.*'], reloadBrowser);
 
-function reloadBrowser(done) {
-	browserSync.reload();
-	done();
+	watch(['./src/scss/**/*.scss', './blocks/**/*.scss'], stylesDev).on('change', browserSync.reload);
+	watch(['./src/js/**/*.js', './blocks/**/*.js'], esbuildDev).on('change', browserSync.reload);
+	watch('./**/*.php', stylesDev).on('change', browserSync.reload);
+	watch(['./img/**/*.*', './fonts/**/*.*']).on('change', browserSync.reload);
 }
 
 
