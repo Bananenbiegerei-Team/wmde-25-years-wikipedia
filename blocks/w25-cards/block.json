@@ -1,0 +1,15 @@
+{
+    "name": "acf/w25-cards",
+    "title": "W25 Cards",
+    "description": "Displays 4 cards with image, title, text and link",
+    "category": "custom-blocks",
+    "icon": "articles",
+    "keywords": [],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "align": false
+    }
+}
