@@ -1,13 +1,22 @@
 //import * as TW from './tailwindhelpers';
 import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 // Swiper core + modules
 import Swiper from 'swiper';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 
-// load js from blocks repositoy 
+// load js from blocks repositoy
 import '../../blocks/w25-hero-video/script.js';
+
+// Make GSAP available globally
+window.gsap = gsap;
+window.ScrollTrigger = ScrollTrigger;
 
 // Swiper styles loaded via SCSS (src/scss/components/swiper.scss)
 

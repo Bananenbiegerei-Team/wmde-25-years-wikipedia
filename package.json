@@ -50,6 +50,7 @@
 		"@swup/fragment-plugin": "^1.0.0",
 		"@swup/preload-plugin": "^3.2.10",
 		"@tailwindcss/container-queries": "^0.1.1",
+		"gsap": "^3.13.0",
 		"jquery": "^3.5.1",
 		"js-confetti": "^0.12.0",
 		"plyr": "^3.8.3",

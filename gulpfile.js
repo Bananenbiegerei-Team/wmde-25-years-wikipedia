@@ -87,8 +87,8 @@ function dev() {
 	// JS → rebuild then reload
 	watch(['./src/js/**/*.js', './blocks/**/*.js'], series(esbuildDev, reloadBrowser));
 
-	// PHP → just reload
-	watch('./**/*.php', reloadBrowser);
+	// PHP → rebuild CSS (for Tailwind JIT) then reload
+	watch('./**/*.php', series(stylesDev, reloadBrowser));
 
 	// Assets → just reload
 	watch(['./img/**/*.*', './fonts/**/*.*'], reloadBrowser);

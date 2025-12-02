@@ -6,8 +6,9 @@
 // List of colors as defined in tailwind.config.js
 $bb_colors: 'primary', 'secondary', 'neutral', 'success', 'warning', 'error', 'accent';
 
-/* Styles for BB-Blocks */
+/* Styles for Blocks */
 @import '../../bb-blocks/**/style.scss';
+@import '../../blocks/**/style.scss';
 
 /* UI Basic components */
 @import './ui/*';
