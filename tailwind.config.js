@@ -98,8 +98,14 @@ module.exports = {
 		aspectRatio: false,
 	},
 	plugins: [
+		require('@tailwindcss/aspect-ratio'),
 		require('@tailwindcss/container-queries'),
 		require('tailwindcss-animated'),
+		// plugin(function ({ addBase }) {
+		// 	addBase({
+		// 		//				html: { fontSize: '6px' },
+		// 	});
+		// }),
 		require('@tailwindcss/forms'),
 		require('tailwindcss-themer')({
 			defaultTheme: {
