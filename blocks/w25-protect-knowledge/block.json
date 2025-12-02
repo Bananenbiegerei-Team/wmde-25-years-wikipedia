@@ -1,0 +1,15 @@
+{
+	"name": "acf/w25-protect-knowledge",
+	"title": "W25 Protect Knowledge",
+	"description": "Protect Knowledge swiper carousel with images and links",
+	"category": "custom-blocks",
+	"icon": "shield",
+	"keywords": ["protect", "knowledge", "swiper", "carousel"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"align": false
+	}
+}

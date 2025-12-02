@@ -69,7 +69,7 @@ $template_uri = get_template_directory_uri();
         scrollTrigger: {
           trigger: '#bus-container',        // Element that triggers the animation
           start: 'top center',               // Start when top of element hits center of viewport
-          markers: true,                     // Show visual markers for debugging
+          markers: false,                     // Show visual markers for debugging
           once: true                         // Only trigger once (don't reverse on scroll back up)
         }
       });
