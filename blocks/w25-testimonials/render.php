@@ -27,9 +27,9 @@ if (!empty($block['align'])) {
 $testimonials = get_field('testimials'); // Note: typo in field name from ACF
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-secondary">
     <?php if ($testimonials): ?>
-        <div class="container grid grid-cols-1 gap-12 pb-16 md:gap-4 bg-secondary md:grid-cols-2 lg:grid-cols-4">
+        <div class="container grid grid-cols-1 gap-12 pb-16 md:gap-4 md:grid-cols-2 lg:grid-cols-4">
             <?php foreach ($testimonials as $testimonial): ?>
                 <div class="space-y-4">
                     <?php if (!empty($testimonial['image'])):
@@ -42,7 +42,7 @@ $testimonials = get_field('testimials'); // Note: typo in field name from ACF
 
                     <div class="">
                         <?php if (!empty($testimonial['name'])): ?>
-                            <h4 class="font-texts font-bold">
+                            <h4 class="font-bold font-texts">
                                 <?php echo esc_html($testimonial['name']); ?>
                             </h4>
                         <?php endif; ?>
