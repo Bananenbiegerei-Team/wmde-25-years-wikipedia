@@ -1,0 +1,15 @@
+{
+	"name": "acf/w25-donate",
+	"title": "W25 Donate CTA",
+	"description": "Call-to-action block for donations with hardcoded content",
+	"category": "custom-blocks",
+	"icon": "heart",
+	"keywords": ["donate", "cta", "call-to-action", "support"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"align": false
+	}
+}
