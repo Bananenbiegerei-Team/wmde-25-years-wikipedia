@@ -172,7 +172,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/w25-news"
+                "value": "acf\/w25-protect-knowledge"
             }
         ]
     ],
@@ -185,5 +185,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1764693200
+    "modified": 1764757865
 }
