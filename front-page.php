@@ -7,6 +7,7 @@ NOTE: This implements a workaround for the pagination bug with Polylang. 'is_pag
 	<?php get_header(); ?>
 	<?php while (have_posts()): ?>
 		<?php the_post(); ?>
+		<h1 class="sr-only">Wikipedia 25</h1>
 		<?php the_content(); ?>
 	<?php endwhile; ?>
 	<?php get_footer(); ?>

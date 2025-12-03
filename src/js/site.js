@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Swiper core + modules
 import Swiper from 'swiper';
-import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+import { Navigation, Pagination, EffectCoverflow, Autoplay, EffectFade } from 'swiper/modules';
 
 // Make GSAP available globally
 window.gsap = gsap;
@@ -20,6 +20,8 @@ window.Swiper = Swiper;
 window.Navigation = Navigation;
 window.Pagination = Pagination;
 window.EffectCoverflow = EffectCoverflow;
+window.Autoplay = Autoplay;
+window.EffectFade = EffectFade;
 
 // Swiper styles loaded via SCSS (src/scss/components/swiper.scss)
 

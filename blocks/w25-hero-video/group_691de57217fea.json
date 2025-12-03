@@ -24,11 +24,11 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_691de5cf5cf6e",
-            "label": "video loop",
-            "name": "video_loop",
+            "key": "field_693045b1eeadf",
+            "label": "video swiper",
+            "name": "video_swiper",
             "aria-label": "",
-            "type": "file",
+            "type": "gallery",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -39,10 +39,18 @@
             },
             "return_format": "array",
             "library": "all",
+            "min": 0,
+            "max": 0,
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "allow_in_bindings": 0
+            "insert": "append",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         },
         {
             "key": "field_691de5bd5cf6d",
@@ -89,5 +97,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763569186
+    "modified": 1764771299
 }

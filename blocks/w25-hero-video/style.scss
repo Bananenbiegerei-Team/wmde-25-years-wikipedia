@@ -1,7 +1,6 @@
 @import 'plyr/src/sass/plyr';
 
 .w25-hero-video {
-
     /* Plyr UI color tokens scoped to the hero block */
     --plyr-color-main: #F0BC00;
     --plyr-control-background: #F0BC00;
@@ -16,11 +15,15 @@
     --plyr-tooltip-color: #ffffff;
     --plyr-loading-spinner: #ffffff;
 
+    .plyr {
+        @apply w-full h-full;
+    }
+
     /* Fine-tune some Plyr elements inside this scope */
     .plyr > .plyr__controls {
         background: linear-gradient(0deg, black, transparent);
     }
-    
+
     .plyr__control,
     .plyr__controls {
         color: var(--plyr-control-color);
@@ -41,17 +44,31 @@
         color: var(--plyr-control-color);
     }
 
-    .plyr__video-wrapper {
-        max-width: 1180px;    
-        aspect-ratio: 16 / 9;
-   }
+//     .plyr__video-wrapper {
+//         max-width: 1180px;
+//         max-height: 100%;
+//         width: 100%;
+//         height: 100%;
+//         aspect-ratio: 16 / 9;
+//         margin: 0 auto;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//    }
 
-   .plyr__controls {
-     max-width: 1180px;
-     margin: auto;
-   }
-    
-    .plyr__control--overlaid {
-        background-color: black;
-    }
+//    .plyr__video-wrapper video {
+//         width: 100%;
+//         height: 100%;
+//         aspect-ratio: 16 / 9;
+//         object-fit: contain;
+//    }
+
+//    .plyr__controls {
+//      max-width: 1180px;
+//      margin: auto;
+//    }
+
+//     .plyr__control--overlaid {
+//         background-color: black;
+//     }
 }
