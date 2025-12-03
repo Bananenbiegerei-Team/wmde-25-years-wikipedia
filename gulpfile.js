@@ -78,21 +78,7 @@ function dev() {
 		notify: false,
 	});
 
-	// SCSS → only run stylesDev, it already streams to browserSync
-	// watch(
-	// 	['./src/scss/**/*.scss', './blocks/**/*.scss', './blocks/**/*.css'],
-	// 	stylesDev
-	// );
-
-	// // JS → rebuild then reload
-	// watch(['./src/js/**/*.js', './blocks/**/*.js'], series(esbuildDev, reloadBrowser));
-
-	// PHP → rebuild CSS (for Tailwind JIT) then reload
-	watch('./**/*.php', series(stylesDev, reloadBrowser));
-
-	// // Assets → just reload
-	// watch(['./img/**/*.*', './fonts/**/*.*'], reloadBrowser);
-
+	// Watch files and reload browser on changes
 	watch(['./src/scss/**/*.scss', './blocks/**/*.scss'], stylesDev).on('change', browserSync.reload);
 	watch(['./src/js/**/*.js', './blocks/**/*.js'], esbuildDev).on('change', browserSync.reload);
 	watch('./**/*.php', stylesDev).on('change', browserSync.reload);
