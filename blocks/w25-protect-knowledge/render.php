@@ -80,7 +80,7 @@ $block_headline = get_field('headline');
             </div>
 
             <!-- Pagination -->
-            <div class="swiper-pagination"></div>
+            <div class="mt-4 swiper-pagination"></div>
         </div>
 
         <!-- Navigation button - Next -->

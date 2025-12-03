@@ -3,11 +3,11 @@
     "title": "Block: W25 Numbers",
     "fields": [
         {
-            "key": "field_691df45394997",
-            "label": "display",
-            "name": "display",
+            "key": "field_6930232827eff",
+            "label": "Message",
+            "name": "",
             "aria-label": "",
-            "type": "true_false",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,12 +16,9 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "message": "The mumbers are hardcoded please contact is@bananenbiegerei.de for changes",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -29,7 +26,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf/w25-numbers"
+                "value": "acf\/w25-numbers"
             }
         ]
     ],
@@ -42,5 +39,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763570798
+    "modified": 1764762456
 }

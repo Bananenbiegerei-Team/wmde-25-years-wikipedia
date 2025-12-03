@@ -18,5 +18,5 @@
 
 // Reset positioning for pagination to allow Tailwind layout control
 .w25-news .swiper-pagination {
-	@apply relative inset-auto m-0;
+	@apply relative inset-auto m-0 mt-4;
 }

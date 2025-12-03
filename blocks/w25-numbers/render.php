@@ -27,15 +27,31 @@ if (!empty($block['align'])) {
 $display = get_field('display');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <?php if ($display): ?>
-        <div class="w25-numbers__content">
-            <!-- Add your numbers/statistics content here -->
-            <p>Numbers block is enabled and ready to display statistics.</p>
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light overflow-hidden">
+    <?php if (!is_admin()): ?>
+        <div class="container h-[200vh] grid grid-cols-1 items-end h-[140vh] md:grid-cols-2 lg:grid-cols-3 gap-8" id="numbers-parallax-container">
+            <div class="number-item">
+                <?php get_template_part('blocks/w25-numbers/number-01'); ?>
+            </div>
+            <div class="flex justify-end md:block number-item">
+                <?php get_template_part('blocks/w25-numbers/number-02'); ?>
+            </div>
+            <div class="number-item">
+                <?php get_template_part('blocks/w25-numbers/number-03'); ?>
+            </div>
+            <div class="flex justify-end number-item md:block">
+                <?php get_template_part('blocks/w25-numbers/number-04'); ?>
+            </div>
+            <div class="number-item">
+                <?php get_template_part('blocks/w25-numbers/number-05'); ?>
+            </div>
+            <div class="flex justify-end number-item md:block">
+                <?php get_template_part('blocks/w25-numbers/number-06'); ?>
+            </div>
         </div>
     <?php else: ?>
-        <div class="w25-numbers__hidden">
-            <p>Numbers display is currently disabled.</p>
-        </div>
+    <div class="p-8">
+        <h2 class="text-base font-texts">Numbers are hardcoded. Please contact is@bananenbiegerei.de</h2>
+    </div>
     <?php endif; ?>
 </div>
