@@ -4,7 +4,7 @@
 $body_color = get_field('body_color', 'options') ?: 'white';
 ?>
 
-<body <?php body_class('flex flex-col min-h-screen bg-' . $body_color . '-light'); ?>>
+<body <?php body_class('flex flex-col min-h-screen text-black'); ?>>
     <!--header role="banner"-->
     <?php get_template_part('template-parts/header-top/main'); ?>
     <!--/header-->

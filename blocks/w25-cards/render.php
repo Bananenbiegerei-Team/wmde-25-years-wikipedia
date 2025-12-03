@@ -31,11 +31,11 @@ $cards       = get_field('cards') ?: [];
 ?>
 <div
     id="<?php echo esc_attr($id); ?>"
-    class="<?php echo esc_attr($className); ?> bg-secondary-light text-primary-dark py-16 px-4 md:px-8"
+    class="<?php echo esc_attr($className); ?> bg-secondary-light/50 text-primary-dark py-16 px-4 md:px-8"
 >
     <div class="container">
         <?php if ($title || $text || $link_to_all): ?>
-            <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-6">
+            <div class="flex flex-col gap-4 mb-6 md:flex-row md:items-end md:justify-between">
                 <div class="">
                     <?php if ($title): ?>
                         <h2 class="">
@@ -50,12 +50,12 @@ $cards       = get_field('cards') ?: [];
                     <?php endif; ?>
                 </div>
 
-              
+
             </div>
         <?php endif; ?>
 
         <?php if (! empty($cards)): ?>
-            <div class="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4 mb-4">
+            <div class="grid gap-6 mb-4 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
                 <?php foreach ($cards as $card): ?>
                     <?php
                     $card_image_id = $card['image'] ?? 0;
@@ -89,7 +89,7 @@ $cards       = get_field('cards') ?: [];
                             </div>
                         <?php endif; ?>
 
-                        <div class="px-0 py-4 md:py-5 flex flex-col gap-3">
+                        <div class="flex flex-col gap-3 px-0 py-4 md:py-5">
                             <?php if ($card_text): ?>
                                 <p class="text-sm md:text-base">
                                     <?php echo esc_html($card_text); ?>
@@ -109,7 +109,7 @@ $cards       = get_field('cards') ?: [];
                 $see_all_title  = $link_to_all['title'] ?: __('See all', 'wmde-25-years-wikipedia');
                 $see_all_target = $link_to_all['target'] ?: '_self';
                 ?>
-                <div class="mt-4 md:mt-0 flex justify-center">
+                <div class="flex justify-center mt-4 md:mt-0">
                     <a
                         class="btn btn-outline btn-secondary"
                         href="<?php echo esc_url($see_all_url); ?>"
@@ -121,5 +121,5 @@ $cards       = get_field('cards') ?: [];
             <?php endif; ?>
     </div>
 
-    
+
 </div>
