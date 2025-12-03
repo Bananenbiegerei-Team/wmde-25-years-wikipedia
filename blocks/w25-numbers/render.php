@@ -29,7 +29,7 @@ $display = get_field('display');
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light overflow-hidden">
     <?php if (!is_admin()): ?>
-        <div class="container h-[200vh] grid grid-cols-1 items-end h-[140vh] md:grid-cols-2 lg:grid-cols-3 gap-8" id="numbers-parallax-container">
+        <div class="container grid grid-cols-1 items-end h-[120vh] md:grid-cols-2 lg:grid-cols-3 gap-8" id="numbers-parallax-container">
             <div class="number-item">
                 <?php get_template_part('blocks/w25-numbers/number-01'); ?>
             </div>
