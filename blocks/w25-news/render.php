@@ -27,7 +27,7 @@ if (!empty($block['align'])) {
 $block_headline = get_field('headline');
 ?>
 <?php if (!is_admin()): ?>
-<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?> py-8">
     <?php if ($block_headline): ?>
         <h2 class="mb-4 text-3xl lg:mb-8 lg:text-4xl"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>

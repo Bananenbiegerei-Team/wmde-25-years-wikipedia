@@ -27,11 +27,11 @@ if (!empty($block['align'])) {
 $block_headline = get_field('headline');
 ?>
 <?php if (!is_admin()): ?>
-<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?> py-8">
     <?php if ($block_headline): ?>
         <h2 class="mb-4 text-3xl lg:mb-8 lg:text-4xl"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>
-    <?php if (have_rows('protect_knowledge_swiper')): ?>
+    <?php if (have_rows('knowledge_swiper')): ?>
     <div class="flex items-center">
         <!-- Navigation button - Previous -->
         <div class="!w-8 lg:!w-16 swiper-button-prev">
@@ -41,7 +41,7 @@ $block_headline = get_field('headline');
         <!-- Swiper container -->
         <div class="flex-1 swiper">
             <div class="swiper-wrapper">
-                <?php while (have_rows('protect_knowledge_swiper')): the_row();
+                <?php while (have_rows('knowledge_swiper')): the_row();
                     $image = get_sub_field('image');
                     $headline = get_sub_field('headline');
                     $description = get_sub_field('description');
