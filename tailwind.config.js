@@ -80,7 +80,8 @@ module.exports = {
 			},
 			height: {
 				specialscreen: 'calc(100vh - 5rem)',
-				screenheader: 'calc(100vh - 123px)' // 100vh minus header
+				screenheader: 'calc(100vh - 123px)', // 100vh minus header
+				mobilescreenheader: 'calc(100vh - 3.5rem)'
 			},
 			maxHeight: {
 				'screen-80': '80vh',

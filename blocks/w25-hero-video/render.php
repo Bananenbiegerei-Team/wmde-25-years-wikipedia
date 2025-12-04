@@ -32,27 +32,27 @@ if (!empty($block['align'])) {
 // $video_loop = get_field('video_loop');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="w25-video-hero relative  h-screenheader w-full bg-secondary <?php echo esc_attr($className); ?>">
-    <div class="relative video-overlay h-screenheader">
+<div id="<?php echo esc_attr($id); ?>" class="w25-video-hero relative w-full bg-secondary <?php echo esc_attr($className); ?>">
+    <div class="relative h-mobilescreenheader video-overlay md:h-screenheader">
+         <?php get_template_part('blocks/w25-hero-video/overlay'); ?>
         <?php
         $video_swiper_gallery = get_field('video_swiper');
         if ($video_swiper_gallery):
         ?>
+
             <!-- Swiper container for video stills -->
-            <div class="absolute top-0 left-0 w-full h-full swiper hero-swiper">
+            <div class="w-full h-full swiper hero-swiper">
                 <div class="w-full h-full swiper-wrapper">
                     <?php foreach ($video_swiper_gallery as $image):
                         $image_url = wp_get_attachment_image_url($image['ID'], 'full');
                         $image_alt = $image['alt'];
                     ?>
                         <div
-                            class="bg-cover swiper-slide"
+                            class="relative bg-cover swiper-slide"
                             style="background-image: url('<?php echo esc_url($image_url); ?>');"
                             role="img"
                             aria-label="<?php echo esc_attr($image_alt); ?>"
                         >
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/blocks/w25-hero-video/overlay.svg' ); ?>" alt="<?php echo esc_attr( 'Hero Video Placeholder', 'wmde-25-years-wikipedia' ); ?>" class="object-cover w-full h-full relative max-h-[80vh]">
-                        <?php get_template_part('blocks/w25-hero-video/play-button'); ?>
                     </div>
                     <?php endforeach; ?>
                 </div>
@@ -60,7 +60,7 @@ if (!empty($block['align'])) {
         <?php endif; ?>
     </div>
 
-    <div class="flex items-center justify-center hidden video-container h-screenheader">
+    <div class="flex items-center justify-center hidden h-screen p-16 video-container md:h-screenheader">
                 <?php
                 $poster_url = '';
                 if ( $poster_id ) {
@@ -68,9 +68,9 @@ if (!empty($block['align'])) {
                 }
                 $player_id = $id . '-plyr';
                 ?>
-                <video
+                    <video
                     id="<?php echo esc_attr( $player_id ); ?>"
-                    class="plyr"
+                    class="plyr h-[50vh] w-auto"
                     controls
                     playsinline
                     preload="metadata"
