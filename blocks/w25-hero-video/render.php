@@ -14,9 +14,6 @@ if (!empty($block['anchor'])) {
     $id = $block['anchor'];
 }
 
-$full_video  = get_field('full_video');
-$poster_id   = get_field('poster_image');
-
 // Create class attribute allowing for custom "className" and "align" values.
 $className = 'w25-hero-video';
 if (!empty($block['className'])) {
@@ -60,27 +57,9 @@ if (!empty($block['align'])) {
         <?php endif; ?>
     </div>
 
-    <div class="flex items-center justify-center hidden h-screen p-16 video-container md:h-screenheader">
-                <?php
-                $poster_url = '';
-                if ( $poster_id ) {
-                    $poster_url = wp_get_attachment_image_url( $poster_id, 'full' );
-                }
-                $player_id = $id . '-plyr';
-                ?>
-                    <video
-                    id="<?php echo esc_attr( $player_id ); ?>"
-                    class="plyr h-[50vh] w-auto"
-                    controls
-                    playsinline
-                    preload="metadata"
-                    style="display:none;"
-                    loop="true"
-                    <?php if ( $poster_url ): ?>poster="<?php echo esc_url( $poster_url ); ?>"<?php endif; ?>
-                >
-                    <?php if ( ! empty( $full_video['url'] ) ): ?>
-                        <source src="<?php echo esc_url( $full_video['url'] ); ?>" type="<?php echo esc_attr( $full_video['mime_type'] ?? 'video/mp4' ); ?>">
-                    <?php endif; ?>
-                </video>
+    <div class="flex items-center hidden p-16 h-mobilescreenheader video-container md:h-screenheader">
+        <div class="w-full">
+            <?php get_template_part('blocks/w25-hero-video/video'); ?>
+        </div>
     </div>
 </div>

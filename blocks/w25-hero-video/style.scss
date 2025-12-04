@@ -16,7 +16,7 @@
     --plyr-loading-spinner: #ffffff;
 
     .plyr {
-        @apply w-full h-full;
+        @apply w-full h-auto;
     }
 
     /* Fine-tune some Plyr elements inside this scope */
@@ -44,17 +44,17 @@
         color: var(--plyr-control-color);
     }
 
-//     .plyr__video-wrapper {
-//         max-width: 1180px;
-//         max-height: 100%;
-//         width: 100%;
-//         height: 100%;
-//         aspect-ratio: 16 / 9;
-//         margin: 0 auto;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//    }
+    .plyr__video-wrapper {
+        max-width: 1180px;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   }
 
 //    .plyr__video-wrapper video {
 //         width: 100%;
