@@ -1,5 +1,4 @@
-<?php $logo_small = esc_attr(get_field('logo_small', 'options') ?: get_stylesheet_directory_uri() . '/img/wikimedia-logo-mini.svg');
-$header_color = get_field('header_color', 'options') ?: 'white';
+<?php $header_color = get_field('header_color', 'options') ?: 'white';
 $search = get_field('activate_topbar_search', 'options');
 ?>
 <script>
@@ -153,7 +152,7 @@ document.addEventListener('alpine:init', () => {
             <div class="transition-all duration-500 ease-in-out -translate-x-10 opacity-0"
                 x-bind:class="{ 'opacity-0 -translate-x-10': !isScrolled, 'opacity-100 translate-x-0': isScrolled }">
                 <a tabindex="-1" href="<?php echo get_home_url(); ?>">
-                    <img class="mini-logo" style="max-height: 33px" src="<?= $logo_small ?>" alt="Wikimedia Logo">
+                    <img class="mini-logo" style="max-height: 33px" src="<?= get_stylesheet_directory_uri() ?>/img/wikimedia-logo-mini.svg" alt="Wikimedia Logo">
                 </a>
             </div>
         </div>
