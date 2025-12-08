@@ -24,6 +24,6 @@ if (!empty($block['align'])) {
 }
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-8 flex flex-col md:flex-row items-center justify-center gap-4 font-headings text-xl md:text-3xl">
-    <p class="text-xl text-center md:text-3xl md:text-left">Sie wollen die Wikipedia unterstützen?</p><a class="px-3 py-2 text-white transition-colors rounded-lg bg-error hover:bg-error-dark" href="https://spenden.wikimedia.de/">Jetzt spenden</a>
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-8 flex flex-col md:flex-row items-center justify-center gap-4 font-headings">
+    <p class="text-xl text-center md:text-3xl md:text-left">Sie wollen die Wikipedia unterstützen?</p><a class="px-6 py-1 text-xl text-white transition-colors rounded-lg bg-error hover:bg-error-dark md:text-2xl" href="https://spenden.wikimedia.de/">Jetzt spenden</a>
 </div>

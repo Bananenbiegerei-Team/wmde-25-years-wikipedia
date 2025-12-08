@@ -32,7 +32,7 @@ $describtion = get_field('describtion');
     <?php if (!is_admin()): ?>
         <div class="container py-8">
             <?php if ($headline): ?>
-                <h2 class="mb-4 text-3xl lg:mb-8 lg:text-4xl"><?php echo esc_html($headline); ?></h2>
+                <h2 class="mb-4 text-3xl lg:mb-8 lg:text-5xl"><?php echo esc_html($headline); ?></h2>
             <?php endif; ?>
 
             <?php if ($describtion): ?>
