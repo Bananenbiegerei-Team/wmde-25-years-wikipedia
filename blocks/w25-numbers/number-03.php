@@ -1,4 +1,4 @@
-<div class="flex h-24 max-w-md gap-4">
+<div class="flex h-[100px] lg:h-24 max-w-md gap-4">
     <div class="text-white">
         <?php include get_template_directory() . '/blocks/w25-numbers/puzzle.svg'; ?>
     </div>

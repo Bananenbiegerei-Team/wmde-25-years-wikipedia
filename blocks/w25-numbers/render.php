@@ -27,7 +27,7 @@ if (!empty($block['align'])) {
 $display = get_field('display');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light overflow-hidden h-[750px]">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light overflow-hidden lg:h-[750px]">
     <div class="container h-full">
     <?php if (!is_admin()): ?>
         <?php if ( get_field('headline') ) : ?>
@@ -37,23 +37,33 @@ $display = get_field('display');
         <?php endif; ?>
 
         <div class="container relative" id="numbers-parallax-container">
-            <div class="number-item absolute top-[0px] left-[10vw]">
+            <div class="number-item lg:absolute lg:top-[0px] lg:left-[10vw]">
                 <?php get_template_part('blocks/w25-numbers/number-01'); ?>
             </div>
-            <div class="number-item absolute top-[10px] right-[3vw]">
-                <?php get_template_part('blocks/w25-numbers/number-02'); ?>
+            <div class="number-item lg:absolute lg:top-[10px] right-[3vw]">
+                <div class="-translate-y-[20px] lg:translate-y-0">
+                    <?php get_template_part('blocks/w25-numbers/number-02'); ?>
+                </div>
             </div>
-            <div class="number-item absolute top-[160px] left-[33vw]">
-                <?php get_template_part('blocks/w25-numbers/number-03'); ?>
+            <div class="number-item lg:absolute lg:top-[160px] lg:left-[33vw]">
+                <div class="-translate-y-[40px] lg:translate-y-0">
+                    <?php get_template_part('blocks/w25-numbers/number-03'); ?>
+                </div>
             </div>
-            <div class="number-item absolute top-[270px] right-[4vw]">
-                <?php get_template_part('blocks/w25-numbers/number-04'); ?>
+            <div class="number-item lg:absolute lg:top-[270px] right-[4vw]">
+                <div class="-translate-y-[60px] lg:translate-y-0">
+                    <?php get_template_part('blocks/w25-numbers/number-04'); ?>
+                </div>
             </div>
-            <div class="number-item absolute top-[250px] left-0">
-                <?php get_template_part('blocks/w25-numbers/number-05'); ?>
+            <div class="number-item lg:absolute lg:top-[250px] lg:left-0">
+                <div class="-translate-y-[100px] lg:translate-y-0">
+                    <?php get_template_part('blocks/w25-numbers/number-05'); ?>
+                </div>
             </div>
-            <div class="number-item absolute top-[400px] left-[20vw]">
-                <?php get_template_part('blocks/w25-numbers/number-06'); ?>
+            <div class="number-item lg:absolute lg:top-[400px] lg:left-[20vw]">
+                <div class="-translate-y-[120px] lg:translate-y-0 ">
+                    <?php get_template_part('blocks/w25-numbers/number-06'); ?>
+                </div>
             </div>
         </div>
     <?php else: ?>

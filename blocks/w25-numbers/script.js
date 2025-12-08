@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		// Calculate the scroll range for triggering items
 		const itemCount = numberItems.length;
-		const scrollRange = 400; // Total scroll distance to spread all triggers across
+		const scrollRange = 200; // Total scroll distance to spread all triggers across
 
 		// Animate each number item with individual scroll triggers
 		numberItems.forEach((item, index) => {
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					ease: 'power2.out',
 					scrollTrigger: {
 						trigger: container,
-						start: () => `top+=${triggerOffset}px center`, // Each item triggers at different scroll position
-						end: () => `top+=${triggerOffset + 150}px center`, // Animation completes over 150px of scroll
+						start: () => `top+=${triggerOffset}px 80%`, // Each item triggers at different scroll position
+						end: () => `top+=${triggerOffset + 1}px center`, // Animation completes over 150px of scroll
 						scrub: 1, // Smooth scrubbing effect - animation tied to scroll
 						markers: false, // Set to true for debugging
 						toggleActions: 'play none none reverse'
