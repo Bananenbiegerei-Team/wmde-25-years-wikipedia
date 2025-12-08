@@ -27,31 +27,39 @@ if (!empty($block['align'])) {
 $display = get_field('display');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light overflow-hidden">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light overflow-hidden h-[750px]">
+    <div class="container h-full">
     <?php if (!is_admin()): ?>
-        <div class="container grid grid-cols-1 items-end h-[100vh] md:grid-cols-2 lg:grid-cols-3 gap-8" id="numbers-parallax-container">
-            <div class="number-item">
+        <?php if ( get_field('headline') ) : ?>
+            <h2 class="py-10 mb-8 text-3xl lg:text-6xl">
+                <?php echo get_field('headline'); ?>
+            </h2>
+        <?php endif; ?>
+
+        <div class="container relative" id="numbers-parallax-container">
+            <div class="number-item absolute top-[0px] left-[10vw]">
                 <?php get_template_part('blocks/w25-numbers/number-01'); ?>
             </div>
-            <div class="flex justify-end md:block number-item">
+            <div class="number-item absolute top-[10px] right-[3vw]">
                 <?php get_template_part('blocks/w25-numbers/number-02'); ?>
             </div>
-            <div class="number-item">
+            <div class="number-item absolute top-[160px] left-[33vw]">
                 <?php get_template_part('blocks/w25-numbers/number-03'); ?>
             </div>
-            <div class="flex justify-end number-item md:block">
+            <div class="number-item absolute top-[270px] right-[4vw]">
                 <?php get_template_part('blocks/w25-numbers/number-04'); ?>
             </div>
-            <div class="number-item">
+            <div class="number-item absolute top-[250px] left-0">
                 <?php get_template_part('blocks/w25-numbers/number-05'); ?>
             </div>
-            <div class="flex justify-end number-item md:block">
+            <div class="number-item absolute top-[400px] left-[20vw]">
                 <?php get_template_part('blocks/w25-numbers/number-06'); ?>
             </div>
         </div>
     <?php else: ?>
     <div class="p-8">
-        <h2 class="text-base font-texts">Numbers are hardcoded. Please contact is@bananenbiegerei.de</h2>
+        <h2 class="text-base font-texts">edit numbers headline</h2>
     </div>
     <?php endif; ?>
+    </div>
 </div>

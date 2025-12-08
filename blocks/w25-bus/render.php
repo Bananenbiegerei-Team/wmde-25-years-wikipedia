@@ -39,7 +39,7 @@ $background_image = get_field('image');
             <div class="container relative z-20">
             <div class="relative max-w-5xl mb-8 lg:w-1/2 bg-secondary-light">
                 <?php if ($headline): ?>
-                <h2 class="pt-24 mb-4 text-3xl before:bg-secondary-light lg:text-5xl before:h-full before:w-full before:absolute before:top-0 before:-left-full">
+                <h2 class="pt-24 mb-4 text-3xl before:bg-secondary-light lg:text-6xl before:h-full before:w-full before:absolute before:top-0 before:-left-full">
                     <?php echo esc_html($headline); ?>
                 </h2>
                 <?php endif; ?>

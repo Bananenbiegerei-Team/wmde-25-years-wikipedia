@@ -38,7 +38,7 @@ $cards       = get_field('cards') ?: [];
             <div class="flex flex-col gap-4 mb-6 md:flex-row md:items-end md:justify-between">
                 <div class="">
                     <?php if ($title): ?>
-                        <h2 class="text-3xl lg:text-5xl">
+                        <h2 class="text-3xl lg:text-6xl">
                             <?php echo esc_html($title); ?>
                         </h2>
                     <?php endif; ?>

@@ -1,6 +1,10 @@
-<div class="flex flex-row-reverse items-center max-w-md gap-2 text-right md:flex-row md:text-left">
-<div class="text-white">
-    <?php include get_template_directory() . '/blocks/w25-numbers/puzzle.svg'; ?>
-</div>
-<p class="text-xl font-bold">65 Milliarden Artikel weltweit …</p>
+<div class="flex h-24 max-w-md gap-4">
+    <div class="text-warning">
+        <?php include get_template_directory() . '/blocks/w25-numbers/puzzle.svg'; ?>
+    </div>
+    <div class="h-full pt-[5px] ">
+        <div class="flex items-center h-full ">
+            <p class="text-xl font-bold">65 Milliarden Artikel weltweit …</p>
+        </div>
+    </div>
 </div>

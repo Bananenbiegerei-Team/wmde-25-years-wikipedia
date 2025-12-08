@@ -11,5 +11,6 @@
 	},
 	"supports": {
 		"align": false
-	}
+	},
+	"script": "file:./script.js"
 }

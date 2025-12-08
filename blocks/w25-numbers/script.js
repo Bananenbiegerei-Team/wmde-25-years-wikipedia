@@ -1,62 +1,46 @@
-// GSAP Parallax effect for W25 Numbers block
+// GSAP Scroll-triggered animation for W25 Numbers block
+// Each number item animates from bottom of viewport to its final absolute position
+// Items trigger sequentially as user scrolls through the container
 document.addEventListener('DOMContentLoaded', function() {
 	const container = document.querySelector('#numbers-parallax-container');
 
-	if (container) {
+	if (container && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+		gsap.registerPlugin(ScrollTrigger);
+
 		const numberItems = container.querySelectorAll('.number-item');
 
 		// Detect if mobile (width < 768px - Tailwind md breakpoint)
 		const isMobile = window.innerWidth < 768;
 
-		// Calculate movement distance relative to viewport height
-		// Mobile: less movement, Desktop: more movement
-		const movementDistance = window.innerHeight * (isMobile ? 0.25 : 0.8);
+		// Distance from bottom - all items come from below the viewport
+		const distance = isMobile ? '80vh' : '100vh';
 
-		// Scale values based on device
-		// Ternary operator: condition ? valueIfTrue : valueIfFalse
-		// Format: isMobile ? mobileValue : desktopValue
+		// Calculate the scroll range for triggering items
+		const itemCount = numberItems.length;
+		const scrollRange = 400; // Total scroll distance to spread all triggers across
 
-		// Starting scale at beginning of scroll animation
-		// Mobile: 0.8 (90%), Desktop: 0.7 (70%)
-		// Mobile starts slightly bigger to be more readable on smaller screens
-		const startScale = isMobile ? 0.9 : 0.7;
+		// Animate each number item with individual scroll triggers
+		numberItems.forEach((item, index) => {
+			// Calculate trigger position for this item based on its index
+			// Spread triggers evenly across the scroll range
+			const triggerOffset = (index / (itemCount - 1)) * scrollRange;
 
-		// Minimum end scale - the smallest possible size at end of animation
-		// Mobile: 1.0 (100%), Desktop: 1.3 (120%)
-		// Desktop scales more dramatically for stronger visual effect
-		const minEndScale = isMobile ? 1.0 : 1.2;
-
-		// Random scale variation range added to minEndScale
-		// Mobile: 0.2 (results in 100%-120% final size), Desktop: 0.3 (results in 130%-160% final size)
-		// Desktop has more variation for more dynamic effect
-		const scaleRange = isMobile ? 0.2 : 0.3;
-
-		// Create parallax effect for each number item with random speed and scale
-		numberItems.forEach((item) => {
-			// Generate random speed between 0.3 and 1.2 for variety
-			const randomSpeed = 0.3 + Math.random() * 1.2; // Random value between 0.3 - 1.2
-
-			// Generate random end scale based on device
-			const randomEndScale = minEndScale + Math.random() * scaleRange;
-
-			// Create GSAP animation with ScrollTrigger - animate both position and scale on scroll
 			gsap.fromTo(item,
 				{
-					// Start state: original position and smaller scale
-					y: 0,
-					scale: startScale
+					opacity: 0,
+					y: distance
 				},
 				{
-					// End state: move up and scale to random size
-					y: () => -movementDistance * randomSpeed, // Move up based on random speed multiplier and viewport height
-					scale: randomEndScale, // Animate to random scale
-					ease: 'none',
+					y: 0,
+					opacity: 1,
+					ease: 'power2.out',
 					scrollTrigger: {
 						trigger: container,
-						start: '20% bottom',
-						end: '80% top',
-						scrub: true,
-						markers: false
+						start: () => `top+=${triggerOffset}px center`, // Each item triggers at different scroll position
+						end: () => `top+=${triggerOffset + 150}px center`, // Animation completes over 150px of scroll
+						scrub: 1, // Smooth scrubbing effect - animation tied to scroll
+						markers: false, // Set to true for debugging
+						toggleActions: 'play none none reverse'
 					}
 				}
 			);

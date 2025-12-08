@@ -3,6 +3,27 @@
     "title": "Block: W25 Numbers",
     "fields": [
         {
+            "key": "field_693695920fb4f",
+            "label": "headline",
+            "name": "headline",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6930232827eff",
             "label": "Message",
             "name": "",
@@ -39,5 +60,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1764762456
+    "modified": 1765184924
 }

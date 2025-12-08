@@ -159,6 +159,12 @@ module.exports = {
 							DEFAULT: '#EE8019',
 							dark: '#682517',
 						},
+						blue: {
+							dark: '#000068'
+						},
+						purple: {
+							DEFAULT: '#7262D7',
+						},
 					},
 				},
 			},
