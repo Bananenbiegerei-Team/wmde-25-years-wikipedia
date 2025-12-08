@@ -56,12 +56,12 @@ $display = get_field('display');
                 </div>
             </div>
             <div class="number-item lg:absolute lg:top-[250px] lg:left-0">
-                <div class="-translate-y-[100px] lg:translate-y-0">
+                <div class="-translate-y-[80px] lg:translate-y-0">
                     <?php get_template_part('blocks/w25-numbers/number-05'); ?>
                 </div>
             </div>
             <div class="number-item lg:absolute lg:top-[400px] lg:left-[20vw]">
-                <div class="-translate-y-[120px] lg:translate-y-0 ">
+                <div class="-translate-y-[100px] lg:translate-y-0 ">
                     <?php get_template_part('blocks/w25-numbers/number-06'); ?>
                 </div>
             </div>
