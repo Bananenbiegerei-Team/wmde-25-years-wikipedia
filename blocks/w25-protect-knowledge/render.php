@@ -51,7 +51,7 @@ $block_headline = get_field('headline');
                 <div class="swiper-slide md:min-h-[430px] overflow-hidden rounded-lg <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
                     <div class="relative">
                         <?php if ($image):
-                            $image_url = wp_get_attachment_image_url($image, 'four-columns-four-three');
+                            $image_url = wp_get_attachment_image_url($image, 'four-columns-sixteen-nine');
                             $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
                         ?>
                             <img class="w-full" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
