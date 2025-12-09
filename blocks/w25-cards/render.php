@@ -44,7 +44,7 @@ $cards       = get_field('cards') ?: [];
                     <?php endif; ?>
 
                     <?php if ($text): ?>
-                        <p class="mt-3 text-base md:text-lg  max-w-[75%]">
+                        <p class="mt-3 text-xl md:text-2xl lg:text-3xl  max-w-[75%] font-headings">
                             <?php echo esc_html($text); ?>
                         </p>
                     <?php endif; ?>
@@ -91,7 +91,7 @@ $cards       = get_field('cards') ?: [];
 
                         <div class="flex flex-col gap-3 px-0 py-4 md:py-5">
                             <?php if ($card_text): ?>
-                                <p class="text-sm md:text-base">
+                                <p class="text-base md:text-xl">
                                     <?php echo esc_html($card_text); ?>
                                 </p>
                             <?php endif; ?>
@@ -111,7 +111,7 @@ $cards       = get_field('cards') ?: [];
                 ?>
                 <div class="flex justify-center mt-4 md:mt-0">
                     <a
-                        class="btn btn-outline btn-secondary"
+                        class="btn btn-outline"
                         href="<?php echo esc_url($see_all_url); ?>"
                         target="<?php echo esc_attr($see_all_target); ?>"
                     >
