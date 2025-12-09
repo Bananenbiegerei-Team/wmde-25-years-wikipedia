@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (videoModal) videoModal.classList.remove('hidden');
 
                 videoEl.style.display = 'block';
+                videoModal.style.top = window.scrollY + 'px';
 
                 setTimeout(() => {
                     const playPromise = plyrInstance.play();
