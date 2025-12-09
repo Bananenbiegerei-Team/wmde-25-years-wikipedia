@@ -225,7 +225,7 @@
 
 	/* btn variants */
 	&-ghost {
-		@apply border border-transparent bg-transparent text-current shadow-none outline-current hover:bg-primary-light hover:border-opacity-0 hover:bg-opacity-20;
+		@apply border border-transparent bg-transparent text-current shadow-none outline-current hover:bg-black/10 hover:border-opacity-0 hover:bg-opacity-20 border-none;
 
 		&.btn-active {
 			@apply bg-primary-dark border-opacity-0 bg-opacity-20;
