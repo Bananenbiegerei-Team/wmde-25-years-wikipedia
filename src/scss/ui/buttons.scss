@@ -4,7 +4,7 @@
 .btn {
 	@apply rounded-md inline-flex flex-shrink-0 cursor-pointer select-none flex-wrap items-center justify-start border-transparent text-left transition duration-200 ease-out text-xl leading-none;
 	//@apply min-h-12 h-12 px-4;
-	@apply px-2.5 py-1.5;
+	@apply px-5 py-3;
 
 	/* disabled */
 	&-disabled,
@@ -77,7 +77,7 @@
 // Styled
 // hover + active color changes around 4-5 steps
 .btn {
-	@apply gap-2 no-underline font-texts font-normal border text-white;
+	@apply gap-2 no-underline font-headings font-normal border text-white text-xl md:text-3xl;
 	animation: button-pop var(--animation-btn, 0.25s) ease-out;
 
 	&:active:hover,
@@ -88,7 +88,7 @@
 
 	/* default btn */
 	& {
-		@apply border-primary bg-primary  outline-primary-dark no-underline hover:border-primary-dark hover:bg-primary-dark;
+		@apply border-primary-dark bg-primary-dark 	 outline-primary-dark no-underline hover:border-primary-dark/50 hover:bg-primary-dark/50;
 
 		&.btn-active {
 			@apply border-primary-dark bg-primary-dark;
@@ -290,7 +290,7 @@
 
 	/* outline */
 	&-outline {
-		@apply text-primary border-current bg-transparent shadow-none hover:border-primary-dark hover:bg-primary-dark hover:text-white;
+		@apply text-primary-dark border-current bg-transparent shadow-none hover:border-primary-dark hover:bg-primary-dark/50 hover:text-primary-dark/50 hover:bg-transparent hover:border-primary-dark/50;
 
 		&.btn-active {
 			@apply border-primary-dark bg-primary-dark;
