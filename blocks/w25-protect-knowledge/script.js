@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			},
 			pagination: {
 				el: '.w25-protect-knowledge .swiper-pagination',
-				clickable: true,
+				type: 'fraction',
 			},
 			breakpoints: {
 				// Mobile (default above: 1 slide)

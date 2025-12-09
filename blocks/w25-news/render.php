@@ -31,13 +31,17 @@ $block_headline = get_field('headline');
     <?php if ($block_headline): ?>
         <h2 class="mb-4 text-3xl lg:mb-8 lg:text-6xl"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>
+    <div class="flex items-center justify-center mb-8">
+            <div class="!text-black swiper-button-prev border rounded border-black !w-12">
+                <?php echo bb_icon('chevron-left'); ?>
+            </div>
+            <div class="swiper-pagination !w-16"></div>
+            <div class="!text-black swiper-button-next border rounded border-black !w-12">
+                <?php echo bb_icon('chevron-right'); ?>
+            </div>
+    </div>
     <?php if (have_rows('news_swiper')): ?>
     <div class="flex items-center">
-        <!-- Navigation button - Previous -->
-        <div class="!w-8 lg:!w-16 swiper-button-prev">
-            <?php echo bb_icon('arrow-left', 'custom-class'); ?>
-        </div>
-
         <!-- Swiper container -->
         <div class="flex-1 swiper">
             <div class="swiper-wrapper">
@@ -78,17 +82,8 @@ $block_headline = get_field('headline');
                 </div>
                 <?php endwhile; ?>
             </div>
-
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
-
-        <!-- Navigation button - Next -->
-        <div class="!w-8 lg:!w-16 swiper-button-next">
-            <?php echo bb_icon('arrow-right', 'custom-class'); ?>
         </div>
     </div>
-
     <?php else: ?>
     <p class="w25-news__empty">No news items added yet.</p>
     <?php endif; ?>
