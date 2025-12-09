@@ -1,12 +1,16 @@
-import { speed } from 'jquery';
 import Plyr from 'plyr';
 import 'plyr/dist/plyr.css';
+
+function toggleBodyLock() {
+    document.body.classList.toggle('overflow-hidden');
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 
     const components = document.querySelectorAll('.w25-hero-video');
-
-    console.log('Hallo')
+    const videoModal = document.querySelector('.video-hero-modal');
+    const closeBtn = videoModal ? videoModal.querySelector('.close-button') : null;
+    const backdrop = videoModal ? videoModal.querySelector('.backdrop') : null;
 
     components.forEach( ( component ) => {
 
@@ -28,29 +32,58 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        const videoEl = component.querySelector('.plyr');
+        const videoEl = videoModal.querySelector('.plyr');
+        console.log(videoEl);
         if (!videoEl) return;
 
         const plyrInstance = new Plyr(videoEl);
 
         const playBtn = component.querySelector('.play-button');
-        const overlay = component.querySelector('.video-overlay');
-        const container = component.querySelector('.video-container');
 
         if (playBtn) {
             playBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                if (overlay) overlay.style.display = 'none';
-                if (container) container.style.display = 'block';
+                console.log(videoModal);
+                if (videoModal) videoModal.classList.remove('hidden');
 
                 videoEl.style.display = 'block';
 
-                const playPromise = plyrInstance.play();
-                if (playPromise && typeof playPromise.then === 'function') {
-                    playPromise.catch(() => {
-                        // Autoplay might be blocked; user interaction already occurred so ignore errors.
-                    });
-                }
+                setTimeout(() => {
+                    const playPromise = plyrInstance.play();
+                    if (playPromise && typeof playPromise.then === 'function') {
+                        playPromise.catch(() => {
+                            // Autoplay might be blocked; user interaction already occurred so ignore errors.
+                        });
+                    }
+                }, 1400);
+
+                toggleBodyLock();
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (videoModal) videoModal.classList.add('hidden');
+                
+                plyrInstance.pause();
+                videoEl.style.display = 'none';
+
+
+                toggleBodyLock();
+            });
+        }
+
+        if (backdrop) {
+            backdrop.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (videoModal) videoModal.classList.add('hidden');
+                
+                plyrInstance.pause();
+                videoEl.style.display = 'none';
+
+
+                toggleBodyLock();
             });
         }
     });

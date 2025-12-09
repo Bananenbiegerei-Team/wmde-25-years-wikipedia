@@ -31,12 +31,11 @@ if (!empty($block['align'])) {
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="w25-video-hero relative w-full bg-secondary <?php echo esc_attr($className); ?>">
     <div class="relative h-mobilescreenheader video-overlay md:h-screenheader">
-         <?php get_template_part('blocks/w25-hero-video/overlay'); ?>
+        <?php get_template_part('blocks/w25-hero-video/overlay'); ?>
         <?php
-        $video_swiper_gallery = get_field('video_swiper');
-        if ($video_swiper_gallery):
+            $video_swiper_gallery = get_field('video_swiper');
+            if ($video_swiper_gallery):
         ?>
-
             <!-- Swiper container for video stills -->
             <div class="w-full h-full swiper hero-swiper">
                 <div class="w-full h-full swiper-wrapper">
@@ -56,10 +55,15 @@ if (!empty($block['align'])) {
             </div>
         <?php endif; ?>
     </div>
+</div>
 
-    <div class="flex items-center hidden p-16 h-mobilescreenheader video-container md:h-screenheader">
-        <div class="w-full">
-            <?php get_template_part('blocks/w25-hero-video/video'); ?>
+
+<div class="video-hero-modal w-full h-screen hidden top-0 left-0 absolute z-[100]">
+    <div class="backdrop absolute w-full h-full bg-[#000000] opacity-[0.4] cursor- pointer"></div>
+    <div class="modal-content absolute w-auto h-auto flex top-1/2 -translate-y-1/2 items-center justify-center mx-4 sm:mx-8 md:mx-16">
+        <?php get_template_part('blocks/w25-hero-video/video'); ?>
+        <div class="close-button top-0 right-[-3.5rem] absolute cursor-pointer">
+            <?php get_template_part('blocks/w25-hero-video/close-button'); ?>
         </div>
     </div>
 </div>
