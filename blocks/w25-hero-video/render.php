@@ -60,9 +60,9 @@ if (!empty($block['align'])) {
 
 <div class="video-hero-modal w-full h-screen hidden left-0 absolute z-[100]">
     <div class="backdrop absolute w-full h-full bg-[#000000] opacity-[0.4] cursor-pointer"></div>
-    <div class="modal-content absolute w-full max-w-[1180px] h-auto flex top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 items-center justify-center mx-4 sm:mx-8 md:mx-0">
+    <div class="modal-content absolute w-full max-w-[1180px] h-auto flex top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 items-center justify-center mx-0">
         <?php get_template_part('blocks/w25-hero-video/video'); ?>
-        <div class="close-button top-0 right-[-3.5rem] absolute cursor-pointer">
+        <div class="close-button  right-0 top-[-3.25rem] xl:top-0 xl:right-[-3.25rem] absolute cursor-pointer">
             <?php get_template_part('blocks/w25-hero-video/close-button'); ?>
         </div>
     </div>
