@@ -37,7 +37,7 @@ $testimonials = get_field('testimials'); // Note: typo in field name from ACF
                         $image_url = wp_get_attachment_image_url($image_id, 'four-columns-four-three');
                         $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
                     ?>
-                        <img class="w-full h-auto rounded-t-lg" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                        <img class="w-full h-auto rounded-t-xl" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
                     <?php endif; ?>
 
                     <div class="">
@@ -53,7 +53,7 @@ $testimonials = get_field('testimials'); // Note: typo in field name from ACF
                     </div>
 
                     <?php if (!empty($testimonial['text'])): ?>
-                        <blockquote class="text-xl leading-tight font-headings">
+                        <blockquote class="text-xl leading-tight">
                             <img class="float-left w-auto h-6 mr-2" src="<?php echo get_template_directory_uri(); ?>/blocks/w25-testimonials/quote-icon-testimonials.svg" alt="Quote">
                             <?php echo nl2br(esc_html($testimonial['text'])); ?>
                         </blockquote>

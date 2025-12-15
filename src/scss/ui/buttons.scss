@@ -4,7 +4,7 @@
 .btn {
 	@apply rounded-md inline-flex flex-shrink-0 cursor-pointer select-none flex-wrap items-center justify-start border-transparent text-left transition duration-200 ease-out text-xl leading-none;
 	//@apply min-h-12 h-12 px-4;
-	@apply px-5 py-3;
+	@apply px-4 py-2;
 
 	/* disabled */
 	&-disabled,
@@ -77,7 +77,7 @@
 // Styled
 // hover + active color changes around 4-5 steps
 .btn {
-	@apply gap-2 no-underline font-headings font-normal border text-white text-xl md:text-3xl;
+	@apply gap-2 no-underline font-headings font-normal border text-white text-lg md:text-2xl;
 	animation: button-pop var(--animation-btn, 0.25s) ease-out;
 
 	&:active:hover,

@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
 				768: {
 					// sm breakpoint
 					slidesPerView: 2,
-					spaceBetween: 0,
+					spaceBetween: 16,
 					autoHeight: false,
 				},
 				1024: {
 					// lg breakpoint
 					slidesPerView: 3,
-					spaceBetween: 0,
+					spaceBetween: 16,
 					autoHeight: false,
 				},
 			},

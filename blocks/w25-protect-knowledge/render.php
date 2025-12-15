@@ -29,7 +29,7 @@ $block_headline = get_field('headline');
 <?php if (!is_admin()): ?>
 <div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?> py-8">
     <?php if ($block_headline): ?>
-    <h2 class="max-w-2xl mb-4 text-3xl lg:mb-8 lg:text-6xl"><?php echo esc_html($block_headline); ?></h2>
+    <h2 class="max-w-3xl mb-4 text-3xl lg:mb-8 lg:text-6xl"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>
     <?php if (have_rows('knowledge_swiper')): ?>
     <div class="flex items-center justify-center mb-8">
@@ -53,14 +53,21 @@ $block_headline = get_field('headline');
                     $background_color = get_sub_field('background_color');
                 ?>
                 <div
-                    class="swiper-slide md:min-h-[430px] overflow-hidden rounded-lg <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
+                    class="swiper-slide md:min-h-[430px] overflow-hidden rounded-lg <?php echo $link ? 'group' : ''; ?> <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
                     <div class="relative">
                         <?php if ($image):
                             $image_url = wp_get_attachment_image_url($image, 'four-columns-sixteen-nine');
                             $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
                         ?>
-                        <img class="w-full" src="<?php echo esc_url($image_url); ?>"
+                        <div class="relative">
+                            <img class="w-full" src="<?php echo esc_url($image_url); ?>"
                             alt="<?php echo esc_attr($image_alt); ?>">
+                            <?php if ($link): ?>
+                            <div
+                                class="absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 bg-gradient-to-t from-white via-white to-transparent group-hover:opacity-30">
+                            </div>
+                            <?php endif; ?>
+                        </div>
                         <?php endif; ?>
                         <div class="p-4">
                             <?php if ($headline): ?>

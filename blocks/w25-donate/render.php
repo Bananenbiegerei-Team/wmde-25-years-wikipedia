@@ -23,7 +23,14 @@ if (!empty($block['align'])) {
     $className .= ' align' . $block['align'];
 }
 
+// Load values from ACF fields
+$cta_text = get_field('cta_text') ?: 'Sie wollen die Wikipedia unterstützen?';
+$button_text = get_field('button_text') ?: 'Jetzt spenden';
+$button_link = get_field('button_link') ?: 'https://spenden.wikimedia.de/';
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-8 flex flex-col md:flex-row items-center justify-center gap-4 font-headings">
-    <p class="text-xl text-center md:text-3xl md:text-left">Sie wollen die Wikipedia unterstützen?</p><a class="px-6 py-1 text-xl text-white transition-colors rounded-lg bg-error hover:bg-error-dark md:text-2xl" href="https://spenden.wikimedia.de/">Jetzt spenden</a>
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-8 py-16 flex flex-col md:flex-row items-center justify-center gap-4 font-headings">
+    <p class="text-xl text-center md:text-3xl md:text-left"><?php echo esc_html($cta_text); ?></p>
+    <a class="px-6 py-1 text-xl text-white transition-colors rounded-lg bg-error hover:bg-error-dark md:text-2xl" href="<?php echo esc_url($button_link); ?>">
+        <?php echo esc_html($button_text); ?>
+    </a>
 </div>

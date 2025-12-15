@@ -89,7 +89,7 @@ $cards       = get_field('cards') ?: [];
 
                 <div class="flex flex-col gap-3 px-0 py-4 md:py-5">
                     <?php if ($card_text): ?>
-                    <p class="text-base md:text-xl">
+                    <p class="text-base font-medium md:text-xl">
                         <?php echo esc_html($card_text); ?>
                     </p>
                     <?php endif; ?>

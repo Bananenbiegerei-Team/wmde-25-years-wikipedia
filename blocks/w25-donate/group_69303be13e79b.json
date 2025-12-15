@@ -3,11 +3,11 @@
     "title": "Block: Donate CTA",
     "fields": [
         {
-            "key": "field_69303be175f45",
-            "label": "Message",
-            "name": "",
+            "key": "field_69303be175f46",
+            "label": "CTA Text",
+            "name": "cta_text",
             "aria-label": "",
-            "type": "message",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,9 +16,51 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Donate CTA is hardcoded",
-            "new_lines": "wpautop",
-            "esc_html": 0
+            "default_value": "Sie wollen die Wikipedia unterstützen?",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69303be175f47",
+            "label": "Button Text",
+            "name": "button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Jetzt spenden",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69303be175f48",
+            "label": "Button Link",
+            "name": "button_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https://spenden.wikimedia.de/",
+            "allow_in_bindings": 0,
+            "placeholder": ""
         }
     ],
     "location": [

@@ -1,7 +1,7 @@
 {
 	"name": "acf/w25-donate",
 	"title": "W25 Donate CTA",
-	"description": "Call-to-action block for donations with hardcoded content",
+	"description": "Call-to-action block for donations with customizable text and link",
 	"category": "custom-blocks",
 	"icon": "heart",
 	"keywords": ["donate", "cta", "call-to-action", "support"],
