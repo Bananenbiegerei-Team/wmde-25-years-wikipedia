@@ -30,7 +30,7 @@ $link_to_all = get_field('link_to_all');
 $cards       = get_field('cards') ?: [];
 ?>
 <div id="<?php echo esc_attr($id); ?>"
-    class="<?php echo esc_attr($className); ?> bg-secondary-light/50 text-primary-dark py-16 px-4 md:px-8">
+    class="<?php echo esc_attr($className); ?> bg-secondary-light/50 text-primary-dark py-8 lg:py-16 px-0 lg:px-8">
     <div class="container">
         <?php if ($title || $text || $link_to_all): ?>
         <div class="flex flex-col gap-4 mb-6 md:flex-row md:items-end md:justify-between">
@@ -53,7 +53,7 @@ $cards       = get_field('cards') ?: [];
         <?php endif; ?>
 
         <?php if (! empty($cards)): ?>
-        <div class="grid gap-6 mb-4 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="grid gap-6 mb-4 md:gap-8 md:grid-cols-2 xl:grid-cols-4">
             <?php foreach ($cards as $card): ?>
             <?php
                     $card_image_id = $card['image'] ?? 0;
@@ -108,7 +108,7 @@ $cards       = get_field('cards') ?: [];
                 $see_all_target = $link_to_all['target'] ?: '_self';
                 ?>
         <div class="flex justify-center mt-4 md:mt-0">
-            <a class="btn btn-outline" href="<?php echo esc_url($see_all_url); ?>"
+            <a class="text-xl btn btn-outline md:text-2xl" href="<?php echo esc_url($see_all_url); ?>"
                 target="<?php echo esc_attr($see_all_target); ?>">
                 <?php echo esc_html($see_all_title); ?>
             </a>
