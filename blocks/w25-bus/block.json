@@ -11,5 +11,7 @@
 	},
 	"supports": {
 		"align": false
-	}
+	},
+	"script": "file:./script.js",
+	"style": "file:./style.scss"
 }

@@ -27,47 +27,53 @@ if (!empty($block['align'])) {
 $headline = get_field('headline');
 $text = get_field('text');
 $cta = get_field('cta');
-$image = get_field('image');
-$background_image = get_field('image');
+$image = get_field('image'); // Returns array with 'url', 'id', etc.
+
+// Get background image URL
+$background_image_url = '';
+if ($image && is_array($image)) {
+    $background_image_url = $image['url'];
+} elseif ($image) {
+    // Fallback if it's just an ID
+    $background_image_url = wp_get_attachment_image_url($image, 'full');
+}
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="overflow-hidden relative <?php echo esc_attr($className); ?>">
-    <div class="relative bg-secondary-light">
+    <div class="relative bg-center bg-cover bg-accent-light" <?php if ($background_image_url): ?>style="background-image: url(<?php echo esc_url($background_image_url); ?>)"<?php endif; ?>>
         <div class="relative z-10">
-            <?php //get_template_part('blocks/w25-bus/puzzle'); ?>
+            <?php get_template_part('blocks/w25-bus/puzzle'); ?>
         </div>
-        <div class="relative top-0 left-0 z-20 w-full h-full">
+        <div class="absolute top-0 left-0 z-20 w-full h-full">
             <div class="container relative z-20">
-                <div class="relative max-w-5xl mb-8 lg:w-1/2 bg-secondary-light">
+                <div class="max-w-5xl mb-8 space-y-8 lg:w-1/2">
                     <?php if ($headline): ?>
                     <h2
-                        class="pt-24 mb-4 text-3xl before:bg-secondary-light lg:text-6xl before:h-full before:w-full before:absolute before:top-0 before:-left-full">
+                        class="pt-24 text-3xl before:bg-secondary-light lg:text-6xl before:h-full before:w-full before:absolute before:top-0 before:-left-full">
                         <?php echo esc_html($headline); ?>
                     </h2>
                     <?php endif; ?>
 
                     <?php if ($text): ?>
-                    <div class="mb-4 text-xl font-headings">
+                    <div class="mb-0 text-xl font-headings">
                         <?php echo nl2br(esc_html($text)); ?>
                     </div>
                     <?php endif; ?>
 
                     <?php if ($cta): ?>
-                    <div class="w25-bus__cta">
-                        <a href="<?php echo esc_url($cta['url']); ?>" class="w25-bus__link"
+                        <a href="<?php echo esc_url($cta['url']); ?>" class="btn btn-outline"
                             <?php if ($cta['target']): ?>target="<?php echo esc_attr($cta['target']); ?>"
                             <?php endif; ?>>
                             <?php echo esc_html($cta['title']); ?>
                         </a>
-                    </div>
                     <?php endif; ?>
-                </div>
-                <?php if (have_rows('social_media')): ?>
+                    <?php if (have_rows('social_media')): ?>
                 <?php if ( get_field('social_media_headline') ) : ?>
-                <h3 class="mb-4 text-center">
+                <div>
+                <h3 class="mt-16 mb-4">
                     <?php echo get_field('social_media_headline'); ?>
                 </h3>
                 <?php endif; ?>
-                <ul class="flex items-center justify-center w-full pb-12 list-none">
+                <ul class="flex items-center w-full pb-12 list-none">
                     <?php while (have_rows('social_media')): the_row();
                         $icon = get_sub_field('icon');
                         $link = get_sub_field('link');
@@ -89,6 +95,8 @@ $background_image = get_field('image');
                     endwhile; ?>
                 </ul>
                 <?php endif; ?>
+                </div>
+                </div>
             </div>
         </div>
     </div>
