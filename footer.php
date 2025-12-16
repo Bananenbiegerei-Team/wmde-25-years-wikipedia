@@ -4,7 +4,7 @@ $footer_color = get_field('footer_color', 'options') ?: 'white';
 </main>
 <footer class="bg-<?= $footer_color; ?> text-black site-footer " role="contentinfo" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <?php /* <div class="py-8 mb-12 border-t-2 border-b border-b-neutral-light lg:mb-0">
+    <div class="py-8 mb-12 border-t-2 border-b border-b-neutral-light lg:mb-0">
         <div class="container grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 xl:gap-20">
             <?php if ( get_field('social_media_links', 'option') ) : ?>
                 <div>
@@ -28,7 +28,7 @@ $footer_color = get_field('footer_color', 'options') ?: 'white';
             </div>
             <?php endif; ?>
         </div>
-    </div> */?>
+    </div>
     <div class="container lg:flex lg:items-center lg:h-24">
         <?php if (has_nav_menu('footer')): ?>
         <div class="lg:flex-1">
