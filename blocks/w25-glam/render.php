@@ -30,7 +30,9 @@ $glam_cta = get_field('glam_cta');
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light relative">
-    <div class="!text-secondary-light w-full relative">
+    <?php if (!is_admin()): ?>
+    <div class="pb-16 glam-container">
+        <div class="!text-secondary-light w-full relative">
         <?php include get_template_directory() . '/blocks/w25-glam/transition-top.svg'; ?>
         <?php
         $glam_puzzles = get_field('glam_puzzles');
@@ -47,28 +49,28 @@ $glam_cta = get_field('glam_cta');
             endforeach; ?>
         </div>
         <?php endif; ?>
-    </div>
-    <?php if (!is_admin()): ?>
-    <div class="container relative z-20">
-        <div class="ml-[35vw] min-h-[60vw] pt-[10vh]">
-            <div class="mr-8 space-y-8">
-                <?php if ($headline): ?>
-            <h2 class="text-3xl lg:text-6xl"><?php echo esc_html($headline); ?></h2>
-            <?php endif; ?>
+        </div>
+        <div class="container relative z-20">
+            <div class="glam-content-sticky pl-[40vw]">
+                <div class="mr-8 space-y-8">
+                    <?php if ($headline): ?>
+                <h2 class="text-3xl lg:text-6xl"><?php echo esc_html($headline); ?></h2>
+                <?php endif; ?>
 
-            <?php if ($describtion): ?>
-            <div class="text-xl leading-tight md:text-2xl lg:text-3xl font-headings">
-                <?php echo nl2br(esc_html($describtion)); ?>
-            </div>
-            <?php endif; ?>
+                <?php if ($describtion): ?>
+                <div class="text-xl leading-tight md:text-2xl lg:text-3xl font-headings">
+                    <?php echo nl2br(esc_html($describtion)); ?>
+                </div>
+                <?php endif; ?>
 
-            <?php if ($glam_cta): ?>
-                <a href="<?php echo esc_url($glam_cta['url']); ?>" class="btn btn-outline"
-                    <?php if ($glam_cta['target']): ?>target="<?php echo esc_attr($glam_cta['target']); ?>"
-                    <?php endif; ?>>
-                    <?php echo esc_html($glam_cta['title']); ?>
-                </a>
-            <?php endif; ?>
+                <?php if ($glam_cta): ?>
+                    <a href="<?php echo esc_url($glam_cta['url']); ?>" class="btn btn-outline"
+                        <?php if ($glam_cta['target']): ?>target="<?php echo esc_attr($glam_cta['target']); ?>"
+                        <?php endif; ?>>
+                        <?php echo esc_html($glam_cta['title']); ?>
+                    </a>
+                <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>
