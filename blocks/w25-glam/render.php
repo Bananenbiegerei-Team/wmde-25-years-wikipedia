@@ -26,25 +26,56 @@ if (!empty($block['align'])) {
 // Load values from ACF fields
 $headline = get_field('headline');
 $describtion = get_field('describtion');
+$glam_cta = get_field('glam_cta');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light relative">
+    <div class="!text-secondary-light w-full relative">
+        <?php include get_template_directory() . '/blocks/w25-glam/transition-top.svg'; ?>
+        <?php
+        $glam_puzzles = get_field('glam_puzzles');
+        if ($glam_puzzles): ?>
+        <div id="glam-puzzles-container" class="absolute top-0 left-0 z-10 w-full h-full pointer-events-none glam-puzzles">
+            <?php $puzzle_index = 1;
+            foreach ($glam_puzzles as $image_id):
+            $image_url = wp_get_attachment_image_url($image_id, 'medium');
+            $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+            ?>
+            <img class="absolute w-[14vw] h-auto puzzle-item puzzle-<?php echo $puzzle_index; ?>"
+                src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+            <?php $puzzle_index++;
+            endforeach; ?>
+        </div>
+        <?php endif; ?>
+    </div>
     <?php if (!is_admin()): ?>
-        <div class="container py-8">
-            <?php if ($headline): ?>
-                <h2 class="mb-4 text-3xl lg:mb-8 lg:text-6xl"><?php echo esc_html($headline); ?></h2>
+    <div class="container relative z-20">
+        <div class="ml-[35vw] min-h-[60vw] pt-[10vh]">
+            <div class="mr-8 space-y-8">
+                <?php if ($headline): ?>
+            <h2 class="text-3xl lg:text-6xl"><?php echo esc_html($headline); ?></h2>
             <?php endif; ?>
 
             <?php if ($describtion): ?>
-                <div class="text-lg">
-                    <?php echo nl2br(esc_html($describtion)); ?>
-                </div>
+            <div class="text-xl leading-tight md:text-2xl lg:text-3xl font-headings">
+                <?php echo nl2br(esc_html($describtion)); ?>
+            </div>
             <?php endif; ?>
+
+            <?php if ($glam_cta): ?>
+                <a href="<?php echo esc_url($glam_cta['url']); ?>" class="btn btn-outline"
+                    <?php if ($glam_cta['target']): ?>target="<?php echo esc_attr($glam_cta['target']); ?>"
+                    <?php endif; ?>>
+                    <?php echo esc_html($glam_cta['title']); ?>
+                </a>
+            <?php endif; ?>
+            </div>
         </div>
+    </div>
     <?php else: ?>
-        <div class="flex flex-col items-center gap-4 p-8 bg-white border border-dashed rounded-lg">
-            <p class="text-base font-bold">W25 GLAM Presents Block</p>
-            <p class="text-sm text-gray-600">Click to edit headline and description</p>
-        </div>
+    <div class="flex flex-col items-center gap-4 p-8 bg-white border border-dashed rounded-lg">
+        <p class="text-base font-bold">W25 GLAM Presents Block</p>
+        <p class="text-sm text-gray-600">Click to edit headline and description</p>
+    </div>
     <?php endif; ?>
 </div>

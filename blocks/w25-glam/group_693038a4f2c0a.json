@@ -43,14 +43,59 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_693fdf0c28dbb",
+            "label": "GLAM CTA",
+            "name": "glam_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_693fe20a1ff3b",
+            "label": "GLAM Puzzles",
+            "name": "glam_puzzles",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "The puzzles will appear in reading direction from left to right and in rows. According to figma design",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": 9,
+            "max": 9,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "post"
+                "value": "acf\/w25-glam"
             }
         ]
     ],
@@ -63,5 +108,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1764767939
+    "modified": 1765794800
 }
