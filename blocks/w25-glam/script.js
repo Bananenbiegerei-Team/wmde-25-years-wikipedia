@@ -102,7 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				end: 'bottom bottom',
 				pin: stickyContent,
 				pinSpacing: false,
-				markers: false // Set to false for production
+				markers: false, // Set to false for production
+				id: 'glam-sticky-pin' // Custom name for markers
 			});
 		}
 	}

@@ -39,16 +39,13 @@ if ($image && is_array($image)) {
 }
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="overflow-hidden relative <?php echo esc_attr($className); ?>">
-    <div class="relative bg-center bg-cover bg-accent-light" <?php if ($background_image_url): ?>style="background-image: url(<?php echo esc_url($background_image_url); ?>)"<?php endif; ?>>
-        <div class="relative z-10">
-            <?php get_template_part('blocks/w25-bus/puzzle'); ?>
-        </div>
-        <div class="absolute top-0 left-0 z-20 w-full h-full">
-            <div class="container relative z-20">
-                <div class="max-w-5xl mb-8 space-y-8 lg:w-1/2">
+    <div class="relative bg-secondary-light">
+        <div class="relative top-0 left-0 z-20 w-full h-full lg:absolute">
+            <div class="container">
+                <div class="max-w-5xl mb-8 space-y-4 lg:space-y-8 lg:w-1/2 bg-secondary-light">
                     <?php if ($headline): ?>
                     <h2
-                        class="pt-24 text-3xl before:bg-secondary-light lg:text-6xl before:h-full before:w-full before:absolute before:top-0 before:-left-full">
+                        class="pt-8 text-3xl lg:pt-24 before:bg-secondary-light lg:text-6xl before:h-full before:w-full before:absolute before:top-0 before:-left-full">
                         <?php echo esc_html($headline); ?>
                     </h2>
                     <?php endif; ?>
@@ -69,11 +66,11 @@ if ($image && is_array($image)) {
                     <?php if (have_rows('social_media')): ?>
                 <?php if ( get_field('social_media_headline') ) : ?>
                 <div>
-                <h3 class="mt-16 mb-4">
+                <h3 class="mt-8 mb-4 lg:mt-16">
                     <?php echo get_field('social_media_headline'); ?>
                 </h3>
                 <?php endif; ?>
-                <ul class="flex items-center w-full pb-12 list-none">
+                <ul class="flex items-center w-full list-none lg:pb-12">
                     <?php while (have_rows('social_media')): the_row();
                         $icon = get_sub_field('icon');
                         $link = get_sub_field('link');
@@ -98,6 +95,9 @@ if ($image && is_array($image)) {
                 </div>
                 </div>
             </div>
+        </div>
+        <div class="relative z-10 bg-center bg-cover " <?php if ($background_image_url): ?>style="background-image: url(<?php echo esc_url($background_image_url); ?>)"<?php endif; ?>>
+            <?php get_template_part('blocks/w25-bus/puzzle'); ?>
         </div>
     </div>
 
