@@ -29,7 +29,7 @@ if (!empty($block['align'])) {
 // $video_loop = get_field('video_loop');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="w25-video-hero relative w-full bg-primary <?php echo esc_attr($className); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="w25-video-hero relative w-full bg-secondary <?php echo esc_attr($className); ?>">
     <div class="relative h-mobilescreenheader video-overlay md:h-screenheader">
         <?php get_template_part('blocks/w25-hero-video/partials/overlay'); ?>
         <?php
