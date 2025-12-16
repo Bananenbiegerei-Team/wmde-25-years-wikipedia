@@ -56,12 +56,12 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_social_platform",
-                    "label": "Platform",
-                    "name": "platform",
+                    "key": "field_social_link",
+                    "label": "Link",
+                    "name": "link",
                     "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
+                    "type": "link",
+                    "instructions": "Social media link (URL and title)",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -69,38 +69,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "e.g. Facebook, Twitter, Instagram",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_social_media_links"
-                },
-                {
-                    "key": "field_social_url",
-                    "label": "URL",
-                    "name": "url",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "https://",
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
                     "parent_repeater": "field_social_media_links"
                 },
                 {
                     "key": "field_social_icon",
-                    "label": "Icon Class",
+                    "label": "Icon",
                     "name": "icon",
                     "aria-label": "",
-                    "type": "text",
-                    "instructions": "CSS class for the icon",
+                    "type": "image",
+                    "instructions": "Upload an SVG icon for this social media platform",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -108,11 +87,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "svg,png,jpg",
+                    "preview_size": "thumbnail",
+                    "allow_in_bindings": 0,
                     "parent_repeater": "field_social_media_links"
                 }
             ]

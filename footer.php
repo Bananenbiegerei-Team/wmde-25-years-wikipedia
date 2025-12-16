@@ -21,7 +21,6 @@ $footer_color = get_field('footer_color', 'options') ?: 'white';
             <?php // No rows found ?>
             <?php endif; ?>
 
-
             <?php if ( get_field( 'show_wikimedia_newsletter_signup_form', 'option' ) == 1 ) : ?>
             <div class="flex-1">
                 <?php get_template_part('template-parts/newsletter-signup-form-minimal'); ?>
