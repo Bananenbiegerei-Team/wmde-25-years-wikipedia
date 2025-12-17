@@ -12,6 +12,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = videoModal ? videoModal.querySelector('.close-button') : null;
     const backdrop = videoModal ? videoModal.querySelector('.backdrop') : null;
 
+
+    components.forEach((component) => {
+
+
+        const overlayPuzzles = gsap.utils.toArray('.overlayPuzzle', component);
+        if (overlayPuzzles.length < 2) return;
+
+        const t_fade = 1;
+        const pause = 2;
+
+        gsap.set(overlayPuzzles, { opacity: 0 });
+        gsap.set(overlayPuzzles[0], { opacity: 1 });
+
+        const tl = gsap.timeline({ repeat: -1 });
+
+        overlayPuzzles.forEach((current, i) => {
+            const next = overlayPuzzles[(i + 1) % overlayPuzzles.length];
+
+            tl.to(next, {
+                opacity: 1,
+                duration: t_fade
+            }, `+=${pause}`);
+
+            tl.to(current, {
+                opacity: 0,
+                duration: t_fade
+            }, `+=${pause}`);
+        });
+
+    });
     components.forEach( ( component ) => {
 
         // Initialize hero swiper if it exists
