@@ -51,7 +51,7 @@ if ($image && is_array($image)) {
                     <?php endif; ?>
 
                     <?php if ($text): ?>
-                    <div class="mb-0 text-xl font-headings">
+                    <div class="mb-0 text-2xl font-headings">
                         <?php echo nl2br(esc_html($text)); ?>
                     </div>
                     <?php endif; ?>

@@ -2,9 +2,11 @@
     <div class="text-secondary-light">
         <?php include get_template_directory() . '/blocks/w25-numbers/puzzle.svg'; ?>
     </div>
-    <div class="h-full pt-[5px] ">
-        <div class="flex items-center h-full ">
-            <p class="text-xl"><span class="font-bold">Alle 4 Minuten …</span> erscheint ein neuer deutschsprachiger Wikipedia-Artikel</p>
+    <div class="h-full pt-[20px] lg:pt-[5px] ">
+        <div class="flex items-center h-full text-base lg:text-xl">
+            <?php if (get_field('number_5')): ?>
+                <?php echo get_field('number_5'); ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
