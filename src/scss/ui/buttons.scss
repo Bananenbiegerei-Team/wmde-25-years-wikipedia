@@ -264,12 +264,11 @@
 			}
 		}
 
-		&.btn-error,
-		&.btn-warning {
-			@apply text-warning hover:border-warning hover:bg-warning;
+		&.btn-error {
+			@apply text-error hover:border-error hover:bg-error;
 
 			&.btn-active {
-				@apply border-warning bg-warning;
+				@apply border-error bg-error;
 			}
 		}
 	}
@@ -337,12 +336,11 @@
 			}
 		}
 
-		&.btn-error,
-		&.btn-warning {
-			@apply text-warning hover:border-warning hover:bg-warning;
+		&.btn-error {
+			@apply text-error hover:border-error hover:bg-error;
 
 			&.btn-active {
-				@apply border-warning bg-warning;
+				@apply border-error bg-error;
 			}
 		}
 	}

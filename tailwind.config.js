@@ -145,9 +145,9 @@ module.exports = {
 							dark: '#6b2235',
 						},
 						error: {
-							light: '#fcc2cd',
-							DEFAULT: '#F21B5A',
-							dark: '#8a0319',
+							light: '#ffe2e6',
+							DEFAULT: '#D13F5C',
+							dark: '#B0003E',
 						},
 						success: {
 							light: '#cfe7cf',

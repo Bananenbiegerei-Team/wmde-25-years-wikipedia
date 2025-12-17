@@ -1,0 +1,129 @@
+{
+    "key": "group_header_cta_options",
+    "title": "Header CTA Options",
+    "fields": [
+        {
+            "key": "field_call_to_actions",
+            "label": "Call to Actions",
+            "name": "call_to_actions",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add call to action buttons for the header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 3,
+            "collapsed": "",
+            "button_label": "Add CTA Button",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_cta_link",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Button link (URL, title, and target)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_call_to_actions"
+                },
+                {
+                    "key": "field_cta_color",
+                    "label": "Button Color",
+                    "name": "color",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Select button color style",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "primary": "Primary",
+                        "secondary": "Secondary",
+                        "accent": "Accent",
+                        "accent-light": "Accent Light",
+                        "success": "Success",
+                        "error": "Error",
+                        "warning": "Warning"
+                    },
+                    "default_value": "primary",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_call_to_actions"
+                },
+                {
+                    "key": "field_cta_variant",
+                    "label": "Button Variant",
+                    "name": "variant",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Select button style variant",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "default": "Default (Solid)",
+                        "outline": "Outline",
+                        "ghost": "Ghost"
+                    },
+                    "default_value": "default",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_call_to_actions"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Configure call to action buttons that appear in the header",
+    "show_in_rest": 0,
+    "modified": 1734307200
+}
