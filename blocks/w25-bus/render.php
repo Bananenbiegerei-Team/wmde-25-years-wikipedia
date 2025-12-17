@@ -96,7 +96,7 @@ if ($image && is_array($image)) {
                 </div>
             </div>
         </div>
-        <div class="relative z-10 bg-center bg-cover " <?php if ($background_image_url): ?>style="background-image: url(<?php echo esc_url($background_image_url); ?>)"<?php endif; ?>>
+        <div class="relative z-10">
             <?php get_template_part('blocks/w25-bus/puzzle'); ?>
         </div>
     </div>

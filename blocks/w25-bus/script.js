@@ -1,60 +1,48 @@
-// Simple fade-in/fade-out animation for bus images
-document.addEventListener('DOMContentLoaded', () => {
-	// Get all bus images
-	const pieces = Array.from(document.querySelectorAll('#bus-container .puzzle-piece'));
+// GSAP Scroll-triggered animation for W25 Bus block
+// Bus images animate from bottom of viewport to their final position
+document.addEventListener('DOMContentLoaded', function() {
+	const container = document.querySelector('#bus-container');
 
-	console.log('Bus animation: Found', pieces.length, 'images');
+	if (container && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+		gsap.registerPlugin(ScrollTrigger);
 
-	// Check if GSAP is available
-	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-		console.error('Bus animation: GSAP or ScrollTrigger not loaded');
-		// Fallback: show all images
-		pieces.forEach(el => el.style.opacity = '1');
-		return;
+		const busItems = container.querySelectorAll('.bus-item');
+
+		// Detect if mobile (width < 768px - Tailwind md breakpoint)
+		const isMobile = window.innerWidth < 768;
+
+		// Distance from bottom - all items come from below the viewport
+		const distance = isMobile ? '80vh' : '100vh';
+
+		// Calculate the scroll range for triggering items
+		const itemCount = busItems.length;
+		const scrollRange = isMobile ? 10 : 100; // Total scroll distance to spread all triggers across
+
+		// Animate each bus item with individual scroll triggers
+		busItems.forEach((item, index) => {
+			// Calculate trigger position for this item based on its index
+			// Spread triggers evenly across the scroll range
+			const triggerOffset = (index / (itemCount - 1)) * scrollRange;
+
+			gsap.fromTo(item,
+				{
+					opacity: 0,
+					y: distance
+				},
+				{
+					y: 0,
+					opacity: 1,
+					ease: 'power2.out',
+					scrollTrigger: {
+						trigger: container,
+						start: () => `top+=${triggerOffset}px center`, // Each item triggers at different scroll position
+						end: () => `top+=${triggerOffset + 200}px center`, // Animation completes over 300px of scroll
+						scrub: 1, // Smooth scrubbing effect - animation tied to scroll
+						markers: false, // Set to true for debugging
+						toggleActions: 'play none none reverse'
+					}
+				}
+			);
+		});
 	}
-
-	gsap.registerPlugin(ScrollTrigger);
-
-	// Wait for images to load
-	const loadPromises = pieces.map(img => {
-		if (img.complete) {
-			return Promise.resolve();
-		} else {
-			return new Promise(res => {
-				img.addEventListener('load', res, { once: true });
-				img.addEventListener('error', res, { once: true });
-			});
-		}
-	});
-
-	// Start animation once images are loaded
-	Promise.all(loadPromises).then(() => {
-		console.log('Bus animation: All images loaded, starting animation');
-
-		// Create GSAP timeline that auto-plays once triggered
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: '#bus-container',
-				start: '20% center',
-				markers: false,
-				once: true,
-				onEnter: () => console.log('Bus animation: ScrollTrigger activated')
-			}
-		});
-
-		// Show images one after another instantly
-		pieces.forEach((el, i) => {
-			const isLast = i === pieces.length - 1;
-
-			// Show this image instantly
-			tl.set(el, { opacity: 1 }, i * 0.3);
-
-			// Hide it instantly (unless it's the last image)
-			if (!isLast) {
-				tl.set(el, { opacity: 0 }, (i * 0.3) + 0.3);
-			}
-		});
-
-		console.log('Bus animation: Timeline created with', pieces.length, 'animations');
-	});
 });
