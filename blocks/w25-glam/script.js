@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		// Calculate the scroll range for triggering items
 		const itemCount = puzzleItems.length;
-		const scrollRange = 400; // Total scroll distance to spread all triggers across
+		const scrollRange = isMobile ? 50 : 800; // Total scroll distance to spread all triggers across (smaller on mobile)
 
 		// Animate each puzzle item with individual scroll triggers
 		puzzleItems.forEach((item, index) => {
