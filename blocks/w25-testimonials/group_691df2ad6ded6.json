@@ -110,7 +110,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": 110,
+                    "maxlength": "",
                     "allow_in_bindings": 0,
                     "rows": "",
                     "placeholder": "",
@@ -138,5 +138,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1764067560
+    "modified": 1765978210
 }
