@@ -289,7 +289,7 @@
 
 	/* outline */
 	&-outline {
-		@apply text-primary-dark border-current bg-transparent shadow-none hover:border-primary-dark hover:bg-primary-dark/50 hover:text-primary-dark/50 hover:bg-transparent hover:border-primary-dark/50;
+		@apply text-primary-dark border-current bg-transparent shadow-none hover:border-primary-dark hover:bg-primary-light;
 
 		&.btn-active {
 			@apply border-primary-dark bg-primary-dark;
@@ -304,40 +304,36 @@
 		}
 
 		&.btn-secondary {
-			@apply text-neutral-dark hover:border-neutral-dark hover:bg-neutral;
+			@apply text-neutral-dark hover:border-neutral-dark hover:bg-secondary-light;
 
 			&.btn-active {
 				@apply border-secondary-dark bg-secondary-dark text-secondary-dark;
 			}
 		}
 
-		&.btn-accent,
 		&.btn-accent {
-			@apply text-accent-dark hover:border-accent hover:bg-accent;
-
+			@apply text-accent-dark hover:border-accent hover:bg-accent-light;
 			&.btn-active {
 				@apply border-accent-dark bg-accent-dark text-accent-dark;
 			}
 		}
 
 		&.btn-success {
-			@apply text-success hover:border-success hover:bg-success;
-
+			@apply text-success hover:border-success hover:bg-success-light;
 			&.btn-active {
 				@apply border-success bg-success;
 			}
 		}
 
 		&.btn-warning {
-			@apply text-warning hover:border-warning hover:bg-warning;
-
+			@apply text-warning hover:border-warning hover:bg-warning-light;
 			&.btn-active {
 				@apply border-warning bg-warning;
 			}
 		}
 
 		&.btn-error {
-			@apply text-error hover:border-error hover:bg-error;
+			@apply text-error hover:border-error hover:bg-error-light;
 
 			&.btn-active {
 				@apply border-error bg-error;
