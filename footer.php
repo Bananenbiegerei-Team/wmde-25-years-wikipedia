@@ -30,8 +30,9 @@ $footer_color = get_field('footer_color', 'options') ?: 'white';
     </div>
     <div class="container lg:flex lg:items-center lg:h-24">
         <?php if (has_nav_menu('footer')): ?>
-        <div class="lg:flex-1">
+        <div class="items-center gap-4 lg:flex lg:flex-1">
             <?php bb_wp_nav_menu(['container' => 'nav', 'menu' => 'footer', 'menu_class' => 'flex flex-col md:flex-row gap-5 ', 'theme_location' => 'footer']); ?>
+            <a class="cli_settings_button" href="#"><?php _e('Cookie Einstellungen', BB_TEXT_DOMAIN); ?></a>
         </div>
         <?php else: ?>
         <div class="p-4 my-2 border-2 border-dotted border-error rounded-2xl">
@@ -44,8 +45,8 @@ $footer_color = get_field('footer_color', 'options') ?: 'white';
             </a>
         </div>
         <?php endif; ?>
-        <div class="">
-            <h3 class="mb-0 text-base"><?php _e('Wir befreien Wissen', BB_TEXT_DOMAIN); ?></h3>
+        <div class="h-16 lg:h-auto">
+            <h3 class="mb-0 text-2xl lg:text-base"><?php _e('Wir befreien Wissen', BB_TEXT_DOMAIN); ?></h3>
         </div>
     </div>
 </footer>

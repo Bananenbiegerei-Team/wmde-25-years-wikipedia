@@ -20,7 +20,7 @@ $bb_colors: 'primary', 'secondary', 'neutral', 'success', 'warning', 'error', 'a
 @import './gutenberg-overwrites/*';
 
 /* Plugins overwrites */
-@import 'plugin-overwrites/*';
+@import 'plugin-overwrites/gdpr-webtoffee';
 
 /* Templates */
 @import './templates/*';

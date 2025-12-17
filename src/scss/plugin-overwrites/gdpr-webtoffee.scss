@@ -1,8 +1,8 @@
 // Banner
 .wt-cli-cookie-bar-container {
 	#cookie-law-info-bar {
-		@apply bg-white border border-primary p-3 rounded-xl shadow-xl font-normal max-h-[50vh] #{!important};
-		width: calc(100% - 4rem) !important;
+		@apply fixed bottom-4 left-4 bg-white border border-white p-3 rounded-xl shadow-xl font-normal max-h-[50vh] #{!important};
+		width: calc(50% - 2rem) !important;
 		br {
 			@apply h-0 hidden #{!important};
 		}
@@ -10,7 +10,7 @@
 			@apply flex flex-col lg:flex-row gap-2 #{!important};
 		}
 		.cli-bar-message {
-			@apply mb-5;
+			@apply mb-5 w-full;
 			br {
 				@apply h-0 hidden #{!important};
 			}
@@ -31,15 +31,15 @@
 }
 .site-footer {
 	.cli_settings_button {
-		@apply bg-white text-primary border-none hover:bg-white hover:text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0 px-1.5 py-0.5 text-base lg:px-2 lg:py-0.5 lg:text-lg #{!important};
+		@apply text-base font-normal font-normal border-none p-0 py-4 #{!important};
 	}
 }
 // Settings overlay
 #cliSettingsPopup {
 	.cli-modal-dialog {
 		@apply font-normal;
-		.cli-tab-footer .wt-cli-privacy-accept-btn {
-			@apply inline-flex items-center rounded-md border border-transparent bg-primary-dark px-1.5 py-2 text-base lg:px-2 lg:py-0.5 lg:text-lg text-white hover:bg-neutral-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0 transition m-0 font-normal #{!important};
-		}
 	}
+}
+#cliSettingsPopup .cli-modal-dialog .cli-btn {
+	@apply px-3 py-2 #{!important};
 }
