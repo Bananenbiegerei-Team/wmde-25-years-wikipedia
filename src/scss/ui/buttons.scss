@@ -360,12 +360,6 @@
 		}
 	}
 }
-
-/* group */
-.btn-menu-section {
-	@apply text-sm bg-transparent  font-headings uppercase border-none hover:bg-transparent hover:text-primary-dark rounded-md;
-}
-
 /* radio input and checkbox as button */
 .btn:is(input[type='checkbox']:checked),
 .btn:is(input[type='radio']:checked) {

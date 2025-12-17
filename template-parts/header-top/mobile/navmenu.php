@@ -38,21 +38,19 @@ document.addEventListener('alpine:init', () => {
     x-transition:enter-start="opacity-0 transform scale-90" x-transition:enter-end="opacity-100 transform scale-100"
     x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-100"
     x-transition:leave-end="opacity-0 transform scale-90">
-    <?php /* <div class="flex items-center justify-end flex-1 gap-5 p-3" x-data="{ open: false }">
-        <div class="w-full">
+   <div class="flex items-center justify-start flex-1 gap-2 p-3 bg-white" x-data="{ open: false }">
             <?php get_template_part('template-parts/header-top/cta'); ?>
-    <form class="flex w-full gap-5 form-sm" action="<?= bb_search_url() ?>" method="get">
+    <?php /* <form class="flex w-full gap-5 form-sm" action="<?= bb_search_url() ?>" method="get">
         <input class="!mb-0" type="text" name="s" id="mobile-search" x-ref="searchInput"
             value="<?php the_search_query(); ?>" />
         <input type="submit" alt="Search" value="Suchen" class="" />
-    </form>
+    </form> */ ?>
     </div>
-    </div>*/ ?>
     <?php if (has_nav_menu('nav-right-level-1')) : ?>
     <?php get_template_part('template-parts/header-top/menu-top-right-1'); ?>
     <?php endif; ?>
 
-    <nav class="border-b divide-y divide-primary-dark border-primary-dark">
+    <nav class="h-full bg-white border-b divide-y divide-primary-dark border-primary-dark">
         <template x-for="(domain,i) in nav">
 
             <div>
@@ -62,7 +60,7 @@ document.addEventListener('alpine:init', () => {
 
                     <!-- Domain title -->
                     <div class="flex-1"
-                        x-bind:class="{'current before:w-2 before:h-16 before:bg-primary-dark before:absolute before:-left-2 before:top-0': pageID == domain.ID }">
+                        x-bind:class="{'current before:w-2 before:h-16 before:bg-primary-dark before:absolute h-16 before:-left-2 before:top-0': pageID == domain.ID }">
                         <a x-bind:href="domain.url" @focus="toggleNav(i)" class="btn btn-menu">
                             <span class="w-full" x-html="domain.title"></span>
                         </a>

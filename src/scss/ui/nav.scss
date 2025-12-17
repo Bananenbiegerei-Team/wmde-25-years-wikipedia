@@ -1,49 +1,25 @@
-// Domains
-#navmenu_desktop_domains {
-	a {
-		&.current {
-			// Current domain or top-level page
-		}
-	}
-}
-
-// Menu items in dropdown
-#navmenu_desktop_dropdown {
-	li {
-		&.current {
-			@apply text-primary-dark font-bold;
-		}
-	}
-}
-
-// Dropdown animations (could not get them to work with AlpineJS)
-#navmenu_desktop_dropdown {
-	& > div.invisible {
-		opacity: 0;
-	}
-	& > div.visible {
-		opacity: 1;
-		transition: opacity 0.2s;
-	}
-}
-
-
+// Main menu structure
 .menu {
 	@apply flex flex-col divide-y divide-primary-dark md:divide-y-0;
+
 	&.horizontal {
 		@apply md:flex-row;
 	}
+
 	&.right {
 		li {
 			@apply md:justify-end;
 		}
 	}
+
 	li {
 		@apply flex;
+
 		a,
 		button {
 			@apply btn btn-menu;
 		}
+
 		&.current-menu-item {
 			a {
 				@apply font-bold;
@@ -51,6 +27,8 @@
 		}
 	}
 }
+
+// Right nav and dropdown link colors
 #nav-right-level-1,
 .dropdown {
 	li {
@@ -61,48 +39,43 @@
 	}
 }
 
-/* Menu */
+// Button menu base styles
 .btn-menu {
-	@apply rounded-md inline-flex select-none flex-wrap items-center justify-start border-transparent text-left transition duration-200 ease-out leading-none text-base p-3 bg-transparent text-black font-alt font-medium hover:bg-gray hover:border-gray mb-0;
+	@apply rounded-md inline-flex select-none flex-wrap items-center justify-start border-transparent text-left transition duration-200 ease-out leading-none text-base p-3 bg-transparent text-black font-alt font-medium hover:bg-gray hover:border-gray mb-0 h-16 lg:h-auto;
 
 	&.current {
-		@apply text-primary-500;
+		@apply font-bold !border-4 !border-primary;
 	}
 }
 
+// Button menu section styles
 .btn-menu-section {
 	@apply text-sm bg-transparent text-black font-alt font-bold uppercase border-none hover:bg-transparent hover:text-primary-800 rounded-md;
 }
 
-// Domains
+// Desktop domains navigation
 #navmenu_desktop_domains {
-	a {
-		&.current {
-			// Current domain or top-level page
-		}
+	a.btn-menu.current {
+		// @apply font-bold border-4 border-primary #{!important};
 	}
 }
 
-// Menu items in dropdown
+// Desktop dropdown navigation
 #navmenu_desktop_dropdown {
 	li {
 		&.current {
-			// Current page
-		}
-
-		&.current {
-			@apply text-primary-500;
+			@apply text-primary-dark font-bold;
 		}
 	}
 }
 
-// Dropdown animations (could not get them to work with AlpineJS)
+// Dropdown animations
 #navmenu_desktop_dropdown {
-	&>div.invisible {
+	& > div.invisible {
 		opacity: 0;
 	}
 
-	&>div.visible {
+	& > div.visible {
 		opacity: 1;
 		transition: opacity 0.2s;
 	}

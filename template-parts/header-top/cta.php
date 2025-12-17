@@ -1,4 +1,4 @@
-<ul class="flex flex-col md:flex-row items-center md:space-x-2 space-y-3 md:space-y-0 mb-4 md:mb-0">
+<ul class="flex items-center gap-2">
     <?php if ( have_rows( 'call_to_actions', 'option' ) ) : ?>
     <?php while ( have_rows( 'call_to_actions', 'option' ) ) : the_row(); ?>
     <?php
@@ -22,7 +22,7 @@
         }
     ?>
     <?php if ( $link ) : ?>
-    <a class="w-full md:w-auto <?php echo esc_attr($btn_class); ?>" href="<?php echo esc_url( $link['url'] ); ?>"
+    <a class="!font-alt !font-medium !text-lg <?php echo esc_attr($btn_class); ?>" href="<?php echo esc_url( $link['url'] ); ?>"
         target="<?php echo esc_attr( $link['target'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
     <?php endif; ?>
     <?php endwhile; ?>
