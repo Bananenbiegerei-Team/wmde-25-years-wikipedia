@@ -59,6 +59,11 @@ function bb_get_block_width($block)
 add_filter(
     'render_block',
     function ($block_content, $block) {
+        // Skip container wrapping on front page
+        if (is_front_page()) {
+            return $block_content;
+        }
+
         // Get value of width from ACF field
         $width = bb_get_block_width($block);
 
