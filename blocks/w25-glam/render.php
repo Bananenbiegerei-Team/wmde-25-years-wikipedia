@@ -50,7 +50,7 @@ $glam_cta = get_field('glam_cta');
         </div>
         <?php endif; ?>
         </div>
-        <div class="container relative z-20 h-full">
+        <div class="container relative z-20 h-full pb-12">
             <div class="glam-content-sticky pl-[40%] md:pl-[50%]">
                 <div class="mr-8 space-y-4 md:space-y-8">
                     <?php if ($headline): ?>
