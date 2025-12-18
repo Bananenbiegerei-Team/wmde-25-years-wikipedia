@@ -77,8 +77,8 @@
             },
             "return_format": "id",
             "library": "all",
-            "min": 9,
-            "max": 9,
+            "min": "",
+            "max": "",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -108,5 +108,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1765794800
+    "modified": 1766059484
 }
