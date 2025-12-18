@@ -31,7 +31,7 @@ $glam_cta = get_field('glam_cta');
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light relative">
     <?php if (!is_admin()): ?>
-    <div class="pb-16 glam-container">
+    <div class="pb-16 overflow-hidden glam-container">
         <div class="!text-secondary-light w-full relative">
         <?php include get_template_directory() . '/blocks/w25-glam/transition-top.svg'; ?>
         <?php
@@ -51,14 +51,14 @@ $glam_cta = get_field('glam_cta');
         <?php endif; ?>
         </div>
         <div class="container relative z-20">
-            <div class="glam-content-sticky pl-[50%]">
-                <div class="mr-8 space-y-8">
+            <div class="glam-content-sticky pl-[40%] md:pl-[50%]">
+                <div class="mr-8 space-y-4 md:space-y-8">
                     <?php if ($headline): ?>
-                <h2 class="text-3xl lg:text-6xl"><?php echo esc_html($headline); ?></h2>
+                <h2 class="text-2xl md:text-6xl"><?php echo esc_html($headline); ?></h2>
                 <?php endif; ?>
 
                 <?php if ($describtion): ?>
-                <div class="text-xl leading-tight md:text-2xl lg:text-3xl font-headings">
+                <div class="text-xl leading-tight md:text-2xl md:text-3xl font-headings">
                     <?php echo nl2br(esc_html($describtion)); ?>
                 </div>
                 <?php endif; ?>

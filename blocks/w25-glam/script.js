@@ -61,11 +61,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		const isMobile = window.innerWidth < 768;
 
 		// Distance from bottom - all items come from below the viewport
-		const distance = isMobile ? '80vh' : '100vh';
+		const distance = isMobile ? '100vh' : '100vh';
 
 		// Calculate the scroll range for triggering items
 		const itemCount = puzzleItems.length;
-		const scrollRange = isMobile ? 50 : 800; // Total scroll distance to spread all triggers across (smaller on mobile)
+		// Scroll range as percentage of viewport height, converted to pixels
+		const scrollRangeVh = isMobile ? 30 : 100; // Viewport height percentage
+		const scrollRange = (scrollRangeVh / 100) * window.innerHeight; // Convert vh to pixels
+
+		// Animation duration (scroll distance for each item animation)
+		const animationDurationVh = isMobile ? 1 : 10; // Viewport height percentage
+		const animationDuration = (animationDurationVh / 100) * window.innerHeight; // Convert vh to pixels
 
 		// Animate each puzzle item with individual scroll triggers
 		puzzleItems.forEach((item, index) => {
@@ -85,10 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
 					scrollTrigger: {
 						trigger: container,
 						start: () => `top+=${triggerOffset}px center`, // Each item triggers at different scroll position when container hits center
-						end: () => `top+=${triggerOffset + 300}px center`, // Animation completes over 300px of scroll
+						end: () => `top+=${triggerOffset + animationDuration}px center`, // Animation completes over animationDuration of scroll
 						scrub: 1, // Smooth scrubbing effect - animation tied to scroll
 						markers: false, // Set to true for debugging
-						toggleActions: 'play none none reverse'
+						toggleActions: 'play none none reverse',
+						id: `glam-puzzle-${index + 1}` // Custom name for markers
 					}
 				}
 			);
