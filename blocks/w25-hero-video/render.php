@@ -30,7 +30,7 @@ if (!empty($block['align'])) {
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="w25-video-hero relative w-full bg-secondary <?php echo esc_attr($className); ?>">
-    <div class="relative h-mobilescreenheader video-overlay md:h-screenheader">
+    <div class="relative h-dvhheader video-overlay md:h-dvhheaderdesktop">
         <?php get_template_part('blocks/w25-hero-video/partials/overlay'); ?>
         <?php
             $video_swiper_gallery = get_field('video_swiper');

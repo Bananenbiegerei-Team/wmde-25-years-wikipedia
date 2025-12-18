@@ -81,7 +81,11 @@ module.exports = {
 			height: {
 				specialscreen: 'calc(100vh - 5rem)',
 				screenheader: 'calc(100vh - 123px)', // 100vh minus header
-				mobilescreenheader: 'calc(100vh - 3.5rem)'
+				mobilescreenheader: 'calc(100vh - 3.5rem)',
+				// Dynamic viewport heights (adjusts for mobile browser UI)
+				dvhfull: '100dvh', // Full dynamic viewport
+				dvhheader: 'calc(100dvh - 3.5rem)', // Mobile: dynamic viewport minus header
+				dvhheaderdesktop: 'calc(100dvh - 123px)' // Desktop: dynamic viewport minus header
 			},
 			maxHeight: {
 				'screen-80': '80vh',
