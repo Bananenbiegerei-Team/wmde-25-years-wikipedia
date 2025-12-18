@@ -57,21 +57,27 @@ document.addEventListener('DOMContentLoaded', function() {
 		const puzzleItems = container.querySelectorAll('.puzzle-item');
 		const stickyContent = document.querySelector('.glam-content-sticky');
 
-		// Detect if mobile (width < 768px - Tailwind md breakpoint)
-		const isMobile = window.innerWidth < 768;
+		// Detect orientation mode (portrait vs landscape)
+		// Portrait: height > width (phones, tablets held vertically)
+		// Landscape: width > height (desktops, tablets held horizontally)
+		const isPortrait = window.innerHeight > window.innerWidth;
 
 		// Distance from bottom - all items come from below the viewport
-		const distance = isMobile ? '100vh' : '100vh';
+		const distance = '100vh'; // Always start from full viewport height below
 
 		// Calculate the scroll range for triggering items
 		const itemCount = puzzleItems.length;
 		// Scroll range as percentage of viewport height, converted to pixels
-		const scrollRangeVh = isMobile ? 30 : 100; // Viewport height percentage
-		const scrollRange = (scrollRangeVh / 100) * window.innerHeight; // Convert vh to pixels
+		// Portrait: tighter spacing (30vh) for vertical scrolling
+		// Landscape: wider spacing (50vh) for horizontal viewing
+		const scrollRangeVh = isPortrait ? 30 : 50;
+		const scrollRange = (scrollRangeVh / 100) * window.innerHeight;
 
 		// Animation duration (scroll distance for each item animation)
-		const animationDurationVh = isMobile ? 1 : 10; // Viewport height percentage
-		const animationDuration = (animationDurationVh / 100) * window.innerHeight; // Convert vh to pixels
+		// Portrait: faster animation (1vh) for quick reveals
+		// Landscape: slower animation (10vh) for smoother transitions
+		const animationDurationVh = isPortrait ? 1 : 10;
+		const animationDuration = (animationDurationVh / 100) * window.innerHeight;
 
 		// Animate each puzzle item with individual scroll triggers
 		puzzleItems.forEach((item, index) => {
@@ -90,12 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					ease: 'power2.out',
 					scrollTrigger: {
 						trigger: container,
-						start: () => `top+=${triggerOffset}px center`, // Each item triggers at different scroll position when container hits center
-						end: () => `top+=${triggerOffset + animationDuration}px center`, // Animation completes over animationDuration of scroll
-						scrub: 1, // Smooth scrubbing effect - animation tied to scroll
+						start: () => `top+=${triggerOffset}px center`, // Each item triggers at staggered positions
+						end: () => `top+=${triggerOffset + animationDuration}px center`, // Animation completes over duration distance
+						scrub: 1, // Smooth scrubbing - animation tied directly to scroll position
 						markers: false, // Set to true for debugging
 						toggleActions: 'play none none reverse',
-						id: `glam-puzzle-${index + 1}` // Custom name for markers
+						id: `glam-puzzle-${index + 1}` // Custom name for debugging markers
 					}
 				}
 			);
@@ -105,12 +111,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (stickyContent && glamContainer) {
 			ScrollTrigger.create({
 				trigger: glamContainer,
-				start: 'top top', // Pin when container reaches 96px from top (6rem)
-				end: 'bottom bottom',
+				start: 'top top', // Pin when container reaches top of viewport
+				end: 'bottom bottom', // Unpin when container bottom reaches viewport bottom
 				pin: stickyContent,
-				pinSpacing: true,
+				pinSpacing: true, // Add spacing to prevent content jump
 				markers: false, // Set to false for production
-				id: 'glam-sticky-pin' // Custom name for markers
+				id: 'glam-sticky-pin' // Custom name for debugging markers
 			});
 		}
 	}
