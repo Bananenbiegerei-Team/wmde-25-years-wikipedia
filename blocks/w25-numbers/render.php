@@ -68,7 +68,7 @@ $display = get_field('display');
         </div>
     <?php else: ?>
     <div class="p-8">
-        <h2 class="text-base font-texts">edit numbers headline</h2>
+        <h2 class="text-base font-texts">edit numbers!</h2>
     </div>
     <?php endif; ?>
     </div>
