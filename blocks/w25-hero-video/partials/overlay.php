@@ -16,5 +16,5 @@
     alt="<?php echo esc_attr( '25 Jahre Wikipedia Logo', 'wmde-25-years-wikipedia' ); ?>"
   >
 
-  <?php get_template_part('blocks/w25-hero-video/play-button'); ?>
+  <?php get_template_part('blocks/w25-hero-video/partials/play-button'); ?>
 </div>
