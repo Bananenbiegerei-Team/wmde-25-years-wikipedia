@@ -31,26 +31,26 @@ $glam_cta = get_field('glam_cta');
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light relative">
     <?php if (!is_admin()): ?>
-    <div class="pb-16 overflow-hidden glam-container">
-        <div class="!text-secondary-light w-full relative">
-        <?php include get_template_directory() . '/blocks/w25-glam/transition-top.svg'; ?>
+    <div class="overflow-hidden glam-container">
+        <div class="relative w-full">
+        <img src="<?php echo get_template_directory_uri(); ?>/blocks/w25-glam/transition-top.png" alt="" class="block w-full h-auto">
         <?php
         $glam_puzzles = get_field('glam_puzzles');
         if ($glam_puzzles): ?>
         <div id="glam-puzzles-container" class="absolute top-0 left-0 z-10 w-full h-full pointer-events-none glam-puzzles">
             <?php $puzzle_index = 1;
             foreach ($glam_puzzles as $image_id):
-            $image_url = wp_get_attachment_image_url($image_id, 'medium');
+            $image_url = wp_get_attachment_image_url($image_id, 'full');
             $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
             ?>
-            <img class="absolute w-[14vw] h-auto puzzle-item puzzle-<?php echo $puzzle_index; ?>"
+            <img class="absolute w-full h-auto puzzle-item puzzle-<?php echo $puzzle_index; ?>"
                 src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
             <?php $puzzle_index++;
             endforeach; ?>
         </div>
         <?php endif; ?>
         </div>
-        <div class="container relative z-20">
+        <div class="container relative z-20 h-full">
             <div class="glam-content-sticky pl-[40%] md:pl-[50%]">
                 <div class="mr-8 space-y-4 md:space-y-8">
                     <?php if ($headline): ?>

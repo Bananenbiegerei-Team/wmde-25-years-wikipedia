@@ -105,10 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (stickyContent && glamContainer) {
 			ScrollTrigger.create({
 				trigger: glamContainer,
-				start: 'top top+=96', // Pin when container reaches 96px from top (6rem)
+				start: 'top top', // Pin when container reaches 96px from top (6rem)
 				end: 'bottom bottom',
 				pin: stickyContent,
-				pinSpacing: false,
+				pinSpacing: true,
 				markers: false, // Set to false for production
 				id: 'glam-sticky-pin' // Custom name for markers
 			});
