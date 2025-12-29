@@ -31,7 +31,7 @@ $display = get_field('display');
     <div class="container h-full">
     <?php if (!is_admin()): ?>
         <?php if ( get_field('headline') ) : ?>
-            <h2 class="py-10 mb-8 text-3xl lg:text-6xl">
+            <h2 class="py-10 mb-8 text-2xl lg:text-4xl xl:text-6xl">
                 <?php echo get_field('headline'); ?>
             </h2>
         <?php endif; ?>
