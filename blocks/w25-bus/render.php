@@ -97,7 +97,14 @@ if ($image && is_array($image)) {
             </div>
         </div>
         <div class="relative z-10">
-            <?php get_template_part('blocks/w25-bus/puzzle'); ?>
+            <?php
+            // Load mobile template for mobile devices, desktop template for others
+            if (wp_is_mobile()) {
+                get_template_part('blocks/w25-bus/puzzle-mobile');
+            } else {
+                get_template_part('blocks/w25-bus/puzzle');
+            }
+            ?>
         </div>
     </div>
 
