@@ -16,15 +16,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		// Calculate the scroll range for triggering items
 		const itemCount = busItems.length;
-		const scrollRange = isMobile ? 10 : 100; // Total scroll distance to spread all triggers across
+		// Scroll range determines how much scrolling is needed to complete all animations
+		// Lower values = animations finish sooner, higher values = animations spread over more scroll
+		const scrollRange = isMobile ? 300 : 300;
 
-		// Animate each bus item with individual scroll triggers
+		// Use a single timeline with staggered animations instead of individual ScrollTriggers
+		// This is more performant than creating 27 separate ScrollTrigger instances
+		const timeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: container,
+				start: 'top center',
+				end: () => `+=${scrollRange}`,
+				scrub: 1,
+				markers: true
+			}
+		});
+
+		// Add all animations to a single timeline with stagger
 		busItems.forEach((item, index) => {
-			// Calculate trigger position for this item based on its index
-			// Spread triggers evenly across the scroll range
-			const triggerOffset = (index / (itemCount - 1)) * scrollRange;
+			const startProgress = index / itemCount;
+			const endProgress = (index + 1) / itemCount;
 
-			gsap.fromTo(item,
+			timeline.fromTo(item,
 				{
 					opacity: 0,
 					y: distance
@@ -33,15 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
 					y: 0,
 					opacity: 1,
 					ease: 'power2.out',
-					scrollTrigger: {
-						trigger: container,
-						start: () => `top+=${triggerOffset}px center`, // Each item triggers at different scroll position
-						end: () => `top+=${triggerOffset + 200}px center`, // Animation completes over 300px of scroll
-						scrub: 1, // Smooth scrubbing effect - animation tied to scroll
-						markers: false, // Set to true for debugging
-						toggleActions: 'play none none reverse'
-					}
-				}
+					duration: 1
+				},
+				startProgress
 			);
 		});
 	}

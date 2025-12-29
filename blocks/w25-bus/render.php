@@ -42,16 +42,16 @@ if ($image && is_array($image)) {
     <div class="relative bg-secondary-light">
         <div class="relative top-0 left-0 z-20 w-full h-full lg:absolute">
             <div class="container">
-                <div class="max-w-5xl mb-8 space-y-4 lg:space-y-8 lg:w-1/2 bg-secondary-light">
+                <div class="max-w-5xl pt-8 pr-8 mb-8 space-y-4 lg:pt-16 lg:w-1/2">
                     <?php if ($headline): ?>
                     <h2
-                        class="pt-8 text-3xl lg:pt-24 before:bg-secondary-light lg:text-6xl before:h-full before:w-full before:absolute before:top-0 before:-left-full">
+                        class="text-3xl lg:text-4xl xl:text-6xl">
                         <?php echo esc_html($headline); ?>
                     </h2>
                     <?php endif; ?>
 
                     <?php if ($text): ?>
-                    <div class="mb-0 text-2xl font-headings">
+                    <div class="mb-0 text-xl leading-tight xl:text-2xl font-headings">
                         <?php echo nl2br(esc_html($text)); ?>
                     </div>
                     <?php endif; ?>
@@ -66,7 +66,7 @@ if ($image && is_array($image)) {
                     <?php if (have_rows('social_media')): ?>
                 <?php if ( get_field('social_media_headline') ) : ?>
                 <div>
-                <h3 class="mt-8 mb-4 lg:mt-16">
+                <h3 class="mt-8 mb-4 text-xl leading-tight xl:text-2xl">
                     <?php echo get_field('social_media_headline'); ?>
                 </h3>
                 <?php endif; ?>
