@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				start: 'top center',
 				end: () => `+=${scrollRange}`,
 				scrub: 1,
-				markers: true
+				markers: false
 			}
 		});
 
