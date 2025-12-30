@@ -27,9 +27,9 @@ if (!empty($block['align'])) {
 $block_headline = get_field('headline');
 ?>
 <?php if (!is_admin()): ?>
-<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?> py-8">
+<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?> pt-8">
     <?php if ($block_headline): ?>
-    <h2 class="max-w-3xl mb-4 text-3xl lg:mb-8 lg:text-6xl"><?php echo esc_html($block_headline); ?></h2>
+    <h2 class="max-w-3xl mb-4 text-2xl lg:text-4xl xl:text-6xl lg:mb-8"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>
     <?php if (have_rows('knowledge_swiper')): ?>
     <div class="flex items-center justify-center mb-8">
