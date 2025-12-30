@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		const itemCount = busItems.length;
 		// Scroll range determines how much scrolling is needed to complete all animations
 		// Lower values = animations finish sooner, higher values = animations spread over more scroll
-		const scrollRange = isMobile ? 300 : 300;
+		const scrollRange = isMobile ? 300 : 700;
 
 		// Use a single timeline with staggered animations instead of individual ScrollTriggers
 		// This is more performant than creating 27 separate ScrollTrigger instances
 		const timeline = gsap.timeline({
 			scrollTrigger: {
 				trigger: container,
-				start: 'top center',
+				start: 'top-=200 center',
 				end: () => `+=${scrollRange}`,
 				scrub: 1,
 				markers: false

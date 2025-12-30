@@ -70,7 +70,7 @@ $block_headline = get_field('headline');
                         <div class="p-4">
                         <?php if ($headline): ?>
                             <?php if ($link): ?>
-                                <h3 class="mb-2 text-2xl lg:text-4xl xl:text-6xl">
+                                <h3 class="mb-2 lg:text-3xl">
                                 <a href="<?php echo esc_url($link['url']); ?>" class="after:content-[''] after:absolute after:inset-0 after:z-10 hover:underline hover:underline-offset-2 decoration-1"<?php if (!empty($link['target'])): ?> target="<?php echo esc_attr($link['target']); ?>"<?php endif; ?>>
                                     <?php echo esc_html($headline); ?>
                                 </a>
