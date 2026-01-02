@@ -40,6 +40,16 @@ if ($image && is_array($image)) {
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="overflow-hidden relative <?php echo esc_attr($className); ?>">
     <div class="relative bg-secondary-light">
+        <div class="relative z-10">
+            <?php
+            // Load mobile template for mobile devices, desktop template for others
+            if (wp_is_mobile()) {
+                get_template_part('blocks/w25-bus/puzzle-mobile');
+            } else {
+                get_template_part('blocks/w25-bus/puzzle');
+            }
+            ?>
+        </div>
         <div class="relative top-0 left-0 z-20 w-full h-full lg:absolute">
             <div class="container">
                 <div class="max-w-5xl pt-8 pr-8 mb-8 space-y-4 lg:pt-16 lg:w-1/2">
@@ -96,16 +106,7 @@ if ($image && is_array($image)) {
                 </div>
             </div>
         </div>
-        <div class="relative z-10">
-            <?php
-            // Load mobile template for mobile devices, desktop template for others
-            if (wp_is_mobile()) {
-                get_template_part('blocks/w25-bus/puzzle-mobile');
-            } else {
-                get_template_part('blocks/w25-bus/puzzle');
-            }
-            ?>
-        </div>
+
     </div>
 
 </div>
