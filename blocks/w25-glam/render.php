@@ -66,7 +66,9 @@ $glam_cta = get_field('glam_cta');
                 <?php if ($glam_cta): ?>
                     <a href="<?php echo esc_url($glam_cta['url']); ?>" class="btn btn-outline"
                         <?php if ($glam_cta['target']): ?>target="<?php echo esc_attr($glam_cta['target']); ?>"
-                        <?php endif; ?>>
+                        <?php endif; ?>
+                        onclick="window._paq && window._paq.push(['trackEvent','CTA','Klick','GLAM CTA Button',1])"
+                        >
                         <?php echo esc_html($glam_cta['title']); ?>
                     </a>
                 <?php endif; ?>

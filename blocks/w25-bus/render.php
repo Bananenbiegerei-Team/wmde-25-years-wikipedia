@@ -88,7 +88,9 @@ if ($image && is_array($image)) {
                     ?>
                     <li>
                         <a class="btn btn-ghost btn-sm social-icon-link" href="<?php echo esc_url($link); ?>" target="_blank"
-                            rel="noopener noreferrer">
+                            rel="noopener noreferrer"
+                            onclick="window._paq && window._paq.push(['trackEvent','CTA','Klick','<?php echo esc_url($link); ?>',1])"
+                            >
                             <?php
                             $attr = [
                                 'class' => 'h-8 w-auto'

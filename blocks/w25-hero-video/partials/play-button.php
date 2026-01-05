@@ -1,6 +1,8 @@
 <button
     class="play-button font-headings md:text-2xl absolute left-1/2 top-[calc(50%+2rem)] -translate-x-1/2 md:translate-x-0 md:right-12 md:bottom-8 md:top-auto md:left-auto flex items-center justify-center gap-2 md:gap-4 group"
-    aria-label="<?php echo esc_attr( 'Play full video', 'wmde-25-years-wikipedia' ); ?>">
+    aria-label="<?php echo esc_attr( 'Play full video', 'wmde-25-years-wikipedia' ); ?>"
+    onclick="window._paq && window._paq.push(['trackEvent','CTA','Klick','Video Play Button',1])"
+    >
     <svg class="w-12 h-12 md:w-16 md:h-16" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle class="transition-[fill-opacity] [fill-opacity:.1] group-hover:[fill-opacity:1]" cx="40" cy="40" r="39"
             fill="black" stroke="black" stroke-width="2" />
