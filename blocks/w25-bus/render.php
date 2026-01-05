@@ -52,7 +52,7 @@ if ($image && is_array($image)) {
         </div>
         <div class="relative top-0 left-0 z-20 w-full h-full lg:absolute">
             <div class="container">
-                <div class="max-w-5xl pt-8 pr-8 mb-8 space-y-4 lg:pt-16 lg:w-1/2">
+                <div class="max-w-5xl space-y-4 lg:pt-8 lg:pr-8 lg:mb-8 lg:pt-16 lg:w-1/2">
                     <?php if ($headline): ?>
                     <h2
                         class="text-2xl lg:text-4xl xl:text-6xl">

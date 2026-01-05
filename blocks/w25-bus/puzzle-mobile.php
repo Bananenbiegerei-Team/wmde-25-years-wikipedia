@@ -2,8 +2,8 @@
 $template_uri = get_template_directory_uri();
 ?>
 <div class="relative lg:hidden">
-    <div class="relative flex justify-end w-full">
-        <img class="w-3/4 h-auto"
+    <div class="relative flex justify-end w-full pt-8">
+        <img class="w-full h-auto"
             src="<?php echo $template_uri; ?>/blocks/w25-bus/img/bus-mobile.png"
             alt="Bus mobile image">
     </div>
