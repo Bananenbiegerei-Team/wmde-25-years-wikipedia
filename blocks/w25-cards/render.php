@@ -42,7 +42,7 @@ $cards       = get_field('cards') ?: [];
                 <?php endif; ?>
 
                 <?php if ($text): ?>
-                <p class="mt-3 text-xl md:text-2xl lg:text-3xl  max-w-[75%] font-headings">
+                <p class="mt-3 text-xl md:text-2xl lg:text-3xl lg:max-w-[75%] font-headings">
                     <?php echo esc_html($text); ?>
                 </p>
                 <?php endif; ?>
