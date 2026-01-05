@@ -1,6 +1,6 @@
 [submodule "bb-blocks"]
 	path = bb-blocks
-	url = git@github.com:bananenbiegerei/bb-blocks
+	url = git@github.com:bananenbiegerei-Team/bb-blocks
 [submodule "bb-components"]
 	path = bb-components
-	url = git@github.com:bananenbiegerei/bb-components/
+	url = git@github.com:bananenbiegerei-Team/bb-components/
