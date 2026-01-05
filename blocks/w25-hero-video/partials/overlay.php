@@ -1,9 +1,20 @@
 <div class="overlay absolute top-0 left-0 z-20 w-full h-full">
-  <div class="overlayPuzzles absolute inset-0">
+  <div class="hidden md:block overlayPuzzles absolute inset-0">
     <?php for ($i = 1; $i <= 6; $i++): ?>
       <img
-        class="overlayPuzzle object-cover w-full h-full absolute inset-0 <?php echo $i === 1 ? 'opacity-100' : 'opacity-0'; ?>"
+        class="overlayPuzzle desktop object-cover w-full h-full absolute inset-0 <?php echo $i === 1 ? 'opacity-100' : 'opacity-0'; ?>"
         src="<?php echo esc_url(get_template_directory_uri() . '/blocks/w25-hero-video/assets/Puzzle-Header' . $i . '.svg'); ?>"
+        alt="<?php echo esc_attr('Hero Video Placeholder ' . $i, 'wmde-25-years-wikipedia'); ?>"
+        data-puzzle="<?php echo esc_attr($i); ?>"
+      >
+    <?php endfor; ?>
+  </div>
+
+  <div class=" md:hidden overlayPuzzles absolute inset-0">
+    <?php for ($i = 1; $i <= 4; $i++): ?>
+      <img
+        class="overlayPuzzle mobile object-cover w-full h-full absolute inset-0 <?php echo $i === 1 ? 'opacity-100' : 'opacity-0'; ?>"
+        src="<?php echo esc_url(get_template_directory_uri() . '/blocks/w25-hero-video/assets/MOBILE-Overlay' . $i . '.svg'); ?>"
         alt="<?php echo esc_attr('Hero Video Placeholder ' . $i, 'wmde-25-years-wikipedia'); ?>"
         data-puzzle="<?php echo esc_attr($i); ?>"
       >

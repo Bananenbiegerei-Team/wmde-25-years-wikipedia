@@ -1,122 +1,136 @@
-import Plyr from 'plyr';
-import 'plyr/dist/plyr.css';
+import Plyr from 'plyr'
+import 'plyr/dist/plyr.css'
 
 function toggleBodyLock() {
-    document.body.classList.toggle('overflow-hidden');
+    document.body.classList.toggle('overflow-hidden')
+}
+
+// helper: creates an infinite fade loop for a list of elements
+function createPuzzleTimeline(puzzles, { t_fade = 1, pause = 2 } = {}) {
+    if (!puzzles || puzzles.length < 2) return null
+
+    gsap.set(puzzles, { opacity: 0 })
+    gsap.set(puzzles[0], { opacity: 1 })
+
+    const tl = gsap.timeline({ repeat: -1 })
+
+    puzzles.forEach((current, i) => {
+        const next = puzzles[(i + 1) % puzzles.length]
+
+        tl.to(
+            next,
+            { opacity: 1, duration: t_fade },
+            `+=${pause}`
+        )
+
+        tl.to(
+            current,
+            { opacity: 0, duration: t_fade },
+            `+=${pause}`
+        )
+    })
+
+    return tl
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const components = document.querySelectorAll('.w25-hero-video')
+    const videoModal = document.querySelector('.video-hero-modal')
+    const closeBtn = videoModal ? videoModal.querySelector('.close-button') : null
+    const backdrop = videoModal ? videoModal.querySelector('.backdrop') : null
 
-    const components = document.querySelectorAll('.w25-hero-video');
-    const videoModal = document.querySelector('.video-hero-modal');
-    const closeBtn = videoModal ? videoModal.querySelector('.close-button') : null;
-    const backdrop = videoModal ? videoModal.querySelector('.backdrop') : null;
-
+    // Match your breakpoint as needed
+    const mm = gsap.matchMedia()
 
     components.forEach((component) => {
+        // IMPORTANT: query INSIDE the component and split by desktop/mobile classes
+        const desktopPuzzles = Array.from(component.querySelectorAll('.overlayPuzzle.desktop'))
+        const mobilePuzzles = Array.from(component.querySelectorAll('.overlayPuzzle.mobile'))
 
+        // Create timelines (we’ll pause one depending on viewport)
+        const desktopTl = createPuzzleTimeline(desktopPuzzles)
+        const mobileTl = createPuzzleTimeline(mobilePuzzles)
 
-        const overlayPuzzles = gsap.utils.toArray('.overlayPuzzle', component);
-        if (overlayPuzzles.length < 2) return;
+        // Only run the relevant one
+        mm.add(
+            {
+                isDesktop: '(min-width: 1024px)',
+                isMobile: '(max-width: 1023px)',
+            },
+            (ctx) => {
+                const { isDesktop, isMobile } = ctx.conditions
 
-        const t_fade = 1;
-        const pause = 2;
+                if (desktopTl) desktopTl.pause(0)
+                if (mobileTl) mobileTl.pause(0)
 
-        gsap.set(overlayPuzzles, { opacity: 0 });
-        gsap.set(overlayPuzzles[0], { opacity: 1 });
+                if (isDesktop) {
+                    if (desktopTl) desktopTl.play(0)
+                    if (mobileTl) mobileTl.pause(0)
+                }
 
-        const tl = gsap.timeline({ repeat: -1 });
+                if (isMobile) {
+                    if (mobileTl) mobileTl.play(0)
+                    if (desktopTl) desktopTl.pause(0)
+                }
 
-        overlayPuzzles.forEach((current, i) => {
-            const next = overlayPuzzles[(i + 1) % overlayPuzzles.length];
+                // cleanup when media query changes
+                return () => {
+                    if (desktopTl) desktopTl.pause(0)
+                    if (mobileTl) mobileTl.pause(0)
+                }
+            }
+        )
+    })
 
-            tl.to(next, {
-                opacity: 1,
-                duration: t_fade
-            }, `+=${pause}`);
-
-            tl.to(current, {
-                opacity: 0,
-                duration: t_fade
-            }, `+=${pause}`);
-        });
-
-    });
-    components.forEach( ( component ) => {
-
+    components.forEach((component) => {
         // Initialize hero swiper if it exists
-        const heroSwiper = component.querySelector('.hero-swiper');
+        const heroSwiper = component.querySelector('.hero-swiper')
         if (heroSwiper) {
             new window.Swiper('.hero-swiper', {
                 effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
+                fadeEffect: { crossFade: true },
                 loop: true,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
+                autoplay: { delay: 3000, disableOnInteraction: false },
                 speed: 2000,
                 modules: [window.Autoplay, window.EffectFade],
-            });
+            })
         }
 
-        const videoEl = videoModal.querySelector('.plyr');
-        console.log(videoEl);
-        if (!videoEl) return;
+        if (!videoModal) return
+        const videoEl = videoModal.querySelector('.plyr')
+        if (!videoEl) return
 
-        const plyrInstance = new Plyr(videoEl);
-
-        const playBtn = component.querySelector('.play-button');
+        const plyrInstance = new Plyr(videoEl)
+        const playBtn = component.querySelector('.play-button')
 
         if (playBtn) {
             playBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log(videoModal);
-                if (videoModal) videoModal.classList.remove('hidden');
+                e.preventDefault()
+                videoModal.classList.remove('hidden')
 
-                videoEl.style.display = 'block';
-                videoModal.style.top = window.scrollY + 'px';
+                videoEl.style.display = 'block'
+                videoModal.style.top = window.scrollY + 'px'
 
                 setTimeout(() => {
-                    const playPromise = plyrInstance.play();
+                    const playPromise = plyrInstance.play()
                     if (playPromise && typeof playPromise.then === 'function') {
-                        playPromise.catch(() => {
-                            // Autoplay might be blocked; user interaction already occurred so ignore errors.
-                        });
+                        playPromise.catch(() => { })
                     }
-                }, 1400);
+                }, 1400)
 
-                toggleBodyLock();
-            });
+                toggleBodyLock()
+            })
         }
 
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (videoModal) videoModal.classList.add('hidden');
-                
-                plyrInstance.pause();
-                videoEl.style.display = 'none';
-
-
-                toggleBodyLock();
-            });
+        const close = (e) => {
+            e?.preventDefault?.()
+            videoModal.classList.add('hidden')
+            plyrInstance.pause()
+            videoEl.style.display = 'none'
+            toggleBodyLock()
         }
 
-        if (backdrop) {
-            backdrop.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (videoModal) videoModal.classList.add('hidden');
-                
-                plyrInstance.pause();
-                videoEl.style.display = 'none';
-
-
-                toggleBodyLock();
-            });
-        }
-    });
-
-});
+        if (closeBtn) closeBtn.addEventListener('click', close)
+        if (backdrop) backdrop.addEventListener('click', close)
+    })
+})
