@@ -22,7 +22,7 @@
         }
     ?>
     <?php if ( $link ) : ?>
-    <a class="!font-menu !font-medium !text-lg <?php echo esc_attr($btn_class); ?>" href="<?php echo esc_url( $link['url'] ); ?>"
+    <a class="!font-menus !font-medium !text-lg <?php echo esc_attr($btn_class); ?>" href="<?php echo esc_url( $link['url'] ); ?>"
         target="<?php echo esc_attr( $link['target'] ); ?>"
         onclick="window._paq && window._paq.push(['trackEvent','CTA','Klick','<?php echo esc_js( esc_html( $link['title'] ) ); ?>',1])"><?php echo esc_html( $link['title'] ); ?></a>
     <?php endif; ?>
