@@ -40,6 +40,11 @@ ul:not([class]),
 ol:not([class]) {
 	@apply leading-tight text-lg lg:text-xl font-normal max-w-4xl;
 }
+
+footer p {
+	@apply text-base lg:text-base;
+}
+ 
 .topline {
 	@apply uppercase font-headings text-sm text-primary;
 }

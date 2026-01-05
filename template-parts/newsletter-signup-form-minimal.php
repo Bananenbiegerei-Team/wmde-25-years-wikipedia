@@ -1,5 +1,5 @@
 <div class="flex flex-col">
-    <h3 for="newsletter-signup-form" class="mb-2 text-base text-primary font-texts"><?php _e('Newlsetter Anmeldung', BB_TEXT_DOMAIN); ?></h3>
+    <h3 for="newsletter-signup-form" class="mb-2 text-base text-blue-dark font-alt"><?php _e('Newlsetter Anmeldung', BB_TEXT_DOMAIN); ?></h3>
     <form action="https://t874ad7c5.emailsys1a.net/191/2155/d537ac9314/subscribe/form.html" method="post" id="newsletter-signup-form">
         <ul class="relative no-bullet newsletter-form-minimal">
             <li style="position:absolute; z-index: -100; left:-6000px;" aria-hidden="true">
@@ -22,7 +22,7 @@
 <div x-data="{ open: false }" class="">
     <!-- Trigger -->
     <span x-on:click="open = true">
-        <button type="button" class="-mx-2 btn btn-link btn-xs font-texts">
+        <button type="button" class="-mx-2 btn btn-link btn-xs font-alt text-blue-dark">
             <?php _e('DSGVO Hinweis', BB_TEXT_DOMAIN); ?>
         </button>
     </span>

@@ -74,6 +74,10 @@
 	@apply content-[attr(aria-label)];
 }
 
+footer .btn.btn-link {
+	@apply font-alt text-blue-dark;
+}
+
 // Styled
 // hover + active color changes around 4-5 steps
 .btn {
@@ -286,6 +290,8 @@
 			@apply border-transparent bg-transparent underline;
 		}
 	}
+
+
 
 	/* outline */
 	&-outline {
