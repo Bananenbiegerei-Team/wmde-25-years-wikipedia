@@ -35,8 +35,8 @@ $description = get_field('description');
     <div class="flex max-w-xl gap-4 lg:max-w-5xl lg:pr-16">
         <?php if ($icon_url): ?>
         <img class="w-auto h-[27px] lg:h-[52px]" src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>">
-        <div>
         <?php endif; ?>
+        <div>
             <?php if ($headline): ?>
             <h2 class="mb-2 text-2xl lg:text-4xl xl:text-6xl">
                 <?php echo esc_html($headline); ?>
