@@ -33,31 +33,28 @@ $glam_cta = get_field('glam_cta');
     <?php if (!is_admin()): ?>
     <div class="overflow-hidden glam-container">
         <div class="relative w-full">
-        <img src="<?php echo get_template_directory_uri(); ?>/blocks/w25-glam/transition-top.png" alt="Puzzle Teile als Trenner oben" class="block w-full h-auto origin-top-left scale-[200%] md:scale-100">
+        <img src="<?php echo get_template_directory_uri(); ?>/blocks/w25-glam/transition-top.png" alt="" class="block w-full h-auto">
         <?php
         $glam_puzzles = get_field('glam_puzzles');
         if ($glam_puzzles): ?>
         <div id="glam-puzzles-container" class="absolute top-0 left-0 z-10 w-full h-full pointer-events-none glam-puzzles">
-            <?php
-            $puzzle_index = 1;
+            <?php $puzzle_index = 1;
             foreach ($glam_puzzles as $image_id):
             $image_url = wp_get_attachment_image_url($image_id, 'full');
             $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-            // Hide images 4+ on mobile/tablet (< 1024px) using CSS
-            $hide_class = ($puzzle_index > 3) ? 'hidden md:block' : '';
             ?>
-            <img class="absolute scale-[200%] origin-top-left md:scale-100 w-full h-auto puzzle-item puzzle-<?php echo $puzzle_index; ?> <?php echo $hide_class; ?>"
+            <img class="absolute w-full h-auto puzzle-item puzzle-<?php echo $puzzle_index; ?>"
                 src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
             <?php $puzzle_index++;
             endforeach; ?>
         </div>
         <?php endif; ?>
         </div>
-        <div class="container relative mt-[40vw] md:mt-0 z-20 h-full pb-12">
-            <div class="glam-content-sticky pl-0 md:pl-[50%]">
+        <div class="container relative z-20 h-full pb-12">
+            <div class="glam-content-sticky pl-[40%] md:pl-[50%]">
                 <div class="mr-8 space-y-4 md:space-y-8">
                     <?php if ($headline): ?>
-                <h2 class="text-2xl md:text-4xl xl:text-6xl"><?php echo esc_html($headline); ?></h2>
+                <h2 class="text-2xl lg:text-4xl xl:text-6xl"><?php echo esc_html($headline); ?></h2>
                 <?php endif; ?>
 
                 <?php if ($describtion): ?>

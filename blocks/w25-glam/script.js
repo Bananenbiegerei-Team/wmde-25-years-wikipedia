@@ -70,13 +70,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		// Scroll range as percentage of viewport height, converted to pixels
 		// Portrait: tighter spacing (30vh) for vertical scrolling
 		// Landscape: wider spacing (50vh) for horizontal viewing
-		const scrollRangeVh = isPortrait ? 30 : 50;
+		const scrollRangeVh = isPortrait ? 60 : 50;
 		const scrollRange = (scrollRangeVh / 100) * window.innerHeight;
 
 		// Animation duration (scroll distance for each item animation)
 		// Portrait: faster animation (1vh) for quick reveals
 		// Landscape: slower animation (10vh) for smoother transitions
-		const animationDurationVh = isPortrait ? 1 : 10;
+		const animationDurationVh = isPortrait ? 30 : 10;
 		const animationDuration = (animationDurationVh / 100) * window.innerHeight;
 
 		// Animate each puzzle item with individual scroll triggers
@@ -108,7 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 
 		// Create sticky effect for content using ScrollTrigger pin
-		if (stickyContent && glamContainer) {
+		// Only enable on landscape/desktop (width >= 1024px) to avoid sticky on mobile
+		if (stickyContent && glamContainer && !isPortrait) {
 			ScrollTrigger.create({
 				trigger: glamContainer,
 				start: 'top top', // Pin when container reaches top of viewport
