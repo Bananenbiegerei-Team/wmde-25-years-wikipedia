@@ -3,4 +3,4 @@
 	url = git@github.com:bananenbiegerei/bb-blocks
 [submodule "bb-components"]
 	path = bb-components
-	url = ./bb-components/
+	url = git@github.com:bananenbiegerei/bb-components/
