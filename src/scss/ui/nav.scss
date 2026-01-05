@@ -41,7 +41,7 @@
 
 // Button menu base styles
 .btn-menu {
-	@apply rounded-md inline-flex select-none flex-wrap items-center justify-start border-transparent text-left transition duration-200 ease-out leading-none text-base p-3 bg-transparent text-black font-alt font-medium hover:bg-gray hover:border-gray mb-0 h-16 lg:h-auto;
+	@apply rounded-md inline-flex select-none flex-wrap items-center justify-start border-transparent text-left transition duration-200 ease-out leading-none text-base p-3 bg-transparent text-black font-menu font-medium hover:bg-gray hover:border-gray mb-0 h-16 lg:h-auto;
 
 	&.current {
 		@apply font-bold !border-4 !border-primary;
@@ -50,7 +50,7 @@
 
 // Button menu section styles
 .btn-menu-section {
-	@apply text-sm bg-transparent text-black font-alt font-bold uppercase border-none hover:bg-transparent hover:text-primary-800 rounded-md;
+	@apply text-sm bg-transparent text-black font-menu font-bold uppercase border-none hover:bg-transparent hover:text-primary-800 rounded-md;
 }
 
 // Desktop domains navigation
