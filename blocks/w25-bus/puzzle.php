@@ -21,9 +21,7 @@ $image_count = count($images);
     <div class="<?php echo $position_class; ?> w-full bus-item">
         <img class="w-full h-auto"
             src="<?php echo $template_uri; ?>/blocks/w25-bus/img/animation/<?php echo $image_filename; ?>"
-            alt="Bus image <?php echo $image_number; ?>"
-            loading="lazy"
-            decoding="async">
+            alt="Bus image <?php echo $image_number; ?>">
         <?php if ($bus_text): ?>
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div class="container">
