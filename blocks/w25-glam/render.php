@@ -58,7 +58,7 @@ $glam_cta = get_field('glam_cta');
                 <?php endif; ?>
 
                 <?php if ($describtion): ?>
-                <div class="text-xl leading-tight md:text-2xl md:text-3xl font-headings">
+                <div class="text-xl leading-tight md:text-2xl font-headings">
                     <?php echo nl2br(esc_html($describtion)); ?>
                 </div>
                 <?php endif; ?>
