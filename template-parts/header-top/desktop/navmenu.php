@@ -142,7 +142,7 @@ document.addEventListener('alpine:init', () => {
 <!-- Container for the whole desktop nav menu -->
 <div x-data="navMenu" @mouseleave="closeNav()" class="sticky top-0 z-40 hidden md:block nohover:hidden">
 <header aria-hidden="true" id="navmenu_desktop"
-    class="border-b border-neutral-light bg-<?= $header_color; ?> py-1">
+    class="border-b border-gray-300 bg-<?= $header_color; ?> py-1">
 
     <!-- Top bar with logo, domains, and search -->
     <div class="container relative z-10 overflow-hidden">
@@ -196,7 +196,7 @@ document.addEventListener('alpine:init', () => {
 
         <!-- Pointer to domain button -->
         <div class="absolute z-20 pointer-events-none" id="pointer" x-show="showPointer">
-            <div class="object-cover w-full h-full drop-shadow-xs text-neutral-light" aria-hidden="true">
+            <div class="object-cover w-full h-full text-gray-300 drop-shadow-xs" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 8L0 20H20L10 8Z" fill="white" />
                     <path d="M0 20L10 8L20 20" stroke="currentColor" />
@@ -207,7 +207,7 @@ document.addEventListener('alpine:init', () => {
         <!-- For each domain... -->
         <template x-for="(domain,i) in nav">
             <div show="isOpen[i]" x-bind:id="'menu_'+ i"
-                class="absolute inset-x-0 z-10 p-2 overflow-hidden transform bg-white border border-neutral-light max-h-screen-80 rounded-xl shadow-navbar"
+                class="absolute inset-x-0 z-10 p-2 overflow-hidden transform bg-white border border-gray-300 max-h-screen-80 rounded-xl shadow-navbar"
                 x-bind:class="{ 'max-w-6xl': domain.featured.length > 0, 'max-w-md': domain.featured.length == 0, 'visible': isOpen[i], 'invisible': !isOpen[i] }">
 
                 <!-- If there are featured pages: 2 columns with featured pages + pages -->
@@ -216,7 +216,7 @@ document.addEventListener('alpine:init', () => {
 
                     <!-- Featured pages -->
                     <template x-if="domain.featured.length > 0">
-                        <nav class="pr-5 mr-5 border-r border-neutral-light">
+                        <nav class="pr-5 mr-5 border-r border-gray-300">
                             <ul class="flex flex-col overflow-auto max-h-screen-80">
                                 <template x-for="page in domain.featured">
                                     <li class="p-1" x-bind:class="{'current': pageID == page.ID }">
