@@ -13,7 +13,7 @@
                 <input type="text" class="form_field form-input" name="email" id="email" value="" placeholder="E-Mail" />
             </li>
             <li class="absolute form_button right-1 bottom-1">
-                <input type="submit" class="form_button_submit btn btn-lg" value="<?php _e('Anmelden', BB_TEXT_DOMAIN); ?>" />
+                <input type="submit" class="form_button_submit btn btn-lg !font-menus !text-base !py-2" value="<?php _e('Anmelden', BB_TEXT_DOMAIN); ?>" />
             </li>
         </ul>
     </form>
