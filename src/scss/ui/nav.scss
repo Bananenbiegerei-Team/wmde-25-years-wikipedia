@@ -29,18 +29,20 @@
 }
 
 // Right nav and dropdown link colors
-#nav-right-level-1,
-.dropdown {
-	li {
-		a,
-		a.btn {
-			@apply text-primary-dark hover:text-primary hover:bg-transparent;
-		}
-	}
-}
+// #nav-right-level-1,
+// .dropdown {
+// 	li {
+// 		a,
+// 		a.btn {
+// 			@apply text-primary-dark hover:text-primary hover:bg-transparent;
+// 		}
+// 	}
+// }
 
 // Button menu base styles
-.btn-menu {
+.btn-menu,
+.dropdown li a,
+.dropdown li a.btn, {
 	@apply rounded-md inline-flex select-none flex-wrap items-center justify-start border-transparent text-left transition duration-200 ease-out leading-none text-base p-3 bg-transparent text-black font-menus font-medium hover:bg-gray hover:border-gray mb-0 h-16 lg:h-auto;
 
 	&.current {
@@ -78,5 +80,12 @@
 	& > div.visible {
 		opacity: 1;
 		transition: opacity 0.2s;
+	}
+
+	// DEBUG: Force dropdowns to stay open
+	& > div {
+		opacity: 1 !important;
+		visibility: visible !important;
+		display: block !important;
 	}
 }

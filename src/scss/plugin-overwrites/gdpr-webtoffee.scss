@@ -22,7 +22,7 @@
 .cli_settings_button,
 .cli_setting_save_button,
 #wt-cli-settings-btn {
-	@apply inline-flex items-center rounded-md border border-transparent bg-primary-dark px-1.5 py-2 text-base lg:px-2 lg:py-0.5 lg:text-lg text-white hover:bg-neutral-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0 transition m-0 font-normal #{!important};
+	@apply inline-flex items-center rounded-md border border-transparent bg-primary-dark px-1.5 text-base lg:px-2 lg:py-0.5 lg:text-lg text-white hover:bg-neutral-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0 transition m-0 font-normal #{!important};
 }
 
 .cli_settings_button,
@@ -31,7 +31,7 @@
 }
 .site-footer {
 	.cli_settings_button {
-		@apply text-base font-normal font-normal border-none p-0 py-4 #{!important};
+		@apply text-base font-normal font-normal border-none p-0 #{!important};
 	}
 }
 // Settings overlay

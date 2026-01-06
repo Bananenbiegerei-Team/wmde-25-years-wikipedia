@@ -44,7 +44,7 @@ ol:not([class]) {
 footer p {
 	@apply text-base lg:text-base;
 }
- 
+
 .topline {
 	@apply uppercase font-headings text-sm text-primary;
 }
@@ -59,7 +59,8 @@ footer p {
 	}
 }
 
-strong {
+strong,
+.font-menus {
 	@apply font-medium;
 }
 

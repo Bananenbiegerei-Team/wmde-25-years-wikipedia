@@ -15,13 +15,13 @@ else {
     <div class="md:flex-none">
     <?php get_template_part('template-parts/social-media-menu'); ?>
     </div>
-    <div class="md:flex-none font-alt">
-    <h3 class="mb-2 font-alt text-base text-blue-dark"><?= _e('Spendenservice', BB_TEXT_DOMAIN) ?></h3>
+    <div class="md:flex-none font-menus">
+    <h3 class="mb-2 font-menus text-base text-blue-dark"><?= _e('Spendenservice', BB_TEXT_DOMAIN) ?></h3>
     <?php echo get_field('kontakt_spendenservice', 'option'); ?>
     </div>
     <?php if (get_field('kontakt', 'option')): ?>
-    <div class="md:flex-none font-alt">
-    <h3 class="mb-2 font-alt text-base text-blue-dark"><?= _e('Kontakt', BB_TEXT_DOMAIN) ?></h3>
+    <div class="md:flex-none font-menus">
+    <h3 class="mb-2 font-menus text-base text-blue-dark"><?= _e('Kontakt', BB_TEXT_DOMAIN) ?></h3>
     <?php echo get_field('kontakt', 'option'); ?>
     </div>
     <?php endif; ?>
@@ -38,7 +38,7 @@ else {
     <?php bb_wp_nav_menu(['container' => 'nav', 'menu' => 'footer', 'menu_class' => 'flex flex-col md:flex-row gap-5', 'theme_location' => 'footer']); ?>
   </div>
   <div class="lg:flex-none py-12 lg:py-0">
-    <h3 class="mb-0 font-alt text-base"><?php _e('Wir befreien Wissen', BB_TEXT_DOMAIN); ?></h3>
+    <h3 class="mb-0 font-menus text-base"><?php _e('Wir befreien Wissen', BB_TEXT_DOMAIN); ?></h3>
   </div>
   </div>
 </footer>

@@ -1,4 +1,20 @@
-/* Montserrat Medium for Menus */
+/* Montserrat for Menus */
+@font-face {
+	font-family: 'Menus';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Menus';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/Montserrat-Italic.ttf') format('truetype');
+}
+
 @font-face {
 	font-family: 'Menus';
 	font-style: normal;
