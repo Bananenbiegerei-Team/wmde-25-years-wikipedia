@@ -221,13 +221,13 @@ document.addEventListener('alpine:init', () => {
                                 <template x-for="page in domain.featured">
                                     <li class="p-1" x-bind:class="{'current': pageID == page.ID }">
                                         <a x-bind:href="page.url"
-                                            class="flex items-center h-12 gap-5 p-1 p-4 transition hover:bg-neutral rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0">
+                                            class="flex items-center h-12 gap-5 p-1 p-4 transition hover:bg-gray rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0">
                                             <div class="">
                                                 <img class="w-10 h-auto p-1"
                                                     x-bind:src="page.logo || page.thumbnail || defaultIcon" />
                                             </div>
                                             <div class="">
-                                                <h4 class="m-0 text-base" x-html="page.title"></h4>
+                                                <h4 class="m-0 text-base font-medium font-menus" x-html="page.title"></h4>
                                             </div>
                                         </a>
                                     </li>
@@ -247,7 +247,7 @@ document.addEventListener('alpine:init', () => {
                                     <li class="p-1 transition bg-white rounded-md"
                                         x-bind:class="{'current': pageID == page.ID }">
                                         <a tabindex="-1" x-bind:href="page.url"
-                                            class="font-normal btn btn-menu btn-expanded" x-html="page.title"></a>
+                                            class="btn-menu btn-expanded" x-html="page.title"></a>
                                     </li>
                                 </template>
                             </ul>
@@ -257,14 +257,14 @@ document.addEventListener('alpine:init', () => {
                         <template x-for="section in domain.sections">
                             <ul class="items-stretch justify-items-stretch">
                                 <li
-                                    class="transition bg-white rounded-md btn btn-menu btn-expanded hover:text-black">
-                                    <span class="p-1" x-text="section.title"></span>
+                                    class="font-medium uppercase transition bg-white rounded-md btn btn-menu-section btn-expanded hover:text-black">
+                                    <span class="py-1" x-text="section.title"></span>
                                 </li>
                                 <template x-for="page in section.pages">
-                                    <li class="p-1 transition bg-white rounded-md"
+                                    <li class="px-1 transition bg-white rounded-md"
                                         x-bind:class="{'current': pageID == page.ID }">
                                         <a tabindex="-1" x-bind:href="page.url"
-                                            class="font-normal btn btn-menu btn-expanded" x-html="page.title"></a>
+                                            class="btn-menu btn-expanded" x-html="page.title"></a>
                                     </li>
                                 </template>
                             </ul>

@@ -131,7 +131,7 @@ footer .btn.btn-link {
 		md:p-3
 		md:border
 		md:hover:bg-neutral-light
-		md:hover:border-neutral-dark
+		md:hover:border-neutral-light
 		md:w-auto
 		md:rounded-md
 		md:border-transparent
@@ -144,6 +144,10 @@ footer .btn.btn-link {
 			//@apply after:content-[''] after:block after:w-2 after:h-2 after:bg-white after:rounded-full after:absolute after:right-0 after:-translate-y-1;
 			@apply font-bold;
 		}
+	}
+
+	&-menu-section {
+		@apply text-sm bg-transparent text-black font-alt font-bold uppercase border-none hover:bg-transparent hover:text-primary-800 rounded-md;
 	}
 
 	// NEW SETUP FOR STARTER THEME...

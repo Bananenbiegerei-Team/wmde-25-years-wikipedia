@@ -27,7 +27,7 @@
 
 .cli_settings_button,
 #wt-cli-settings-btn {
-	@apply bg-white text-primary-dark border border-primary-dark hover:border-neutral-dark hover:bg-white hover:text-neutral-dark py-1 #{!important};
+	@apply bg-white text-blue-dark border border-primary-dark hover:border-neutral-dark hover:bg-white hover:text-neutral-dark py-1 #{!important};
 }
 .site-footer {
 	.cli_settings_button {
