@@ -38,7 +38,7 @@ h6,
 p,
 ul:not([class]),
 ol:not([class]) {
-	@apply leading-tight text-lg lg:text-xl font-normal max-w-4xl;
+	@apply leading-tight text-lg lg:text-xl font-normal max-w-5xl;
 }
 
 footer p {

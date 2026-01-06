@@ -36,7 +36,7 @@ $display = get_field('display');
             </h2>
         <?php endif; ?>
 
-        <div class="container relative" id="numbers-parallax-container">
+        <div class="container relative -mb-16 lg:mb-0" id="numbers-parallax-container">
             <div class="number-item lg:absolute lg:top-[0px] lg:left-[10vw]">
                 <?php get_template_part('blocks/w25-numbers/number-01'); ?>
             </div>
