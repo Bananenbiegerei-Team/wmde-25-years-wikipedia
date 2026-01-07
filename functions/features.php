@@ -65,3 +65,10 @@ add_action(
     },
     11
 );
+
+// allow uploading of VTT files for subtitles
+add_filter('upload_mimes', function ($mimes) {
+  $mimes['vtt'] = 'text/vtt';
+  return $mimes;
+});
+
