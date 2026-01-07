@@ -30,7 +30,7 @@ $link_to_all = get_field('link_to_all');
 $cards       = get_field('cards') ?: [];
 ?>
 <div id="<?php echo esc_attr($id); ?>"
-    class="<?php echo esc_attr($className); ?> bg-secondary-light/50 text-primary-dark py-8 lg:py-16 px-0 lg:px-8">
+    class="<?php echo esc_attr($className); ?> bg-secondary-light/50 text-primary-dark py-8 lg:py-16">
     <div class="container">
         <?php if ($title || $text || $link_to_all): ?>
         <div class="flex flex-col gap-4 mb-6 md:flex-row md:items-end md:justify-between">

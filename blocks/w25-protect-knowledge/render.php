@@ -81,7 +81,7 @@ $block_headline = get_field('headline');
                                 </a>
                             </h3>
                             <?php else: ?>
-                            <h3 class="mb-2 lg:text-3xl">
+                            <h3 class="mb-2 lg:text-2xl">
                                 <?php echo esc_html($headline); ?>
                             </h3>
                             <?php endif; ?>

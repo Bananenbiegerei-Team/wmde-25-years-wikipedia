@@ -40,15 +40,15 @@ $testimonials = get_field('testimials'); // Note: typo in field name from ACF
                         <img class="w-full h-auto rounded-t-xl" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
                     <?php endif; ?>
 
-                    <div class="">
+                    <div>
                         <?php if (!empty($testimonial['name'])): ?>
-                            <h4>
+                            <h4 class="text-base">
                                 <?php echo esc_html($testimonial['name']); ?>
                             </h4>
                         <?php endif; ?>
 
                         <?php if (!empty($testimonial['role'])): ?>
-                            <p class="font-headings"><?php echo esc_html($testimonial['role']); ?></p>
+                            <p class="text-base font-headings"><?php echo esc_html($testimonial['role']); ?></p>
                         <?php endif; ?>
                     </div>
 

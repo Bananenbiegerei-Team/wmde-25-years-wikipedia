@@ -27,11 +27,11 @@ if (!empty($block['align'])) {
 $display = get_field('display');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light overflow-hidden lg:h-[750px]">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light overflow-hidden lg:h-[720px]">
     <div class="container h-full">
     <?php if (!is_admin()): ?>
         <?php if ( get_field('headline') ) : ?>
-            <h2 class="py-10 mb-8 text-2xl lg:text-3xl xl:text-4xl">
+            <h2 class="py-16 text-2xl lg:text-3xl xl:text-4xl">
                 <?php echo get_field('headline'); ?>
             </h2>
         <?php endif; ?>

@@ -52,7 +52,7 @@ if ($image && is_array($image)) {
         </div>
         <div class="relative top-0 left-0 z-20 w-full h-full lg:absolute">
             <div class="container">
-                <div class="space-y-4 lg:pt-8 lg:pr-8 lg:mb-8 lg:pt-16 lg:w-2/3">
+                <div class="space-y-4 lg:pr-8 lg:mb-8 lg:pt-16 lg:w-2/3">
                     <?php if ($headline): ?>
                     <h2
                         class="text-2xl lg:text-3xl xl:text-4xl">
@@ -61,7 +61,7 @@ if ($image && is_array($image)) {
                     <?php endif; ?>
 
                     <?php if ($text): ?>
-                    <div class="max-w-3xl mb-0 text-xl leading-tight xl:text-2xl">
+                    <div class="max-w-2xl mb-0 text-xl leading-tight lg:text-2xl font-headings bg-secondary-light">
                         <?php echo nl2br(esc_html($text)); ?>
                     </div>
                     <?php endif; ?>

@@ -27,7 +27,7 @@ if (!empty($block['align'])) {
 $block_headline = get_field('headline');
 ?>
 <?php if (!is_admin()): ?>
-<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?> py-8">
+<div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?> py-8 lg:py-16">
     <?php if ($block_headline): ?>
         <h2 class="max-w-3xl mb-4 text-2xl lg:text-3xl xl:text-4xl lg:mb-8"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>
@@ -70,13 +70,13 @@ $block_headline = get_field('headline');
                         <div class="p-4">
                         <?php if ($headline): ?>
                             <?php if ($link): ?>
-                                <h3 class="mb-2 lg:text-3xl">
+                                <h3 class="mb-2 lg:text-2xl">
                                 <a href="<?php echo esc_url($link['url']); ?>" class="after:content-[''] after:absolute after:inset-0 after:z-10 hover:underline hover:underline-offset-2 decoration-1"<?php if (!empty($link['target'])): ?> target="<?php echo esc_attr($link['target']); ?>"<?php endif; ?>>
                                     <?php echo esc_html($headline); ?>
                                 </a>
                                 </h3>
                             <?php else: ?>
-                                <h3 class="mb-2 lg:text-3xl">
+                                <h3 class="mb-2 lg:text-2xl">
                                 <?php echo esc_html($headline); ?>
                                 </h3>
                             <?php endif; ?>
