@@ -55,7 +55,7 @@ if ($image && is_array($image)) {
                 <div class="space-y-4 lg:pt-8 lg:pr-8 lg:mb-8 lg:pt-16 lg:w-2/3">
                     <?php if ($headline): ?>
                     <h2
-                        class="text-xl lg:text-2xl xl:text-4xl">
+                        class="text-2xl lg:text-3xl xl:text-4xl">
                         <?php echo esc_html($headline); ?>
                     </h2>
                     <?php endif; ?>

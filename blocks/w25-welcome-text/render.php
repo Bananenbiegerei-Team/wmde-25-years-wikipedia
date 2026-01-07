@@ -38,7 +38,7 @@ $description = get_field('description');
         <?php endif; ?>
         <div>
             <?php if ($headline): ?>
-            <h2 class="mb-2 text-xl lg:text-2xl xl:text-4xl">
+            <h2 class="mb-2 text-2xl lg:text-4xl xl:text-6xl">
                 <?php echo esc_html($headline); ?>
             </h2>
         <?php endif; ?>
