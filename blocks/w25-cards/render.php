@@ -42,7 +42,7 @@ $cards       = get_field('cards') ?: [];
                 <?php endif; ?>
 
                 <?php if ($text): ?>
-                <p class="mt-3 text-xl md:text-2xl">
+                <p class="mt-3 text-xl md:text-2xl font-headings">
                     <?php echo esc_html($text); ?>
                 </p>
                 <?php endif; ?>
@@ -87,7 +87,7 @@ $cards       = get_field('cards') ?: [];
 
                 <div class="flex flex-col gap-3 px-0 py-4 md:py-5">
                     <?php if ($card_text): ?>
-                    <p class="text-xl font-medium">
+                    <p class="text-xl font-medium font-headings">
                         <?php echo esc_html($card_text); ?>
                     </p>
                     <?php endif; ?>

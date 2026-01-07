@@ -2,8 +2,8 @@
     <div class="w-24 text-secondary-light">
         <?php include get_template_directory() . '/blocks/w25-numbers/puzzle.svg'; ?>
     </div>
-    <div class="h-full pt-[20px] lg:pt-[5px] flex-1 ">
-        <div class="flex items-center h-full text-base lg:text-xl">
+    <div class="h-full pt-[20px] lg:pt-[18px] flex-1 ">
+        <div class="flex items-center h-full text-base lg:text-xl font-headings">
             <?php if (get_field('number_5')): ?>
                 <?php echo get_field('number_5'); ?>
             <?php endif; ?>

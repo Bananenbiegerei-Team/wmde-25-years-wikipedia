@@ -52,7 +52,7 @@ module.exports = {
 			'3vw': '10vw',
 		},
 		fontFamily: {
-			headings: ['Headings', 'sans-serif'],
+			headings: ['Menus', 'sans-serif'],
 			texts: ['Texts', 'sans-serif'],
 			menus: ['Menus', 'sans-serif'],
 			alt: ['Montserrat', 'sans-serif'],

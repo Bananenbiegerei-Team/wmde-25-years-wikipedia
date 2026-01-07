@@ -29,7 +29,7 @@ $button_text = get_field('button_text') ?: 'Jetzt spenden';
 $button_link = get_field('button_link') ?: 'https://spenden.wikimedia.de/';
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-accent-light p-8 pt-0 lg:py-16 flex flex-col md:flex-row items-center justify-center gap-4">
-    <p class="text-xl text-center md:text-3xl md:text-left font-headings"><?php echo esc_html($cta_text); ?></p>
+    <p class="text-xl text-center md:text-2xl md:text-left font-headings"><?php echo esc_html($cta_text); ?></p>
     <a class="px-6 py-1 text-xl text-white transition-colors rounded-lg bg-error hover:bg-error-dark md:text-2xl font-menus" href="<?php echo esc_url($button_link); ?>"
     onclick="window._paq && window._paq.push(['trackEvent','CTA','Klick','Spenden CTA in content',1])"
     >

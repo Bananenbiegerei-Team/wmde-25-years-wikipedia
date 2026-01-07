@@ -42,13 +42,13 @@ $testimonials = get_field('testimials'); // Note: typo in field name from ACF
 
                     <div class="">
                         <?php if (!empty($testimonial['name'])): ?>
-                            <h4 class="font-bold font-texts">
+                            <h4>
                                 <?php echo esc_html($testimonial['name']); ?>
                             </h4>
                         <?php endif; ?>
 
                         <?php if (!empty($testimonial['role'])): ?>
-                            <p><?php echo esc_html($testimonial['role']); ?></p>
+                            <p class="font-headings"><?php echo esc_html($testimonial['role']); ?></p>
                         <?php endif; ?>
                     </div>
 

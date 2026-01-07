@@ -44,7 +44,7 @@ $description = get_field('description');
         <?php endif; ?>
 
         <?php if ($description): ?>
-            <div class="text-xl leading-tight lg:text-3xl">
+            <div class="text-xl leading-tight lg:text-3xl font-headings">
                 <?php echo nl2br(esc_html($description)); ?>
             </div>
         <?php endif; ?>

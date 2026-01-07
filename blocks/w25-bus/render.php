@@ -76,7 +76,7 @@ if ($image && is_array($image)) {
                     <?php if (have_rows('social_media')): ?>
                 <?php if ( get_field('social_media_headline') ) : ?>
                 <div>
-                <h3 class="my-4 text-xl leading-tight xl:text-2xl font-texts">
+                <h3 class="my-4 text-xl leading-tight xl:text-2xl">
                     <?php echo get_field('social_media_headline'); ?>
                 </h3>
                 <?php endif; ?>
