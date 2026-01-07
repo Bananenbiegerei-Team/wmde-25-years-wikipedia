@@ -81,7 +81,7 @@ footer .btn.btn-link {
 // Styled
 // hover + active color changes around 4-5 steps
 .btn {
-	@apply gap-2 no-underline font-headings font-normal border text-white text-lg md:text-2xl;
+	@apply gap-2 no-underline font-menus font-normal border text-white text-lg md:text-xl;
 	animation: button-pop var(--animation-btn, 0.25s) ease-out;
 
 	&:active:hover,

@@ -61,7 +61,7 @@ if ($image && is_array($image)) {
                     <?php endif; ?>
 
                     <?php if ($text): ?>
-                    <div class="max-w-3xl mb-0 text-xl leading-tight xl:text-2xl font-headings">
+                    <div class="max-w-3xl mb-0 text-xl leading-tight xl:text-2xl">
                         <?php echo nl2br(esc_html($text)); ?>
                     </div>
                     <?php endif; ?>
@@ -76,7 +76,7 @@ if ($image && is_array($image)) {
                     <?php if (have_rows('social_media')): ?>
                 <?php if ( get_field('social_media_headline') ) : ?>
                 <div>
-                <h3 class="my-4 text-xl leading-tight xl:text-2xl">
+                <h3 class="my-4 text-xl leading-tight xl:text-2xl font-texts">
                     <?php echo get_field('social_media_headline'); ?>
                 </h3>
                 <?php endif; ?>

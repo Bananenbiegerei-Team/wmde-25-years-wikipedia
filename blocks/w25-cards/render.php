@@ -42,7 +42,7 @@ $cards       = get_field('cards') ?: [];
                 <?php endif; ?>
 
                 <?php if ($text): ?>
-                <p class="mt-3 text-xl md:text-2xl font-headings">
+                <p class="mt-3 text-xl md:text-2xl">
                     <?php echo esc_html($text); ?>
                 </p>
                 <?php endif; ?>
@@ -106,7 +106,7 @@ $cards       = get_field('cards') ?: [];
                 $see_all_target = $link_to_all['target'] ?: '_self';
                 ?>
         <div class="flex justify-center mt-4 md:mt-0">
-            <a class="text-xl btn btn-outline md:text-2xl" href="<?php echo esc_url($see_all_url); ?>"
+            <a class="btn btn-outline" href="<?php echo esc_url($see_all_url); ?>"
                 target="<?php echo esc_attr($see_all_target); ?>">
                 <?php echo esc_html($see_all_title); ?>
             </a>
