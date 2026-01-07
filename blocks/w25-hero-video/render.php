@@ -40,8 +40,10 @@ if (!empty($block['align'])) {
             <div class="w-full h-full swiper hero-swiper">
                 <div class="w-full h-full swiper-wrapper">
                     <?php foreach ($video_swiper_gallery as $image):
-                        $image_url = wp_get_attachment_image_url($image['ID'], 'full');
-                        $image_alt = $image['alt'];
+                        // Handle both array and ID formats
+                        $image_id = is_array($image) ? $image['ID'] : $image;
+                        $image_url = wp_get_attachment_image_url($image_id, 'full');
+                        $image_alt = is_array($image) ? $image['alt'] : get_post_meta($image_id, '_wp_attachment_image_alt', true);
                     ?>
                         <div
                             class="relative bg-cover swiper-slide"
