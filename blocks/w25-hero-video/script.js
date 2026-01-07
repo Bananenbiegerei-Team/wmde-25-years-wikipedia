@@ -100,7 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const videoEl = videoModal.querySelector('.plyr')
         if (!videoEl) return
 
-        const plyrInstance = new Plyr(videoEl)
+        const plyrInstance = new Plyr(videoEl, {
+            captions: { active: true, update: true },
+        })
         const playBtn = component.querySelector('.play-button')
 
         if (playBtn) {
