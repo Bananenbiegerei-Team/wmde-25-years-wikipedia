@@ -54,7 +54,7 @@ $glam_cta = get_field('glam_cta');
             <div class="glam-content-sticky pl-[40%] md:pl-[50%]">
                 <div class="mr-8 space-y-4 md:space-y-8">
                     <?php if ($headline): ?>
-                <h2 class="text-2xl lg:text-4xl xl:text-6xl"><?php echo esc_html($headline); ?></h2>
+                <h2 class="text-xl lg:text-2xl xl:text-4xl"><?php echo esc_html($headline); ?></h2>
                 <?php endif; ?>
 
                 <?php if ($describtion): ?>

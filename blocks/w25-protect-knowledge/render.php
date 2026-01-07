@@ -29,7 +29,7 @@ $block_headline = get_field('headline');
 <?php if (!is_admin()): ?>
 <div id="<?php echo esc_attr($id); ?>" class="container <?php echo esc_attr($className); ?> pt-8">
     <?php if ($block_headline): ?>
-    <h2 class="max-w-3xl mb-4 text-2xl lg:text-4xl xl:text-6xl lg:mb-8"><?php echo esc_html($block_headline); ?></h2>
+    <h2 class="max-w-3xl mb-4 text-xl lg:text-2xl xl:text-4xl lg:mb-8"><?php echo esc_html($block_headline); ?></h2>
     <?php endif; ?>
     <?php if (have_rows('knowledge_swiper')): ?>
     <div class="flex items-center justify-center mb-8">
@@ -72,7 +72,7 @@ $block_headline = get_field('headline');
                         <div class="p-4">
                             <?php if ($headline): ?>
                             <?php if ($link): ?>
-                            <h3 class="mb-2 text-2xl lg:text-4xl xl:text-6xl">
+                            <h3 class="mb-2 text-xl lg:text-2xl xl:text-4xl">
                                 <a href="<?php echo esc_url($link['url']); ?>"
                                     class="after:content-[''] after:absolute after:inset-0 after:z-10 hover:underline hover:underline-offset-2 decoration-1"
                                     <?php if (!empty($link['target'])): ?>
