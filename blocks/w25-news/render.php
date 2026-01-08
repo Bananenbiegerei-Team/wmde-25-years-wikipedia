@@ -52,17 +52,18 @@ $block_headline = get_field('headline');
                     $link = get_sub_field('link');
                     $background_color = get_sub_field('background_color');
                 ?>
-                <div class="swiper-slide md:min-h-[430px] overflow-hidden rounded-lg <?php echo $link ? 'group' : ''; ?> <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
-                    <div class="relative">
+                <div class="swiper-slide md:min-h-[430px] overflow-hidden rounded-lg <?php echo $link ? 'class-with-link' : ''; ?> <?php echo !empty($background_color) ? 'bg-' . esc_attr($background_color) : 'bg-primary'; ?>">
+                    <div class="relative group/image">
                         <?php if ($image):
                             $image_url = wp_get_attachment_image_url($image, 'four-columns-sixteen-nine');
                             $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+                            $image_caption = wp_get_attachment_caption($image);
                         ?>
                         <div class="relative">
                             <img class="w-full" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                            <?php if ($link): ?>
-                            <div
-                                class="absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 bg-gradient-to-t from-white via-white to-transparent group-hover:opacity-30">
+                            <?php if (!empty($image_caption)): ?>
+                            <div class="absolute bottom-0 left-0 hidden w-full p-2 text-sm text-white bg-black group-hover/image:block">
+                            <?php echo $image_caption; ?>
                             </div>
                             <?php endif; ?>
                         </div>
@@ -71,7 +72,7 @@ $block_headline = get_field('headline');
                         <?php if ($headline): ?>
                             <?php if ($link): ?>
                                 <h3 class="mb-2 lg:text-2xl">
-                                <a href="<?php echo esc_url($link['url']); ?>" class="after:content-[''] after:absolute after:inset-0 after:z-10 hover:underline hover:underline-offset-2 decoration-1"<?php if (!empty($link['target'])): ?> target="<?php echo esc_attr($link['target']); ?>"<?php endif; ?>>
+                                <a href="<?php echo esc_url($link['url']); ?>" class="hover:underline hover:underline-offset-2 decoration-1"<?php if (!empty($link['target'])): ?> target="<?php echo esc_attr($link['target']); ?>"<?php endif; ?>>
                                     <?php echo esc_html($headline); ?>
                                 </a>
                                 </h3>
