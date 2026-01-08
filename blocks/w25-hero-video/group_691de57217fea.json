@@ -24,50 +24,6 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_w25_subtitles",
-            "label": "Subtitles",
-            "name": "subtitles",
-            "type": "repeater",
-            "min": 0,
-            "layout": "row",
-            "button_label": "Add subtitle",
-            "sub_fields": [
-                {
-                    "key": "field_w25_subtitle_label",
-                    "label": "Label",
-                    "name": "label",
-                    "type": "text",
-                    "required": 1,
-                    "wrapper": {
-                        "width": "30"
-                    }
-                },
-                {
-                    "key": "field_w25_subtitle_lang",
-                    "label": "Language code",
-                    "name": "lang",
-                    "type": "text",
-                    "instructions": "e.g. en, de, fr",
-                    "required": 1,
-                    "wrapper": {
-                        "width": "20"
-                    }
-                },
-                {
-                    "key": "field_w25_subtitle_file",
-                    "label": "VTT file",
-                    "name": "file",
-                    "type": "file",
-                    "return_format": "array",
-                    "mime_types": "vtt",
-                    "required": 1,
-                    "wrapper": {
-                        "width": "50"
-                    }
-                }
-            ]
-        },
-        {
             "key": "field_693045b1eeadf",
             "label": "video swiper",
             "name": "video_swiper",
@@ -121,6 +77,73 @@
             "mime_types": "",
             "allow_in_bindings": 0,
             "preview_size": "medium"
+        },
+        {
+            "key": "field_695e36faad3b7",
+            "label": "subtitles",
+            "name": "subtitles",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_695fc3e71d4c5",
+            "label": "video credits",
+            "name": "video_credits",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Eintrag hinzufügen",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_695fc4091d4c6",
+                    "label": "credit",
+                    "name": "credit",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_695fc3e71d4c5"
+                }
+            ]
         }
     ],
     "location": [
@@ -141,5 +164,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1767782156
+    "modified": 1767883843
 }
