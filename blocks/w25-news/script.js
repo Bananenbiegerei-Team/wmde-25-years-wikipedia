@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			centeredSlides: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			loop: true,
+			loop: false,
 			autoHeight: false,
 			navigation: {
 				nextEl: '.w25-news .swiper-button-next',
