@@ -62,143 +62,12 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_691df5d353eb1",
-            "label": "image",
-            "name": "image",
+            "key": "field_695fba2c22db7",
+            "label": "bus caption",
+            "name": "bus_caption",
             "aria-label": "",
-            "type": "image",
+            "type": "text",
             "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_bus_text_01",
-            "label": "Bus Text 01",
-            "name": "bus_text_01",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Text that appears with the first bus animation image",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_bus_text_02",
-            "label": "Bus Text 02",
-            "name": "bus_text_02",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Text that appears with the second bus animation image",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_bus_text_03",
-            "label": "Bus Text 03",
-            "name": "bus_text_03",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Text that appears with the third bus animation image",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_bus_text_04",
-            "label": "Bus Text 04",
-            "name": "bus_text_04",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Text that appears with the fourth bus animation image",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_bus_text_05",
-            "label": "Bus Text 05",
-            "name": "bus_text_05",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Text that appears with the fifth bus animation image",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_bus_text_06",
-            "label": "Bus Text 06",
-            "name": "bus_text_06",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Text that appears with the sixth bus animation image (final image that stays visible)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -326,5 +195,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1765270765
+    "modified": 1767881287
 }

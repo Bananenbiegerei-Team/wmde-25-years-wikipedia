@@ -55,7 +55,7 @@ footer p {
 	ul a,
 	ol a,
 	a.link {
-		@apply underline transition underline-offset-2 decoration-1 hover:text-primary-light transition;
+		@apply underline transition underline-offset-2 decoration-1 hover:text-primary transition;
 	}
 }
 

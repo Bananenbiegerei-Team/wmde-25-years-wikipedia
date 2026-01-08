@@ -28,6 +28,7 @@ $headline = get_field('headline');
 $text = get_field('text');
 $cta = get_field('cta');
 $image = get_field('image'); // Returns array with 'url', 'id', etc.
+$bus_caption = get_field('bus_caption');
 
 // Get background image URL
 $background_image_url = '';
@@ -51,7 +52,7 @@ if ($image && is_array($image)) {
             ?>
         </div>
         <div class="relative top-0 left-0 z-20 w-full h-full lg:absolute">
-            <div class="container">
+            <div class="container relative h-full">
                 <div class="space-y-4 lg:pr-8 lg:mb-8 lg:pt-16 lg:w-2/3">
                     <?php if ($headline): ?>
                     <h2
@@ -106,6 +107,9 @@ if ($image && is_array($image)) {
                 <?php endif; ?>
                 </div>
                 </div>
+                <?php if ($bus_caption): ?>
+                <p class="py-8 text-sm lg:absolute lg:bottom-0"><?php echo $bus_caption; ?></p>
+                <?php endif; ?>
             </div>
         </div>
 
