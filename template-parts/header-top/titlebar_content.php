@@ -1,5 +1,5 @@
 <?php
-$home_url = is_home() ? 'https://www.wikimedia.de/' : get_home_url();
+$home_url = 'https://www.wikimedia.de/';
 ?>
 
 
