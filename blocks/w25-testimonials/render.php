@@ -31,13 +31,19 @@ $testimonials = get_field('testimials'); // Note: typo in field name from ACF
     <?php if ($testimonials): ?>
         <div class="container grid grid-cols-1 gap-12 pb-16 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
             <?php foreach ($testimonials as $testimonial): ?>
-                <div class="space-y-4">
+                <div class="relative space-y-4">
                     <?php if (!empty($testimonial['image'])):
                         $image_id = $testimonial['image'];
                         $image_url = wp_get_attachment_image_url($image_id, 'four-columns-four-three');
                         $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+                        $image_caption = wp_get_attachment_caption($image_id);
                     ?>
+                    <div class="relative group/portrait">
                         <img class="w-full h-auto rounded-t-xl" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                        <?php if (!empty($image_caption)): ?>
+                            <p class="absolute bottom-0 left-0 hidden w-full p-2 text-sm text-white bg-black group-hover/portrait:block"><?php echo $image_caption; ?></p>
+                        <?php endif; ?>
+                    </div>
                     <?php endif; ?>
 
                     <div>
