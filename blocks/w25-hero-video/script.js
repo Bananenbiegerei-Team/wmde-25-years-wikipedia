@@ -102,6 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const plyrInstance = new Plyr(videoEl, {
             captions: { active: true, update: true },
+            controls: [
+                'play-large',
+                'play',
+                'progress',
+                'current-time',
+                'mute',
+                'volume',
+                'captions',
+                'fullscreen'
+            ],
         })
         const playBtn = component.querySelector('.play-button')
 
