@@ -30,12 +30,12 @@
   <?php get_template_part('blocks/w25-hero-video/partials/play-button'); ?>
   <?php if (have_rows('video_credits')): ?>
   <div class="absolute left-0 px-2 bottom-2" x-data="{ showCredits: false }">
-    <div x-show="showCredits" class="max-w-xl p-2 mb-2 space-y-2 text-sm text-white bg-black rounded-lg">
+    <div x-show="showCredits" class="max-w-xl p-2 mb-2 space-y-2 rounded-lg bg-black/80">
       <?php while (have_rows('video_credits')): the_row();
         $credit = get_sub_field('credit');
         if ($credit):
       ?>
-        <p><?php echo $credit; ?></p>
+        <p class="text-sm text-white"><?php echo $credit; ?></p>
       <?php
         endif;
       endwhile; ?>

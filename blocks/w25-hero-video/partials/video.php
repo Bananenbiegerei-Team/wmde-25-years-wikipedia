@@ -28,17 +28,13 @@ if ($poster_id) {
     >
   <?php endif; ?>
 
-  <?php if (!empty($subtitles)): ?>
-    <?php foreach ($subtitles as $index => $track): ?>
-      <?php if (!empty($track['file']['url'])): ?>
-        <track
-          kind="subtitles"
-          src="<?php echo esc_url($track['file']['url']); ?>"
-          srclang="<?php echo esc_attr($track['lang']); ?>"
-          label="<?php echo esc_attr($track['label']); ?>"
-          <?php if ($index === 0): ?>default<?php endif; ?>
-        >
-      <?php endif; ?>
-    <?php endforeach; ?>
+  <?php if (is_array($subtitles) && !empty($subtitles['url'])): ?>
+    <track
+      kind="captions"
+      src="<?php echo esc_url($subtitles['url']); ?>"
+      srclang="de"
+      label="Deutsch"
+      default
+    >
   <?php endif; ?>
 </video>
