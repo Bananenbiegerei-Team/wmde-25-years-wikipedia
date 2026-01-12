@@ -28,7 +28,7 @@ if (is_admin() || $is_preview): ?>
     <div id="<?php echo esc_attr($id); ?>" class="w25-video-hero relative w-full p-8 bg-secondary <?php echo esc_attr($className); ?>">
         <div class="text-left">
             <h2 class="mb-2">W25 Hero Video Block</h2>
-            <p class="mb-2 font-texts">Edit the hero video settings in the block panel</p>
+            <p class="mb-2 font-texts btn btn-outline">Edit the hero video settings by clicking here</p>
             <?php
             $full_video = get_field('full_video');
             $video_swiper = get_field('video_swiper');
