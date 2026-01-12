@@ -1,15 +1,18 @@
 // Container classes used buy functions/containers.php
 
 .bb-container-wide {
-	@apply col-span-12;
+	@apply col-span-12 rounded-lg overflow-hidden;
 }
 
 .bb-container-default {
-	@apply col-span-12 md:col-span-8 md:col-start-3;
+	@apply col-span-12 md:col-span-8 md:col-start-3  overflow-hidden;
 }
 
 .bb-group-padding {
 	@apply p-5;
+	.outer-container {
+		@apply block max-w-none;
+	}
 }
 
 // Add padding to specific blocks that require it in full width
@@ -19,4 +22,25 @@
 
 .content > div.bb-fullwidth-no-padding {
 	@apply p-0;
+}
+
+// refering to classes in containers.php
+.outer-container {
+	@apply grid grid-cols-12 container;
+}
+
+.wide {
+	@apply col-span-12;
+}
+.right {
+	@apply col-span-12 lg:col-span-8 lg:col-start-5;
+}
+
+.no-container-styles {
+	.default {
+		@apply col-start-1 col-span-12;
+	}
+	.outer-container {
+		@apply px-0;
+	}
 }

@@ -15,6 +15,7 @@ except if they have the 'bb-fullwidth-no-padding' class.
 define('BB_CONTAINER_WIDTHS', [
     'default' => 'Default',
     'wide' => 'Wide',
+    'right' => 'Right',
     'full' => 'Full Width'
 ]);
 
@@ -27,6 +28,7 @@ define(
     [
         'wide' => 'bb-container-wide' ,
         'default' => 'bb-container-default',
+        'right' => 'right',
     ]
 );
 
@@ -43,14 +45,30 @@ add_filter(
 
 
 // Get ACF value for block width (looking for BB_WIDTH_FIELD)
+// Also check for CSS classes added in Gutenberg (for core/group and core/columns)
 function bb_get_block_width($block)
 {
     $width = 'default';
+
+    // First check ACF field
     foreach ($block['attrs']['data'] ?? [] as $key => $value) {
         if ($key === BB_WIDTH_FIELD || (str_ends_with($key, '_' . BB_WIDTH_FIELD) && !str_starts_with($key, '_'))) {
             $width = $value;
         }
     }
+
+    // For core/group and core/columns, also check CSS classes
+    if ($block['blockName'] === 'core/group' || $block['blockName'] === 'core/columns') {
+        $className = $block['attrs']['className'] ?? '';
+        // Check if any of the width options are in the class name
+        foreach (array_keys(BB_CONTAINER_WIDTHS) as $width_option) {
+            if (strpos($className, $width_option) !== false) {
+                $width = $width_option;
+                break;
+            }
+        }
+    }
+
     return $width;
 }
 

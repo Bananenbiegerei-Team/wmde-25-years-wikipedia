@@ -12,10 +12,10 @@
 			"customDuotone": false,
 			"palette": [
 				{ "name": "White", "slug": "white", "color": "#ffffff" },
-				{ "name": "Gray", "slug": "gray", "color": "#f6f6f6" },
-				{ "name": "Pink", "slug": "red-50", "color": "#F9DDE9" },
-				{ "name": "Orange", "slug": "green-50", "color": "#FBDFC5" },
-				{ "name": "Yellow", "slug": "primary-50", "color": "#FBEEBF" }			]
+				{ "name": "Neutral Light", "slug": "neutral-light", "color": "#f6f6f6" },
+				{ "name": "Primary Light", "slug": "primary-light", "color": "#FBEEBF" },
+				{ "name": "Secondary Light", "slug": "secondary-light", "color": "#FBDFC5" },
+				{ "name": "Accent Light", "slug": "accent-light", "color": "#F9DDE9" }			]
 		},
 		"typography": {
 			"customFontSize": false,
