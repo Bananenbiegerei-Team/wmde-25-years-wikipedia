@@ -79,8 +79,8 @@ function dev() {
 	});
 
 	// Watch files and reload browser on changes
-	watch(['./src/scss/**/*.scss', './blocks/**/*.scss'], stylesDev).on('change', browserSync.reload);
-	watch(['./src/js/**/*.js', './blocks/**/*.js'], esbuildDev).on('change', browserSync.reload);
+	watch(['./src/scss/**/*.scss', './blocks/**/*.scss', './bb-blocks/**/*.scss'], stylesDev).on('change', browserSync.reload);
+	watch(['./src/js/**/*.js', './blocks/**/*.js', './bb-blocks/**/*.js'], esbuildDev).on('change', browserSync.reload);
 	watch('./**/*.php', stylesDev).on('change', browserSync.reload);
 	watch(['./img/**/*.*', './fonts/**/*.*']).on('change', browserSync.reload);
 }
