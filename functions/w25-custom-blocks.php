@@ -25,6 +25,11 @@ function register_acf_block_types()
 		'w25-numbers',
 		'w25-bus',
 		'w25-news',
+		'w25-donate',
+		'w25-participate',
+		'w25-glam',
+		'w25-protect-knowledge',
+		'w25-cards',
 	];
 
 	foreach ($blocks as $block) {

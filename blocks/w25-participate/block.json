@@ -1,0 +1,15 @@
+{
+	"name": "acf/w25-participate",
+	"title": "W25 Participate CTA",
+	"description": "Call-to-action block for participation with customizable text and link",
+	"category": "custom-blocks",
+	"icon": "groups",
+	"keywords": ["participate", "cta", "call-to-action", "contribute", "mitmachen"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"align": false
+	}
+}
