@@ -25,6 +25,9 @@ window.EffectFade = EffectFade;
 
 // Swiper styles loaded via SCSS (src/scss/components/swiper.scss)
 
+// load js from bb-blocks repository
+import '../../bb-blocks/bb-block-gallery-swiper/script.js';
+
 // load js from blocks repositoy
 import '../../blocks/w25-hero-video/script.js';
 import '../../blocks/w25-news/script.js';

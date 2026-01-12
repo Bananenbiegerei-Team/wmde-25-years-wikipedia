@@ -22,22 +22,28 @@
 		}
 	}
 	// Custom sizes
-	&.icon-xs {
+	&.icon-xs,
+	&.icon-xs svg {
 		@apply h-4 w-4;
 	}
-	&.icon-sm {
+	&.icon-sm,
+	&.icon-sm svg {
 		@apply h-5 w-5;
 	}
-	&.icon-base {
+	&.icon-base,
+	&.icon-base svg {
 		@apply h-7 w-7;
 	}
-	&.icon-lg {
+	&.icon-lg,
+	&.icon-lg svg {
 		@apply h-8 w-8;
 	}
-	&.icon-xl {
+	&.icon-xl,
+	&.icon-xl svg {
 		@apply h-9 w-9;
 	}
-	&.icon-xxl {
+	&.icon-xxl,
+	&.icon-xxl svg {
 		@apply h-12 w-12;
 	}
 
