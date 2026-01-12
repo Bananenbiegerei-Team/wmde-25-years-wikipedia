@@ -28,7 +28,7 @@ $cta_text = get_field('cta_text') ?: 'Schreiben Sie mit am Wissen der Welt.';
 $button_text = get_field('button_text') ?: 'Jetzt mitmachen';
 $button_link = get_field('button_link') ?: 'https://www.wikimedia.de/mitmachen';
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-secondary-light pb-8 lg:pb-16 flex flex-col md:flex-row items-center justify-center gap-4">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> bg-secondary-light/50 pb-8 lg:pb-16 flex flex-col md:flex-row items-center justify-center gap-4">
     <p class="text-xl text-center md:text-2xl md:text-left font-headings"><?php echo esc_html($cta_text); ?></p>
     <a class="px-6 py-1 text-xl text-white transition-colors rounded-lg bg-secondary-dark hover:bg-secondary-dark/80 md:text-2xl font-menus" href="<?php echo esc_url($button_link); ?>"
     onclick="window._paq && window._paq.push(['trackEvent','CTA','Klick','Participate CTA in content',1])"
