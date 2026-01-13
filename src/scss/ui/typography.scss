@@ -11,30 +11,54 @@ h6 {
 	@apply font-headings leading-none font-medium;
 }
 
+body.page:not(.home) .content {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply leading-tight mb-2;
+	}
+
+	p,
+	ul:not([class]),
+	ol:not([class]) {
+		@apply leading-normal mb-6 max-w-4xl;
+	}
+}
+
 h1,
 .h1 {
 	@apply text-2xl lg:text-5xl;
 }
+
 h2,
 .h2 {
 	@apply text-2xl lg:text-3xl;
 }
+
 h3,
 .h3 {
 	@apply text-xl lg:text-2xl;
 }
+
 h4,
 .h4 {
 	@apply text-lg lg:text-xl;
 }
+
 h5,
 .h5 {
 	@apply text-base lg:text-lg;
 }
+
 h6,
 .h6 {
 	@apply text-sm lg:text-base;
 }
+
 p,
 ul:not([class]),
 ol:not([class]) {
@@ -51,6 +75,7 @@ footer p {
 
 .main-content {
 	@apply font-texts;
+
 	p a,
 	ul a,
 	ol a,
