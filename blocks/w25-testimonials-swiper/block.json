@@ -1,0 +1,15 @@
+{
+	"name": "acf/w25-testimonials-swiper",
+	"title": "W25 Testimonials Swiper",
+	"description": "Testimonials carousel/swiper with auto-scroll",
+	"category": "custom-blocks",
+	"icon": "testimonial",
+	"keywords": ["testimonials", "swiper", "carousel", "quotes"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"align": ["full"]
+	}
+}

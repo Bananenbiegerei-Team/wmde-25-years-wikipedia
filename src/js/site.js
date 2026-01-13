@@ -34,6 +34,7 @@ import '../../blocks/w25-news/script.js';
 import '../../blocks/w25-protect-knowledge/script.js';
 import '../../blocks/w25-numbers/script.js';
 import '../../blocks/w25-glam/script.js';
+import '../../blocks/w25-testimonials-swiper/script.js';
 
 // Init Alpine
 window.Alpine = Alpine;

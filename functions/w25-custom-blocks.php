@@ -22,6 +22,7 @@ function register_acf_block_types()
 		'w25-hero-video',
 		'w25-welcome-text',
 		'w25-testimonials',
+		'w25-testimonials-swiper',
 		'w25-numbers',
 		'w25-bus',
 		'w25-news',
