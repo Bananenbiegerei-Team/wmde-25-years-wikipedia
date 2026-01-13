@@ -5,7 +5,8 @@ add_action(
     'wp_enqueue_scripts',
     function () {
         // Site javascript, loaded with defer
-        wp_enqueue_script('site', get_template_directory_uri() . '/js/site.js', ['jquery'], '', ['in_footer' => true, 'strategy' => 'defer']);
+        $site_js_version = filemtime(get_template_directory() . '/js/site.js');
+        wp_enqueue_script('site', get_template_directory_uri() . '/js/site.js', ['jquery'], $site_js_version, ['in_footer' => true, 'strategy' => 'defer']);
         // Allow easy editing of post with `CTLR-E`
         if (current_user_can('edit_post', get_the_ID())) {
             $post_edit_url = get_edit_post_link(get_the_ID(), '&');
@@ -25,7 +26,8 @@ add_action(
         }
 
         // Site style
-        wp_enqueue_style('style', get_template_directory_uri() . '/css/site.css', [], '', 'all');
+        $site_css_version = filemtime(get_template_directory() . '/css/site.css');
+        wp_enqueue_style('style', get_template_directory_uri() . '/css/site.css', [], $site_css_version, 'all');
     },
     999
 );
@@ -36,13 +38,17 @@ add_action(
     function () {
         global $pagenow;
         if ($pagenow == 'post.php' || $pagenow == 'post-new.php') {
-            wp_enqueue_script('editor-addon', get_template_directory_uri() . '/js/editor.js', ['jquery', 'acf-input'], '', false);
+            $editor_js_version = filemtime(get_template_directory() . '/js/editor.js');
+            wp_enqueue_script('editor-addon', get_template_directory_uri() . '/js/editor.js', ['jquery', 'acf-input'], $editor_js_version, false);
             // Load editor-specific overrides first to reset WordPress defaults
-            wp_enqueue_style('editor-wmde', get_template_directory_uri() . '/css/editor.css', [], '', 'all');
+            $editor_css_version = filemtime(get_template_directory() . '/css/editor.css');
+            wp_enqueue_style('editor-wmde', get_template_directory_uri() . '/css/editor.css', [], $editor_css_version, 'all');
             // Load frontend styles last so Tailwind utilities can override (depends on editor-wmde)
-            wp_enqueue_style('site-frontend', get_template_directory_uri() . '/css/site.css', ['editor-wmde'], '', 'all');
+            $site_css_version = filemtime(get_template_directory() . '/css/site.css');
+            wp_enqueue_style('site-frontend', get_template_directory_uri() . '/css/site.css', ['editor-wmde'], $site_css_version, 'all');
         }
-        wp_enqueue_script('admin', get_template_directory_uri() . '/js/admin.js', ['jquery'], '', false);
+        $admin_js_version = file_exists(get_template_directory() . '/js/admin.js') ? filemtime(get_template_directory() . '/js/admin.js') : '1.0';
+        wp_enqueue_script('admin', get_template_directory_uri() . '/js/admin.js', ['jquery'], $admin_js_version, false);
         if (current_user_can('administrator')) {
             $acf_url = get_admin_url() . '/edit.php?post_type=acf-field-group';
             if (is_multisite()) {
