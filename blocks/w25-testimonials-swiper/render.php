@@ -13,8 +13,11 @@ if (is_admin() || $is_preview): ?>
             <?php endif; ?>
         </div>
     </div>
-<?php else: ?>
-<div class="mb-10 -mx-6 w25-testimonials-swiper-block lg:mb-20 lg:mx-0" id="<?= $block['id'] ?>">
+<?php else:
+$wide_layout = get_field('wide_layout');
+$wide_class = $wide_layout ? 'wide' : '';
+?>
+<div class="mb-10 -mx-6 w25-testimonials-swiper-block lg:mb-20 lg:mx-0 <?= $wide_class ?>" id="<?= $block['id'] ?>">
     <div class="swiper">
         <div class="swiper-wrapper">
             <?php if (have_rows('testimonials')): ?>

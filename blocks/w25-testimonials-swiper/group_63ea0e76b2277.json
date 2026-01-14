@@ -3,6 +3,25 @@
     "title": "Block: Testimonials Swiper",
     "fields": [
         {
+            "key": "field_69665322wide1",
+            "label": "Wide Layout",
+            "name": "wide_layout",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Enable to make the swiper span the full container width",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_63ea0e77cc52e",
             "label": "Testimonials",
             "name": "testimonials",
