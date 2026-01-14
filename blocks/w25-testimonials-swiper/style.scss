@@ -1,7 +1,7 @@
 // Make the container span full width when this block is inside it
-// .bb-container-default:has(.w25-testimonials-swiper-block) {
-// 	@apply col-span-12;
-// }
+.bb-container-default:has(.w25-testimonials-swiper-block) {
+	@apply col-span-12;
+}
 
 .w25-testimonials-swiper-block {
 	@apply relative;
