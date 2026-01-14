@@ -26,7 +26,7 @@ if (is_admin() || $is_preview): ?>
                     ?>
                     <div class="swiper-slide !h-auto">
                         <div class="rounded-xl bg-neutral-light p-4 !h-full">
-                            <blockquote class="flex flex-col items-stretch h-full gap-4 text-xl justfiy-between text-primary-dark">
+                            <blockquote class="flex flex-col items-stretch h-full gap-4 text-base justfiy-between text-primary-dark">
                                     <div>
                                         <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 rounded-full">
                                         <?= bb_icon('quote', 'icon-xs') ?>
@@ -35,7 +35,7 @@ if (is_admin() || $is_preview): ?>
                                     </div>
                                 <?php if ($testimonial_source): ?>
                                     <div class="flex flex-col mt-auto">
-                                        <cite class="text-base not-italic font-bold leading-tight">
+                                        <cite class="text-sm not-italic font-bold leading-tight">
                                             — <?= esc_html($testimonial_source) ?>
                                         </cite>
                                         <?php if ($testimonial_source_role): ?>

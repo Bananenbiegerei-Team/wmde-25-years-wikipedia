@@ -13,11 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 disableOnInteraction: true,
             },
             grabCursor: true,
+
             // Settings for mobile
             centeredSlides: false,
             loop: false,
             rewind: true,
-            slidesPerView: 1.1,
+            slidesPerView: 1.4,
+            // spaceBetween: 16,
             // Responsive breakpoints
             breakpoints: {
                 640: {
