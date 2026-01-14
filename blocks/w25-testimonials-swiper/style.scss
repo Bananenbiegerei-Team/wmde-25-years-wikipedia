@@ -1,66 +1,58 @@
 .w25-testimonials-swiper-block {
-	position: relative;
+	@apply relative;
 
 	// Using borders instead of Swiper.js's spaceBetween option
-	// For mobile,  just to the left so that the first slide is aligned properly
+	// For mobile, just to the left so that the first slide is aligned properly
 	.swiper-slide {
-		border-left: solid 1.25rem transparent;
-		border-right: none;
+		@apply border-l-[1.25rem] border-r-0 border-transparent;
 	}
 	// For bigger screens on both sides
-	@media (min-width: 640px) {
+	@screen sm {
 		.swiper-slide {
-			border-left: solid 1.25rem transparent;
-			border-right: solid 1.25rem transparent;
+			@apply border-x-[1.25rem] border-transparent;
 		}
 	}
 
 	// Prepare fade effect on either side of the swiper block
 	&::before,
 	&::after {
-		opacity: 0;
 		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		z-index: 2;
-		transition: opacity 0.5s;
+		@apply block absolute top-0 bottom-0 z-[2] opacity-0 transition-opacity duration-500;
 		// Fade length
-		width: 1.25em;
-		@media (min-width: 640px) and (max-width: 1023px) {
-			width: 4em;
+		@apply w-[1.25em];
+		@screen sm {
+			@apply w-[4em];
 		}
-		@media (min-width: 1024px) {
-			width: 8em;
+		@screen lg {
+			@apply w-[8em];
 		}
 	}
 
 	// Left side fade
 	&::before {
-		left: 0;
-		background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+		@apply left-0 bg-gradient-to-r from-white;
+
 	}
 
 	// Right side fade
 	&::after {
-		right: 0;
-		background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+		@apply right-0 bg-gradient-to-l from-white;
+
 	}
 
 	// Fade effect active on load for mobile and smaller screens
 	@media (max-width: 1023px) {
 		&::before,
 		&::after {
-			opacity: 1;
+			@apply opacity-100;
 		}
 	}
 
 	// For larger screens: apply fade effect when Swiper starts moving (see swiper config)
-	@media (min-width: 1024px) {
+	@screen lg {
 		&.started::before,
 		&.started::after {
-			opacity: 1;
+			@apply opacity-100;
 		}
 	}
 }
