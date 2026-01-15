@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		gsap.registerPlugin(ScrollTrigger);
 
 		const puzzleItems = container.querySelectorAll('.puzzle-item');
-		const stickyContent = document.querySelector('.glam-content-sticky');
 
 		// Detect orientation mode (portrait vs landscape)
 		// Portrait: height > width (phones, tablets held vertically)
@@ -106,19 +105,5 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			);
 		});
-
-		// Create sticky effect for content using ScrollTrigger pin
-		// Only enable on landscape/desktop (width >= 1024px) to avoid sticky on mobile
-		if (stickyContent && glamContainer && !isPortrait) {
-			ScrollTrigger.create({
-				trigger: glamContainer,
-				start: 'top top', // Pin when container reaches top of viewport
-				end: 'bottom bottom', // Unpin when container bottom reaches viewport bottom
-				pin: stickyContent,
-				pinSpacing: true, // Add spacing to prevent content jump
-				markers: false, // Set to false for production
-				id: 'glam-sticky-pin' // Custom name for debugging markers
-			});
-		}
 	}
 });

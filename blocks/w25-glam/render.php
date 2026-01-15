@@ -53,8 +53,8 @@ $glam_cta = get_field('glam_cta');
         </div>
         <?php endif; ?>
         </div>
-        <div class="container relative mt-[40vw] md:mt-0 z-20 h-full pb-4">
-            <div class="glam-content-sticky pl-0 md:pl-[50%]">
+        <div class="container relative mt-[40vw] md:mt-0 z-20 h-full pb-4 h-full">
+            <div class="pl-0 md:pl-[33%] md:mt-16">
                 <div class="mr-8 space-y-4 md:space-y-8">
                     <?php if ($headline): ?>
                 <h2 class="text-2xl lg:text-3xl xl:text-4xl"><?php echo esc_html($headline); ?></h2>
