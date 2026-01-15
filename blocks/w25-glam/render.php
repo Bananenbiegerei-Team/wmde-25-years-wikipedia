@@ -33,7 +33,7 @@ $glam_cta = get_field('glam_cta');
     <?php if (!is_admin()): ?>
     <div class="overflow-hidden glam-container">
         <div class="relative w-full">
-        <img src="<?php echo get_template_directory_uri(); ?>/blocks/w25-glam/transition-top-2.png" alt="Puzzle Teile als Trenner oben" class="block w-full h-auto origin-top-left scale-[200%] md:scale-100">
+        <img src="<?php echo get_template_directory_uri(); ?>/blocks/w25-glam/transition-top-3.png" alt="Puzzle Teile als Trenner oben" class="block w-full h-auto origin-top-left scale-[200%] md:scale-100">
         <?php
         $glam_puzzles = get_field('glam_puzzles');
         if ($glam_puzzles): ?>
