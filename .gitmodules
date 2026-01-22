@@ -1,0 +1,6 @@
+[submodule "bb-blocks"]
+	path = bb-blocks
+	url = https://github.com/Bananenbiegerei-Team/bb-blocks
+[submodule "bb-components"]
+	path = bb-components
+	url = https://github.com/Bananenbiegerei-Team/bb-components
