@@ -1,0 +1,15 @@
+{
+    "name": "acf/w25-video-swiper",
+    "title": "W25 Video Swiper",
+    "description": "Slider for multiple videos",
+    "category": "custom-blocks",
+    "icon": "video-alt3",
+    "keywords": [],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "align": false
+    }
+}

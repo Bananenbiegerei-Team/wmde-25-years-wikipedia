@@ -1,0 +1,67 @@
+{
+    "key": "group_w25_video_swiper",
+    "title": "Block: W25 Video Swiper",
+    "fields": [
+        {
+            "key": "field_696_video_slides",
+            "label": "Video Slides",
+            "name": "videoSlides",
+            "type": "repeater",
+            "instructions": "Add each video slide here.",
+            "required": 0,
+            "layout": "block",
+            "button_label": "Eintrag hinzufügen",
+            "sub_fields": [
+                {
+                    "key": "field_696_slide_video",
+                    "label": "Video (mp4)",
+                    "name": "videoFile",
+                    "type": "file",
+                    "required": 1,
+                    "return_format": "array",
+                    "mime_types": "mp4"
+                },
+                {
+                    "key": "field_696_slide_poster",
+                    "label": "Poster Image",
+                    "name": "posterImage",
+                    "type": "image",
+                    "required": 1,
+                    "return_format": "id",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_696_slide_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_696_slide_subtitle",
+                    "label": "Subtitle",
+                    "name": "subtitle",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_696_slide_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "wysiwyg",
+                    "media_upload": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/w25-video-swiper"
+            }
+        ]
+    ],
+    "active": true
+}

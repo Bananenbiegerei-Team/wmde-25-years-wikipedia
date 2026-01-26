@@ -1,6 +1,7 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
+	mode: 'jit',
 	content: [
 		'./**/*.php',
 		'./blocks/**/render.php',
@@ -165,6 +166,9 @@ module.exports = {
 						},
 						blue: {
 							dark: '#000068'
+						},
+						green: {
+							DEFAULT: '#EBFF9A',
 						},
 						purple: {
 							DEFAULT: '#7262D7',
