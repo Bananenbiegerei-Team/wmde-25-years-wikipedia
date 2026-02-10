@@ -9,7 +9,7 @@ sort($images); // Ensure they're in numerical order
 // Get the total number of images
 $image_count = count($images);
 ?>
-<div class="relative hidden lg:block" id="bus-container">
+<div class="relative hidden lg:pb-16 lg:block" id="bus-container">
     <?php foreach ($images as $index => $image_path):
         $image_number = $index + 1;
         $image_filename = basename($image_path);
