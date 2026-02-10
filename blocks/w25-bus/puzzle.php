@@ -3,7 +3,7 @@ $template_uri = get_template_directory_uri();
 $animation_dir = get_template_directory() . '/blocks/w25-bus/img/animation/';
 
 // Get all bus-puzzle images from the animation directory
-$images = glob($animation_dir . 'bus-puzzle-*.png');
+$images = glob($animation_dir . 'bus-puzzle-neu-*.png');
 sort($images); // Ensure they're in numerical order
 
 // Get the total number of images
