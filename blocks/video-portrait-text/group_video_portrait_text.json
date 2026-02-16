@@ -1,0 +1,98 @@
+{
+    "key": "group_video_portrait_text",
+    "title": "Block: Video Portrait Text",
+    "fields": [
+        {
+            "key": "field_vpt_tab_video",
+            "label": "Video",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_vpt_video_content",
+            "label": "Video Content",
+            "name": "videoContent",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_vpt_v_file",
+                    "label": "Video (mp4)",
+                    "name": "video",
+                    "type": "file",
+                    "required": 1,
+                    "return_format": "array",
+                    "mime_types": "mp4"
+                },
+                {
+                    "key": "field_vpt_v_poster",
+                    "label": "Poster Image",
+                    "name": "poster",
+                    "type": "image",
+                    "required": 1,
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_vpt_v_title",
+                    "label": "Video Title",
+                    "name": "title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_vpt_v_subtitle",
+                    "label": "Video Subtitle",
+                    "name": "subtitle",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_vpt_tab_text",
+            "label": "Text",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_vpt_text_content",
+            "label": "Text Content",
+            "name": "textContent",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_vpt_t_pretitle",
+                    "label": "Pre-Title",
+                    "name": "preTitle",
+                    "type": "text"
+                },
+                {
+                    "key": "field_vpt_t_title",
+                    "label": "Main Title",
+                    "name": "title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_vpt_t_content",
+                    "label": "Content",
+                    "name": "content",
+                    "translations": "translate",
+                    "type": "wysiwyg",
+                    "tabs": "all",
+                    "toolbar": "wmde",
+                    "media_upload": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/video-portrait-text"
+            }
+        ]
+    ]
+}

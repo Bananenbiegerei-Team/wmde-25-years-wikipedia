@@ -1,0 +1,23 @@
+/* Plain CSS - not processed by Tailwind/PostCSS */
+
+.overrides .plyr {
+    height: 100%;
+}
+
+.overrides .plyr__poster {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.overrides .plyr__video-embed {
+    aspect-ratio: unset;
+}
+
+/* Make controls visible */
+.overrides .plyr--video .plyr__controls {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+}

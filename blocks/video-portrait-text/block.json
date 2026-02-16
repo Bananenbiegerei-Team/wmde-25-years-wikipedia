@@ -1,0 +1,21 @@
+{
+    "name": "acf/video-portrait-text",
+    "title": "Video Portrait Text",
+    "description": "A split block featuring a portrait video (9:16) and a text content area.",
+    "category": "wmde-custom-blocks",
+    "icon": "format-video",
+    "keywords": [
+        "video",
+        "portrait",
+        "text",
+        "split"
+    ],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "video-portrait-text.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}
