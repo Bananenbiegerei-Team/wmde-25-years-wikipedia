@@ -27,3 +27,15 @@ $bb_colors: 'primary', 'secondary', 'neutral', 'success', 'warning', 'error', 'a
 
 /* Styles for W25 Blocks */
 @import '../../blocks/**/style.scss';
+
+.home .video-portrait-text-block {
+    @apply max-w-xl lg:max-w-5xl mx-auto px-4 md:px-0;
+    p, h2 {
+        @apply mb-0;
+    }
+}
+.video-portrait-text-block {
+    p, h2 {
+        @apply mb-0;
+    }
+}
