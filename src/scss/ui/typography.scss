@@ -19,13 +19,13 @@ body.page:not(.home) .content {
 	h4,
 	h5,
 	h6 {
-		@apply leading-snug mb-2;
+		@apply leading-snug;
 	}
 
 	p,
 	ul:not([class]),
 	ol:not([class]) {
-		@apply leading-normal mb-6 max-w-4xl;
+		@apply leading-normal max-w-4xl;
 	}
 }
 

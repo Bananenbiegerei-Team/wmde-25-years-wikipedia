@@ -1,0 +1,20 @@
+{
+    "name": "acf/w25-event-teaser",
+    "title": "W25 Event Teaser",
+    "description": "A teaser block for displaying event information.",
+    "category": "wmde-custom-blocks",
+    "icon": "calendar-alt",
+    "keywords": [
+        "event",
+        "teaser",
+        "calendar"
+    ],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "event-teaser.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}
