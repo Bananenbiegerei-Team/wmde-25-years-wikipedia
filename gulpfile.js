@@ -21,6 +21,7 @@ function stylesDev() {
 		.pipe(
 			sass({
 				includePaths: ['node_modules'],
+				silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin'],
 			}).on('error', sass.logError)
 		)
 		.pipe(postcss([tailwindcss('./tailwind.config.js')]))
@@ -35,6 +36,7 @@ function stylesProd() {
 		.pipe(
 			sass({
 				includePaths: ['node_modules'],
+				silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin'],
 			}).on('error', sass.logError)
 		)
 		.pipe(postcss([tailwindcss('./tailwind.config.js'), autoprefixer(), cssnano()]))
