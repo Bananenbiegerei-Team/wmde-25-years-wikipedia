@@ -29,6 +29,27 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_699590eaea7c0",
+            "label": "Date",
+            "name": "date",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_69947ce8826a0",
             "label": "Headline",
             "name": "headline",
@@ -106,5 +127,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1771341464
+    "modified": 1771409652
 }
