@@ -24,20 +24,20 @@ if ($video_content || $text_content): ?>
         <div class="flex flex-col justify-center col-span-4 space-y-2 md:order-2 md:col-span-5">
             <div>
                 <?php if (!empty($text_content['preTitle'])): ?>
-                <p class="mb-0 text-sm font-bold uppercase">
+                <p class="mb-1 text-sm font-bold uppercase">
                     <?php echo esc_html($text_content['preTitle']); ?>
                 </p>
             <?php endif; ?>
 
             <?php if (!empty($text_content['title'])): ?>
-                <h2 class="mb-0 text-xl lg:text-2xl">
+                <h2 class="mb-2 text-2xl lg:text-3xl xl:text-4xl">
                     <?php echo esc_html($text_content['title']); ?>
                 </h2>
             <?php endif; ?>
             </div>
 
             <?php if (!empty($text_content['content'])): ?>
-                <p class="mb-0 text-lg leading-tight lg:text-xl">
+                <p class="mb-0 text-xl leading-tight lg:text-2xl font-headings">
                     <?php echo wp_kses($text_content['content'], [
                         'a' => [
                             'href' => [],
