@@ -18,13 +18,14 @@ $image = get_field('image');
 $headline = get_field('headline');
 $text = get_field('text');
 $link = get_field('link');
+$date = get_field('date');
 
-if ($image || $headline || $text || $link): ?>
+if ($image || $headline || $text || $link || $date): ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> my-4 md:my-8 bg-gray rounded-xl p-5 md:flex gap-4">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> group/event relative my-4 md:my-8 bg-gray rounded-xl p-5 md:flex gap-4 ">
     <?php if ($image): ?>
-        <div class="mb-2 basis-1/4 md:mb-0 h-full">
-            <?php echo wp_get_attachment_image($image['ID'], 'four-columns-four-three', false, ['class' => 'rounded-lg']); ?>
+        <div class="h-full mb-2 basis-1/4 md:mb-0">
+            <?php echo wp_get_attachment_image($image['ID'], 'four-columns-sixteen-nine', false, ['class' => 'rounded-lg group-hover/event:opacity-50 transition']); ?>
         </div>
     <?php endif; ?>
     <div class="basis-3/4">
