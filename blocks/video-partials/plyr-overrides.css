@@ -1,0 +1,155 @@
+/* Video Player Overrides */
+
+.video-player-wrapper {
+    /* Active progress bar color (the filled portion) - 80% white */
+    --plyr-color-main: rgba(255, 255, 255, 0.8);
+    --plyr-range-fill-background: rgba(255, 255, 255, 0.8);
+
+    /* Remove gradient background from controls */
+    --plyr-video-controls-background: transparent;
+
+    /* Track styling */
+    --plyr-range-track-height: 10px;
+    --plyr-video-range-track-background: rgba(0, 0, 0, 0.8);
+
+    /* Remove control spacing/padding */
+    --plyr-control-spacing: 0;
+}
+
+.video-player-wrapper .plyr {
+    background: transparent;
+}
+
+.video-player-wrapper .plyr__video-wrapper {
+    background: transparent;
+}
+
+.video-player-wrapper .plyr__video-embed {
+    aspect-ratio: unset;
+    border-radius: 0.75rem;
+    height: 100%;
+    background: transparent;
+}
+
+.video-player-wrapper .plyr__video-embed video {
+    border-radius: 0.75rem;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.video-player-wrapper .plyr__poster {
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hide controls by default and position at bottom */
+.video-player-wrapper .plyr--video .plyr__controls {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0);
+    padding: 0;
+    bottom: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show controls when playing */
+.video-player-wrapper.is-playing .plyr--video .plyr__controls {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Progress bar styling - set the fill color via currentColor */
+.video-player-wrapper .plyr--full-ui.plyr--video input[type='range'] {
+    cursor: pointer;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.8);
+    height: 10px;
+}
+
+/* Progress bar track (the background line) - use gradient to preserve fill */
+.video-player-wrapper .plyr--full-ui.plyr--video input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: linear-gradient(to right, currentColor var(--value, 0%), transparent var(--value, 0%));
+}
+
+.video-player-wrapper .plyr--full-ui.plyr--video input[type='range']::-moz-range-track {
+    height: 10px;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Remove all spacing from controls container */
+.video-player-wrapper .plyr__controls .plyr__controls__item {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.video-player-wrapper .plyr__controls .plyr__controls__item.plyr__progress__container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Remove default progress bar spacing */
+.video-player-wrapper .plyr__progress {
+    left: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* Remove input margin adjustments */
+.video-player-wrapper .plyr__progress input[type='range'],
+.video-player-wrapper .plyr__progress__buffer {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+/* Progress bar thumb (the draggable circle) - HIDDEN */
+.video-player-wrapper .plyr--full-ui.plyr--video input[type='range']::-webkit-slider-thumb {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.video-player-wrapper .plyr--full-ui.plyr--video input[type='range']::-moz-range-thumb {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+/* Progress bar progress fill (Firefox) */
+.video-player-wrapper .plyr--full-ui.plyr--video input[type='range']::-moz-range-progress {
+    border-radius: 0;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Buffered area (shows loaded video) */
+.video-player-wrapper .plyr--video .plyr__progress__buffer {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Hide fullscreen button */
+.video-player-wrapper .plyr__controls button[data-plyr='fullscreen'] {
+    display: none;
+}
+
+/* Hide picture-in-picture button */
+.video-player-wrapper .plyr__controls button[data-plyr='pip'],
+.video-player-wrapper .plyr__controls [data-plyr='pip'],
+.video-player-wrapper .plyr__control[data-plyr='pip'] {
+    display: none !important;
+}
+
+/* Hide the tooltip */
+.video-player-wrapper .plyr__progress .plyr__tooltip {
+    display: none;
+}
