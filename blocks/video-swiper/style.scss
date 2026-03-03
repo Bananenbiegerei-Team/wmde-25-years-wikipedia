@@ -1,0 +1,16 @@
+.bb-video-swiper-block {
+	.swiper-wrapper {
+		align-items: stretch;
+	}
+	.swiper-slide {
+		height: auto;
+	}
+	.plyr {
+		@apply w-auto h-full;
+		.plyr__control.plyr__control--overlaid {
+			svg {
+				@apply hidden;
+			}
+		}
+	}
+}
