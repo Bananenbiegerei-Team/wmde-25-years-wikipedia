@@ -1,5 +1,5 @@
 <?php if (has_post_thumbnail()): ?>
-<div class="bg-secondary min-h-[12rem]">
+<div class="bg-primary min-h-[12rem]">
     <div class="container grid grid-cols-12">
         <div class="col-span-12 pt-4 md:col-span-10 md:col-start-2">
             <?php //get_template_part('template-parts/breadcrumbs'); ?>
