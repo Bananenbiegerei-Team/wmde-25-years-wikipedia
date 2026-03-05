@@ -113,6 +113,16 @@ module.exports = {
 		// 	});
 		// }),
 		require('@tailwindcss/forms'),
+		require('tailwind-easing-gradients')({
+			variants: ['responsive'],
+			alphaDecimals: 5,
+			colorStops: 15,
+			easing: 'ease-in-out',
+			colorMode: 'lrgb',
+			gradients: {
+				'black-transparent': ['rgba(0,0,0,0.6)', 'transparent'],
+			},
+		}),
 		require('tailwindcss-themer')({
 			defaultTheme: {
 				extend: {
