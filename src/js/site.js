@@ -40,3 +40,18 @@ import '../../blocks/w25-testimonials-swiper/script.js';
 window.Alpine = Alpine;
 Alpine.plugin(focus);
 Alpine.start();
+
+// Initialize all Swipers from SwipersConfig (defined in head.php, populated by blocks)
+// Use window.onload to ensure all inline scripts have executed
+window.addEventListener('load', () => {
+	if (typeof SwipersConfig !== 'undefined') {
+		Object.keys(SwipersConfig).forEach((selector) => {
+			const container = document.querySelector(selector + ' .swiper');
+			if (container) {
+				const config = SwipersConfig[selector];
+				config.modules = [Navigation, Pagination, EffectCoverflow, Autoplay, EffectFade];
+				new Swiper(container, config);
+			}
+		});
+	}
+});

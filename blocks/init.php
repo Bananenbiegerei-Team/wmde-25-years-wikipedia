@@ -8,6 +8,15 @@
 define('WMDE_BB_BLOCKS_DIR', 'blocks');
 define('WMDE_BB_BLOCKS_PATH', get_template_directory() . '/' . WMDE_BB_BLOCKS_DIR);
 
+// Load shared partials (folders without block.json that provide shared functionality)
+$shared_partials = ['video-partials'];
+foreach ($shared_partials as $partial) {
+	$partial_functions = WMDE_BB_BLOCKS_PATH . '/' . $partial . '/functions.php';
+	if (file_exists($partial_functions)) {
+		require_once $partial_functions;
+	}
+}
+
 // Define text domain constant if not already defined
 if (!defined('BB_TEXT_DOMAIN')) {
 	define('BB_TEXT_DOMAIN', wp_get_theme()->get('TextDomain'));

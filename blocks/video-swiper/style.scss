@@ -1,16 +1,46 @@
 .bb-video-swiper-block {
 	.swiper-wrapper {
-		align-items: stretch;
+		align-items: flex-start;
 	}
+
 	.swiper-slide {
 		height: auto;
+		width: auto;
 	}
+
+	.video-player-wrapper {
+		@apply w-full;
+	}
+
 	.plyr {
-		@apply w-auto h-full;
+		@apply w-full h-full;
+
 		.plyr__control.plyr__control--overlaid {
 			svg {
 				@apply hidden;
 			}
 		}
+	}
+
+	.plyr__video-embed {
+		@apply w-full h-full;
+
+		video {
+			@apply w-full h-full object-cover;
+		}
+	}
+
+	// Reset position for pagination and navigation to allow Tailwind styling in template
+	.swiper-button-prev,
+	.swiper-button-next {
+		@apply static mt-0 w-auto h-auto w-12;
+
+		svg {
+			@apply w-6 h-6;
+		}
+	}
+
+	.swiper-pagination {
+		@apply static text-xl font-alt;
 	}
 }

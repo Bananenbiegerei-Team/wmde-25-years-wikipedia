@@ -4,12 +4,18 @@
         <div class="w-full bb-video-swiper-block">
             <div class="flex items-center justify-end w-full">
                 <div class="flex items-center mb-4 space-x-2">
-                    <?= bb_icon('chevron-left', 'swiper-button-prev btn btn-outline cursor-pointer icon-xxl') ?>
-                    <div class="flex gap-2 mx-2 text-3xl align-middle swiper-pagination font-alt"></div>
-                    <?= bb_icon('chevron-right', 'swiper-button-next btn btn-outline cursor-pointer icon-xxl') ?>
+                    <div class="p-2 transition border rounded-lg swiper-button-prev border-primary hover:bg-primary-light">
+                    <?= bb_icon('chevron-left', '') ?>
+                    </div>
+
+                    <div class="flex mx-2 text-3xl align-middle swiper-pagination font-alt"></div>
+
+                    <div class="p-2 transition border rounded-lg swiper-button-next border-primary hover:bg-primary-light">
+                    <?= bb_icon('chevron-right', '') ?>
+                    </div>
                 </div>
             </div>
-            <div class="relative swiper-container">
+            <div class="relative swiper">
                 <div class="swiper-wrapper">
                     <?php if (have_rows('video_swiper')) : ?>
                     <?php $index = 0; ?>
