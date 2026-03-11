@@ -4,13 +4,13 @@
         <div class="w-full bb-video-swiper-block">
             <div class="flex items-center justify-end w-full">
                 <div class="flex items-center mb-4 space-x-2">
-                    <div class="p-2 transition border rounded-lg swiper-button-prev border-primary hover:bg-primary-light">
+                    <div class="p-2 transition border border-black rounded-lg swiper-button-prev hover:bg-neutral-light">
                     <?= bb_icon('chevron-left', '') ?>
                     </div>
 
                     <div class="flex mx-2 text-3xl align-middle swiper-pagination font-alt"></div>
 
-                    <div class="p-2 transition border rounded-lg swiper-button-next border-primary hover:bg-primary-light">
+                    <div class="p-2 transition border border-black rounded-lg swiper-button-next hover:bg-neutral-light">
                     <?= bb_icon('chevron-right', '') ?>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
 
                                         <?php if ($modal_headline) : ?>
                                         <!-- Headline -->
-                                        <h2 class="mb-0 font-sans text-primary" :id="$id('modal-title-<?php echo $index; ?>')">
+                                        <h2 class="mb-0 font-sans text-neutral" :id="$id('modal-title-<?php echo $index; ?>')">
                                             <?php echo esc_html($modal_headline); ?>
                                         </h2>
                                         <?php endif; ?>
@@ -120,7 +120,7 @@
                 },
                 autoHeight: true,
                 slidesPerView: 1,
-                spaceBetween: 32,
+                spaceBetween: 20,
                 freeMode: true,
                 simulateTouch: false,
                 touchMoveStopPropagation: false,

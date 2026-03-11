@@ -1,3 +1,8 @@
+.home {
+	.bb-video-swiper-block {
+		@apply max-w-4xl mx-auto;
+	}
+}
 .bb-video-swiper-block {
 	.swiper-wrapper {
 		align-items: flex-start;
@@ -33,7 +38,7 @@
 	// Reset position for pagination and navigation to allow Tailwind styling in template
 	.swiper-button-prev,
 	.swiper-button-next {
-		@apply static mt-0 w-auto h-auto w-12;
+		@apply static mt-0 w-auto h-auto w-12 text-black;
 
 		svg {
 			@apply w-6 h-6;

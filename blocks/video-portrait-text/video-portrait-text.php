@@ -20,8 +20,8 @@ $text_content  = get_field('textContent');
 if ($video_content || $text_content): ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="relative my-8 md:my-16 w-full <?php echo esc_attr($className); ?>">
-    <div class="grid grid-cols-4 gap-8 mx-auto md:grid-cols-8">
-        <div class="flex flex-col justify-center col-span-4 space-y-2 md:order-2 md:col-span-5">
+    <div class="flex lg:gap-10">
+        <div class="flex flex-col justify-center space-y-2 basis-2/3 md:order-2 md:col-span-5">
             <div>
                 <?php if (!empty($text_content['preTitle'])): ?>
                 <p class="mb-1 text-sm font-bold uppercase">
@@ -54,7 +54,7 @@ if ($video_content || $text_content): ?>
             <?php endif; ?>
         </div>
 
-        <div class="relative grid w-full h-full col-span-4 md:order-1 md:col-span-3">
+        <div class="relative grid w-full h-full basis-1/3 md:order-1">
             <?php if ($video_content):
                 $video      = $video_content['video'];
                 $width      = $video['width'] ?? null;
