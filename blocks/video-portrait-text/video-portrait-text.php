@@ -20,8 +20,8 @@ $text_content  = get_field('textContent');
 if ($video_content || $text_content): ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="relative my-8 md:my-16 w-full <?php echo esc_attr($className); ?>">
-    <div class="flex lg:gap-10">
-        <div class="flex flex-col justify-center space-y-2 basis-2/3 md:order-2 md:col-span-5">
+    <div class="gap-10 md:flex">
+        <div class="flex flex-col justify-center mb-10 space-y-2 basis-2/3 md:order-2 md:col-span-5 md:md-0">
             <div>
                 <?php if (!empty($text_content['preTitle'])): ?>
                 <p class="mb-1 text-sm font-bold uppercase">

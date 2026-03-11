@@ -1,6 +1,6 @@
 .home {
 	.bb-video-swiper-block {
-		@apply max-w-4xl mx-auto;
+		@apply max-w-xl lg:max-w-4xl mx-auto px-4 md:px-0;
 	}
 }
 .bb-video-swiper-block {
