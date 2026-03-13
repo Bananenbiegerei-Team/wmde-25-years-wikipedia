@@ -3,6 +3,27 @@
     "title": "Block: Video Swiper",
     "fields": [
         {
+            "key": "field_video_swiper_headline",
+            "label": "Headline",
+            "name": "headline",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6660b443ddeec",
             "label": "Video Swiper",
             "name": "video_swiper",
