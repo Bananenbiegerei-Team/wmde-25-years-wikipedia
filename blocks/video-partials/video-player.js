@@ -46,10 +46,12 @@ const VideoPlayer = {
             if (!videoElement || !playBtn) return;
 
             const player = new Plyr(videoElement, {
-                controls: ['progress'],
+                controls: ['progress', 'mute'],
                 clickToPlay: true,
                 hideControls: false,
                 disableContextMenu: false,
+                muted: false,
+                volume: 1,
                 settings: []
             });
 

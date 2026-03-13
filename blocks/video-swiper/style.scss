@@ -25,6 +25,12 @@
 				@apply hidden;
 			}
 		}
+		.plyr__controls__item.plyr__volume {
+			@apply absolute right-1 bottom-3 z-40 bg-black w-8 h-8 flex items-center justify-center rounded-full;
+			button {
+				@apply hover:bg-black/90
+			}
+		}
 	}
 
 	.plyr__video-embed {
