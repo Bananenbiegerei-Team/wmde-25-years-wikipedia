@@ -26,7 +26,10 @@
 			}
 		}
 		.plyr__controls__item.plyr__volume {
-			@apply absolute right-1 bottom-3 z-40 bg-black w-8 h-8 flex items-center justify-center rounded-full;
+			@apply absolute flex items-center justify-center w-8 h-8 m-auto text-white transition-all duration-300 border-[1px] border-black/50 rounded-full shadow-xl bg-black/50 hover:bg-black group-hover:scale-110 bottom-4 right-4;
+			&.has-info-button {
+				@apply bottom-14;
+			}
 			button {
 				@apply hover:bg-black/90
 			}

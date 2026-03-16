@@ -59,6 +59,19 @@ const VideoPlayer = {
             videoElement.plyr = player;
             wrapper.dataset.plyrInitialized = 'true';
 
+            // Check if info button exists and add class to volume control after Plyr is ready
+            player.on('ready', () => {
+                // Navigate up to find the swiper-slide or similar container that holds both video and info button
+                const slide = wrapper.closest('.swiper-slide') || wrapper.closest('[x-data]');
+                const infoButton = slide ? slide.querySelector('button[x-on\\:click="open = true"]') : null;
+                if (infoButton) {
+                    const volumeControl = wrapper.querySelector('.plyr__controls__item.plyr__volume');
+                    if (volumeControl) {
+                        volumeControl.classList.add('has-info-button');
+                    }
+                }
+            });
+
             // Observe for viewport visibility
             this.scrollObserver.observe(videoElement);
 
