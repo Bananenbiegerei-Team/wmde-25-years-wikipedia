@@ -57,31 +57,12 @@ if ($video_content || $text_content): ?>
         <div class="relative grid w-full h-full basis-1/3 md:order-1">
             <?php if ($video_content):
                 $video      = $video_content['video'];
-                $width      = $video['width'] ?? null;
-                $height     = $video['height'] ?? null;
-                $style_ratio = ($width && $height) ? "aspect-ratio: {$width} / {$height};" : "aspect-ratio: 9 / 16;";
                 $poster_id  = $video_content['poster'];
-                $poster_url = wp_get_attachment_image_url($poster_id, 'full');
+                $unique_id  = 'video-portrait-' . $block['id'];
+                $title      = '';
+                $subtitle   = '';
             ?>
-                <div class="relative w-full overflow-hidden overrides-portrait-video group">
-
-                    <div class="plyr__video-embed" style="<?php echo esc_attr($style_ratio); ?>">
-                        <video
-                            class="js-plyr-video"
-                            preload="metadata"
-                            playsinline
-                            poster="<?php echo esc_url($poster_url); ?>"
-                        >
-                            <source src="<?php echo esc_url($video['url']); ?>" type="<?php echo esc_attr($video['mime_type']); ?>">
-                        </video>
-                    </div>
-
-                    <button class="absolute inset-0 z-30 flex items-center justify-center w-16 h-16 m-auto text-white transition-all duration-300 border-[1px] border-black/50 rounded-full shadow-xl bg-black/50 play-button hover:bg-black group-hover:scale-110">
-                        <svg class="translate-x-[2px]" width="1.5em" height="1.5em" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 2.00537C0 0.387327 1.82137 -0.560979 3.14692 0.36691L12.6593 7.0256C13.7968 7.8218 13.7968 9.50632 12.6593 10.3025L3.14692 16.9612C1.82137 17.8891 0 16.9408 0 15.3228V2.00537Z" fill="currentColor"/>
-                        </svg>
-                    </button>
-                </div>
+                <?php include locate_template('blocks/video-partials/video-player.php'); ?>
             <?php endif; ?>
         </div>
 

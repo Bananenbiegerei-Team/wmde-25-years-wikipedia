@@ -1,0 +1,36 @@
+// Shared Video Player Styles
+// Used by video-swiper and video-portrait-text blocks
+
+.video-player-wrapper {
+    @apply w-full;
+}
+
+.plyr {
+    @apply w-full h-full;
+
+    .plyr__control.plyr__control--overlaid {
+        svg {
+            @apply hidden;
+        }
+    }
+
+    .plyr__controls__item.plyr__volume {
+        @apply absolute flex items-center justify-center w-8 h-8 m-auto text-white transition-all duration-300 border-[1px] border-black/50 rounded-full shadow-xl bg-black/50 hover:bg-black group-hover:scale-110 bottom-4 right-4;
+
+        &.has-info-button {
+            @apply bottom-14;
+        }
+
+        button {
+            @apply hover:bg-black/90;
+        }
+    }
+}
+
+.plyr__video-embed {
+    @apply w-full h-full;
+
+    video {
+        @apply w-full h-full object-cover;
+    }
+}
