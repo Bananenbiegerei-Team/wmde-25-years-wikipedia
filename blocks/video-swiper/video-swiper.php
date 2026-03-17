@@ -57,8 +57,8 @@
                                         class="relative w-full max-w-4xl p-4 pr-12 bg-white shadow-lg md:pb-32 md:p-24 rounded-xl">
                                         <!-- Close Button -->
                                         <button type="button" x-on:click="open = false"
-                                            class="absolute flex items-center justify-center w-10 h-10 p-1 cursor-pointer top-2 right-2 md:top-8 md:right-8 btn btn-ghost icon-md">
-                                            <?= bb_icon('x', 'w-6 h-6') ?>
+                                            class="absolute flex items-center justify-center w-10 h-10 p-1 cursor-pointer top-2 right-2 md:top-8 md:right-8 btn btn-ghost btn-icon">
+                                            <?= bb_icon('x', 'icon-lg') ?>
                                             <span class="sr-only"><?php _e('Close', 'flavor'); ?></span>
                                         </button>
 

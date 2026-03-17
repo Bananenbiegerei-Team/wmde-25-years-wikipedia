@@ -14,6 +14,9 @@ function bb_icon($name, $classes = '')
 	// Read the SVG content from the file
 	$svgContent = file_get_contents($filename);
 
+	// Remove fixed width and height attributes from SVG to allow CSS sizing
+	$svgContent = preg_replace('/\s*(width|height)="[^"]*"/', '', $svgContent);
+
 	// Add role="presentation" and aria-hidden="true" attributes to the root <svg> element
 	$svgContent = preg_replace('/<svg(.*?)>/i', '<svg$1 role="presentation" aria-hidden="true">', $svgContent);
 

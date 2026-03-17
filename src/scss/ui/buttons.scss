@@ -12,6 +12,9 @@
 	&:disabled {
 		@apply pointer-events-none;
 	}
+	&.btn-icon {
+		@apply p-1;
+	}
 
 	svg {
 		@apply h-8 w-8;
@@ -36,9 +39,9 @@
 	&.btn-lg {
 		@apply px-2 py-1 text-xl lg:px-2.5 lg:py-1 lg:text-2xl;
 
-		svg {
-			@apply icon-lg;
-		}
+		// svg {
+		// 	@apply icon-lg;
+		// }
 	}
 
 	&.btn-xl {
