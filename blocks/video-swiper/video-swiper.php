@@ -79,7 +79,7 @@
 
                                         <?php if ($modal_text) : ?>
                                         <!-- Content -->
-                                        <div class="max-w-none md:[&_p]:text-xl">
+                                        <div class="max-w-none md:[&_p]:text-xl modal-content">
                                             <?php echo wp_kses_post($modal_text); ?>
                                         </div>
                                         <?php endif; ?>

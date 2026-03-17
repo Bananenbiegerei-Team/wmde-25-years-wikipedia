@@ -84,6 +84,12 @@ footer p {
 	}
 }
 
+.modal-content {
+	a {
+		@apply underline transition underline-offset-2 decoration-1 hover:text-primary transition;
+	}
+}
+
 strong,
 .font-menus {
 	@apply font-medium;
