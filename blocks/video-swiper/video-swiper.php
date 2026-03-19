@@ -64,7 +64,7 @@
 
                                         <?php if ($modal_headline) : ?>
                                         <!-- Headline -->
-                                        <h2 class="mb-0 font-sans text-neutral"
+                                        <h2 class="mb-2 font-sans font-texts text-blue-dark"
                                             :id="$id('modal-title-<?php echo $index; ?>')">
                                             <?php echo esc_html($modal_headline); ?>
                                         </h2>
@@ -72,7 +72,7 @@
 
                                         <?php if ($modal_subline) : ?>
                                         <!-- Subline -->
-                                        <h3 class="mb-6 font-sans">
+                                        <h3 class="mb-4 font-sans font-texts">
                                             <?php echo esc_html($modal_subline); ?>
                                         </h3>
                                         <?php endif; ?>
