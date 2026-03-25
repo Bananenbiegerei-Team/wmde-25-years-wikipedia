@@ -1,0 +1,13 @@
+{
+	"name": "bb/blockquote",
+	"title": "Blockquote",
+	"description": "Blockquote",
+	"category": "custom-blocks",
+	"icon": "format-quote",
+	"keywords": [],
+	"acf": {
+		"mode": "false",
+		"renderTemplate": "blockquote.php"
+	},
+	"align": "full"
+}

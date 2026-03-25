@@ -1,0 +1,15 @@
+{
+	"name": "bb/accordion",
+	"title": "Accordion",
+	"description": "Accordion",
+	"category": "custom-blocks",
+	"icon": "menu-alt3",
+	"keywords": [],
+	"acf": {
+		"mode": "false",
+		"renderTemplate": "accordion.php"
+	},
+	"supports": {
+		"align": false
+	}
+}

@@ -1,0 +1,23 @@
+.bb-block-gallery-swiper {
+    figure {
+        @apply mb-0;
+    }
+
+    .swiper {
+
+        /* Reset default Swiper navigation positioning */
+        .swiper-button-next,
+        .swiper-button-prev {
+            @apply static m-0 w-auto h-auto text-black text-2xl rounded transition hover:bg-secondary;
+
+            &::after {
+                @apply content-none;
+            }
+        }
+
+        /* Reset default Swiper pagination positioning */
+        .swiper-pagination {
+            @apply static w-auto;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+	"name": "bb/gallery-lightbox",
+	"title": "Gallery Lightbox",
+	"description": "Image grid with the posibility to enlarge",
+	"category": "custom-blocks",
+	"icon": "images-alt2",
+	"keywords": [],
+	"acf": {
+		"mode": "false",
+		"renderTemplate": "gallery-lightbox.php"
+	},
+	"supports": {
+		"align": false
+	}
+}

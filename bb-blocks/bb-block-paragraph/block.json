@@ -1,0 +1,16 @@
+{
+	"name": "bb/paragraph",
+	"title": "Text",
+	"description": "Block for text, lists und paragraphs",
+	"category": "custom-blocks",
+	"icon": "editor-paragraph",
+	"keywords": [],
+	"acf": {
+		"mode": "false",
+		"renderTemplate": "paragraph.php"
+	},
+	"align": "full",
+	"bb": {
+		"colors": [{ "key": "field_64240bd8a13a8", "name": "text_color", "variant": "all", "bw": true, "none": false }]
+	}
+}

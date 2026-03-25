@@ -1,0 +1,12 @@
+.bb-block-paragraph {
+	p {
+		font-size: inherit;
+		@apply font-texts;
+	}
+	ol {
+		@apply list-decimal pl-4;
+	}
+	ul {
+		@apply list-disc pl-4;
+	}
+}

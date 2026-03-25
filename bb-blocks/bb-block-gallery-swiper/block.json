@@ -1,0 +1,15 @@
+{
+	"name": "bb/gallery-swiper",
+	"title": "Gallery Swiper",
+	"description": "An image gallery with swiper",
+	"category": "custom-blocks",
+	"icon": "slides",
+	"keywords": [],
+	"acf": {
+		"mode": "false",
+		"renderTemplate": "gallery-swiper.php"
+	},
+	"supports": {
+		"align": false
+	}
+}

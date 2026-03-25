@@ -1,0 +1,3 @@
+.wp-block-acf-spacer {
+	@apply rounded-xl border border-dotted border-neutral-light text-xs after:absolute after:right-2 after:top-2 after:block after:rounded-full after:bg-neutral-light after:px-3 after:py-1 after:content-['_spacer'];
+}

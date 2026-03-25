@@ -1,0 +1,4 @@
+/* Button block spacing */
+.bb-block-button + .bb-block-button {
+	@apply mt-2;
+}

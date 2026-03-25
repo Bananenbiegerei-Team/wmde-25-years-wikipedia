@@ -1,0 +1,18 @@
+{
+	"name": "bb/group",
+	"title": "Group",
+	"description": "Group",
+	"category": "custom-blocks",
+	"icon": "block-default",
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "group.php"
+	},
+	"supports": {
+		"align": false
+	},
+	"bb": {
+		"colors": [{ "key": "field_66703b15b72d8", "name": "bg_color", "variant": "all", "bw": true, "none": true }]
+	}
+}

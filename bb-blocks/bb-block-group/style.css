@@ -1,0 +1,11 @@
+/* Ensure text color inheritance in groups with foreground colors */
+.wp-block-group[class*="-foreground"] {
+  & * {
+    color: inherit;
+  }
+  /* Allow buttons to keep their own colors */
+  & .btn,
+  & [class*="btn-"] {
+    color: revert-layer;
+  }
+}

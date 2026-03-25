@@ -1,0 +1,15 @@
+{
+	"name": "bb/card",
+	"title": "Card",
+	"description": "Card with title and link",
+	"category": "custom-blocks",
+	"icon": "id-alt",
+	"keywords": [],
+	"acf": {
+		"mode": "false",
+		"renderTemplate": "card.php"
+	},
+	"supports": {
+		"align": false
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "bb/heading",
+	"title": "Headline",
+	"description": "Basic Block for Headlines",
+	"category": "custom-blocks",
+	"icon": "heading",
+	"keywords": [],
+	"acf": {
+		"mode": "false",
+		"renderTemplate": "heading.php"
+	},
+	"supports": {
+		"align": false
+	},
+	"bb": {
+		"colors": [
+			{ "key": "field_64242f1a595e0", "name": "text_color", "variant": "dark", "bw": true, "none": true },
+			{ "key": "field_63e3a8189c006", "name": "bg_color", "variant": "light", "bw": true, "none": true }
+		]
+	}
+}

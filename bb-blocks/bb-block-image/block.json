@@ -1,0 +1,15 @@
+{
+	"name": "bb/image",
+	"title": "Image",
+	"description": "Image",
+	"category": "custom-blocks",
+	"icon": "format-image",
+	"keywords": [],
+	"acf": {
+		"mode": "false",
+		"renderTemplate": "image.php"
+	},
+	"supports": {
+		"align": false
+	}
+}
