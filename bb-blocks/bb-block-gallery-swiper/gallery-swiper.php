@@ -7,15 +7,15 @@ $block_id = $block['id'];
         <?php if (!is_admin()): ?>
         <!-- Swiper -->
         <div class="swiper">
-            <div class="items-center mb-2 bg-red-500 md:flex">
-                <div class="relative flex items-center gap-2">
-                    <button class="swiper-button-prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z"/></svg>
-                    </button>
-                    <div class="inline-block mx-2 text-base align-middle swiper-pagination min-w-8"></div>
-                    <button class="swiper-button-next">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z"/></svg>
-                    </button>
+            <div class="flex items-center justify-end mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 transition border border-black rounded-lg swiper-button-prev hover:bg-neutral-light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 32 32"><path fill="currentColor" d="M10 16L20 6l1.4 1.4l-8.6 8.6l8.6 8.6L20 26z"/></svg>
+        </span>
+                    <div class="mx-2 text-xl swiper-pagination font-alt"></div>
+                    <span class="p-2 transition border border-black rounded-lg swiper-button-next hover:bg-neutral-light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z"/></svg>
+        </span>
                 </div>
             </div>
             <div class="swiper-wrapper">
