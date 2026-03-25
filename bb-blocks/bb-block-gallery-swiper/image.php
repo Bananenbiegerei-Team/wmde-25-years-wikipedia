@@ -17,10 +17,10 @@ $description = $attachment ? $attachment->post_content : '';
 // Determine orientation and classes
 if ($image_meta_data && ($image_meta_data['width'] ?? 2) * 0.74 < ($image_meta_data['height'] ?? 1)) {
     $figure_classes = 'portrait flex flex-col justify-center relative overflow-hiddenwidth="1em" height="32"';
-    $image_attr = ['class' => 'h-full w-auto'];
+    $image_attr = ['class' => 'h-full w-auto rounded-lg'];
 } else {
     $figure_classes = 'flex flex-col relative';
-    $image_attr = ['class' => 'w-full h-autowidth="1em" height="32"'];
+    $image_attr = ['class' => 'w-full h-auto rounded-lg'];
 }
 $image_attr['sizes'] = ' ';
 $image_attr['loading'] = 'lazy';
