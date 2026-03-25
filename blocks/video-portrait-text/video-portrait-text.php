@@ -30,14 +30,14 @@ if ($video_content || $text_content): ?>
             <?php endif; ?>
 
             <?php if (!empty($text_content['title'])): ?>
-                <h2 class="mb-2 text-2xl lg:text-3xl xl:text-4xl">
+                <h2 >
                     <?php echo esc_html($text_content['title']); ?>
                 </h2>
             <?php endif; ?>
             </div>
 
             <?php if (!empty($text_content['content'])): ?>
-                <p class="mb-0 text-xl leading-tight lg:text-2xl font-headings">
+                <p class="content">
                     <?php echo wp_kses($text_content['content'], [
                         'a' => [
                             'href' => [],

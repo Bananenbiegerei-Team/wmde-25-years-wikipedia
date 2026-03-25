@@ -1,3 +1,17 @@
 .home .video-portrait-text-block {
     @apply max-w-xl lg:max-w-4xl mx-auto px-4 md:px-0;
+    h2 {
+        @apply mb-2 text-2xl lg:text-3xl xl:text-4xl;
+    }
+    p.content {
+        @apply mb-0 text-xl leading-tight lg:text-2xl font-headings;
+    }
+}
+.video-portrait-text-block {
+    h2 {
+        @apply mb-0 text-xl lg:text-2xl;
+    }
+    p.content {
+        @apply mb-0 text-lg leading-normal lg:text-xl;
+    }
 }
